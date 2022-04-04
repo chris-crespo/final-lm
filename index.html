@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/mouse.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --btn-fg: #c6493a;
+            --btn-bg: #22061b;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .div{
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://cdn.dribbble.com/users/1846841/screenshots/5200239/yosemite1.jpg");
+            background-size: cover;
+        }
+        .div img{
+            width: 100%;
+        }
+
+        .titulo{
+            height: auto;
+            width: fit-content;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+        }
+        h1{
+            font-size: 100px;
+            font-family: 'Amatic SC', cursive;
+            margin-bottom: 18px;
+        }
+        p{
+            font-size: 32px;
+            font-family: 'Amatic SC', cursive;
+            width: 700px;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        button{
+            color: white;
+            background-color: var(--btn-fg);
+            border: 4px solid var(--btn-bg);
+            box-shadow: 4px 4px 0px var(--btn-bg) ;
+            padding: 16px 28px;
+            font-size: 21px;
+            font-family: 'Amatic SC';
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            color: var(--btn-bg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="div"> </div>
+    <div class="mouse">
+        <div class="wheel"></div>
+    </div>
+    <div class="titulo">
+        <h1>HORDZA CAPING</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis quia natus, corrupti qui deserunt recusandae obcaecati ad, itaque dolorem dolore quidem unde ducimus minus tempora rem molestiae eligendi inventore impedit.</p>
+        <button>+ information</button>
+    </div>
+</body>
+</html>

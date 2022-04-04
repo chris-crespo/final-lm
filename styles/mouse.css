@@ -1,0 +1,41 @@
+.mouse {
+    position: absolute;
+    width: 34px;
+    height: 56px;
+    border-radius: 20px;
+    border: 2px solid #f6d5da;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouse .wheel {
+    width: 7px;
+    height: 7px;
+    background: #f6d5da;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: scroll 2000ms cubic-bezier(.36,.01,.52,.62) infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translate(-50%, 0px);
+        opacity: 1;
+    }
+
+
+    60% {
+        transform: translate(-50%, 24px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, 24px);
+        opacity: 0;
+    }
+}
+
