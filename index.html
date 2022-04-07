@@ -9,157 +9,27 @@
     <link rel="stylesheet" href="styles/mouse.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --btn-fg: #c6493a;
-            --btn-bg: #22061b;
-            --Titulo: #fff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .cover {
-            background-color: #f2f1ef;
-            width: 100vw;
-            height: 100vh;
-            position: absolute;
-            top: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            z-index: 99;
-        }
-
-        .cover img {
-            transform: scale(0.4);
-        }
-
-        .cover>.logo>.sun {
-            background-color: none;
-            border: 1px solid #0d5fb8;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-        }
-
-        .cover>.logo>.camp {
-            width: 50px;
-            height: 50px;
-            /*border: 150px solid transparent;
-            border-top: 0;
-            border-bottom: 300px solid red;*/
-        }
-
-        .campbordleft {
-            height: 100%;
-            border-left: 1px solid #0d5fb8;
-            transform: rotate(20deg);
-        }
-
-        .campbordright {
-            height: 100%;
-            border-right: 1px solid #0d5fb8;
-            transform: rotate(-20deg);
-        }
-
-
-        .campbordbottom{
-            width: 100%;
-            border-bottom: 1px solid #0d5fb8;
-            
-        }
-
-
-
-        .mainBackgrund {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-        }
-
-        .mainBackgrund video {
-            width: 100%;
-            height: 100%;
-        }
-
-        .blackcover {
-            background-color: rgba(0, 0, 0, 0.3500);
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            z-index: 1;
-            top: 0;
-        }
-
-        .videocont {
-            max-height: 100vh;
-            overflow: hidden;
-        }
-
-        .titulo {
-            height: auto;
-            width: fit-content;
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 100px;
-            font-family: 'Amatic SC', cursive;
-            margin-bottom: 18px;
-            color: var(--Titulo);
-        }
-
-        p {
-            font-size: 32px;
-            font-family: 'Amatic SC', cursive;
-            width: 700px;
-            font-weight: 700;
-            margin-bottom: 48px;
-            color: var(--Titulo);
-        }
-
-        button {
-            color: white;
-            background-color: var(--btn-fg);
-            border: 4px solid var(--btn-bg);
-            box-shadow: 4px 4px 0px var(--btn-bg);
-            padding: 16px 28px;
-            font-size: 21px;
-            font-family: 'Amatic SC';
-            font-weight: bold;
-            letter-spacing: 0.2em;
-            /*color: var(--btn-bg);*/
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/mainStyle.css">
 </head>
 
 <body>
     <div class="cover">
-        <img src="assets/logo.jpg" alt="">
-        <div class="logo">
-            <div class="sun"></div>
-            <div class="three"></div>
-            <div class="camp">
-                <div class="campbordleft"></div>
-                <div class="campbordright"></div>
-                <div class="campbordbottom"></div>
+        <div class="logocont">
+            <img class="sun" src="assets/sun.jpg" alt="sun">
+            <img src="assets/camp.jpg" alt="camp">
+            <div class="waves">
+                <img src="assets/wave.jpg" alt="">
+                <img src="assets/wave.jpg" alt="waves">
+                <img src="assets/wave.jpg" alt="waves">
+                <img src="assets/wave.jpg" alt="waves">
+                <img src="" alt="waves">
             </div>
-            <div class="wave"></div>
-            <div class="surfboard"></div>
+            <img src="assets/surfboard.jpg" alt="surf"> 
         </div>
     </div>
-    <div class="mainBackgrund">
+    <div class="mainBackground">
         <div class="videocont">
             <video playsinline autoplay muted loop>
                 <source src="assets/vid.mp4" type="video/mp4">
