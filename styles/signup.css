@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Anek Devanagari', sans-serif;
+}
+.signupForm{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.Signupback{
+    height: 100vh;
+    width: 40%;
+
+} 
+.Signupback img{
+    height: 100%;
+    width: 100%;
+}
+.signupForm form{
+    height: 100vh;
+    width: 50%;
+}
+.signupInfo{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.signupInfo div{
+    width: 60%;
+}
+form{
+    margin: auto;
+}
+form h4{
+    text-align: end;
+    font-family: 'Anek Devanagari', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+form a{
+    color: #ce2856;
+}
+.signuptitle{
+    text-align: left;
+}
+.signupsubtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.signupsubtitle h5{
+    color: rgba(0, 0, 0, 0.267);
+    margin: 10px;
+}
+.signupsubtitle hr{
+    flex-grow: 1;
+    height: 0;
+    color: rgba(0, 0, 0, 0.267);
+}
+.username{
+    width: 50%;
+}
+.username, .email, .password{
+    display: flex;
+    flex-direction: column;
+
+}
+#username, #email, #password{
+    border: none;
+    background-color: #f3f3f4;
+    padding: 5px;
+    border-radius:8px ;
+}
+#username{
+    width:50%;
+}
+button{
+    background-color: #ce2856;
+    color: white;
+    padding: 8px 25px;
+    border: 2px solid #ce2856;
+    border-radius: 8px;
+    display: flex;
+}
+button:hover{
+    color: #ce2856;
+    background-color: white;
+    border: 2px solid #ce2856;
+    transition: 0.8s all;
+    cursor: pointer;
+}
+
+
+
+
+
