@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c8f9f330ff.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script type="module" src="../out/SignUp.js"></script>
 </head>
 
 <body>
@@ -20,67 +23,9 @@
         <div class="Signupback">
             <img src="../assets/img/signupback.png" alt="">
         </div>
-        <form action="">
+        <div class="form-wrapper" id="signup-form-container">
 
-            <h4>Already a member? <a href="http://localhost:3000/signin">Sign In</a></h4>
-
-            <div class="signupInfo">
-
-                <div class="signuptitle">
-                    <h1> Sign up to Our Camp</h1>
-                </div>
-
-                <div class="signupsubtitle">
-                    <hr>
-                    <h5>SignUp</h5>
-                    <hr>
-                </div>           
-
-                    <div class="username">
-                        <label for="username">UserName</label>
-                        <input type="text" name="userName" id="username">
-                    </div>
-            
-
-                <div class="email">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                </div>
-
-                <div class="password">
-                    <label for="passwored">Password</label>
-                    <input type="password" name="passwored" id="password" placeholder="6+ caracters">
-                </div>
-
-                <div class="policycheckbox">
-                    <input type="checkbox" name="policy" id="policy">
-                    <label for="policy">
-                        Creating an account means you’re okay with our
-                        <a href="">Terms of Service</a>,
-                        <a href="">Privacy Policy</a>, and our default
-                        <a href="">Notification Settings</a>.
-                    </label>
-                </div>
-
-                <div class="button">
-                    <button>Create Account</button>
-                </div>
-
-                <div class="redcaptcha">
-                    <p>This site is protected by reCAPTCHA and the Google
-                        <a href="">Privacy Policy</a>
-                        and
-                        <a href="">Terms of Service</a>
-                        apply.</p>
-                </div>
-
-
-
-
-            </div>
-
-
-        </form>
+        </div>
     </div>
 </body>
 

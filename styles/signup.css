@@ -17,10 +17,11 @@
 .Signupback img{
     height: 100%;
     width: 100%;
+    display: block;
 }
 .signupForm form{
     height: 100vh;
-    width: 50%;
+    width: 80%;
 }
 .signupInfo{
     height: 80%;
@@ -29,6 +30,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+}
+#signup-form-container{
+    width: 65%;
+    height: 100vh;
 }
 .signupInfo div{
     width: 60%;
@@ -77,9 +83,10 @@ form a{
     background-color: #f3f3f4;
     padding: 5px;
     border-radius:8px ;
+    font-size: 20px;
 }
-#username{
-    width:50%;
+label{
+    font-size: 20px;
 }
 button{
     background-color: #ce2856;
@@ -88,6 +95,7 @@ button{
     border: 2px solid #ce2856;
     border-radius: 8px;
     display: flex;
+    font-size: 20px;
 }
 button:hover{
     color: #ce2856;
