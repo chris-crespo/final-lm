@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run compile && node server.js",
-    "compile": "rm -rf out && npx babel src --out-dir out --presets react-app/prod"
+    "compile": "npx babel src --out-dir out --presets react-app/prod"
   },
   "keywords": [],
   "author": "",
