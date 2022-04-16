@@ -1,6 +1,6 @@
 const CredentialsForm = ({ handleSubmit }) => (
     <form onSubmit={handleSubmit}>
-        <h4>Already a member? <a href="http://localhost:3000/signin">Sign In</a></h4>
+        <h4>Already a member? <a href="signin">Sign In</a></h4>
         <div class="signupInfo">
             <div class="signuptitle">
                 <h1> Sign up to Our Camp</h1>
