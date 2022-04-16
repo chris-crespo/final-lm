@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/userDataForm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c8f9f330ff.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script type="module" src="../out/SignUp.js"></script>
+</head>
+
+<body>
+    <div class="signupForm">
+        <div class="Signupback">
+            <img src="../assets/img/signupback.png" alt="">
+        </div>
+        <div class="form-wrapper" id="signup-form-container">
+            <form>
+                <h4>Already a member? <a href="http://localhost:3000/signin">Sign In</a></h4>
+                <div class="signupInfo">
+                    <div class="signuptitle">
+                        <h1> Sign up to Our Camp</h1>
+                    </div>
+                    <div class="signupsubtitle">
+                        <hr />
+                        <h5>SignUp</h5>
+                        <hr />
+                    </div>
+                    <div class="name-lastname">
+                        <div id="Dname" class="Name">
+                            <label for="username">Name</label>
+                            <input type="text" name="Name" id="Name" />
+                        </div>
+
+                        <div id="DLname" class="LastName">
+                            <label for="LastName">LastName</label>
+                            <input type="text" name="LastName" id="LastName" />
+                        </div>
+                    </div>
+                    <div class="telephone">
+                        <div id="negative" class="NegativeNumber">
+                            <label for="NegativeNumber">Phone</label>
+                            <input type="text" value=" +34 " name="NegativeNumber" id="NegativeNumber" />
+                        </div>
+                        <div id="number" class="PhoneNumber">
+                            <label for="PhoneNumber"> Number</label>
+                            <input type="tel" name="PhoneNumber" id="PhoneNumber" placeholder="123456789" />
+                        </div>
+                    </div>
+
+                    <div class="Adress">
+                        <label for="Adress">Adress</label>
+                        <input type="text" name="Adress" id="Adress" placeholder="Calle zumardia n16" />
+                    </div>
+
+                    <div class="button">
+                        <button>Create Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
