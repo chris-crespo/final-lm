@@ -32,7 +32,7 @@ const CredentialsForm = ({ handleSubmit }) => {
             </div>
             <div class="signupInfo">
                 <div class="signuptitle">
-                    <h1> Sign up to Our Camp</h1>
+                    <h1><span>Sign up</span> to our camp</h1>
                 </div>
                 <div class="field">
                     <label for="username">Username</label>

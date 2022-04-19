@@ -20,10 +20,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-     z-index: 99; 
+    z-index: 99;
 }
 
-.logocont{
+.logocont {
     height: 25%;
     width: 620px;
     display: flex;
@@ -33,10 +33,11 @@
     position: relative;
 }
 
-.logocont img{
+.logocont img {
     width: 100%;
 }
-.sun{
+
+.sun {
     height: 30px;
     width: 30px;
     border: 4px solid #1E68B9;
@@ -48,16 +49,18 @@
 }
 
 @keyframes sunmove {
-    0%{
-        left:210px;
-        top:15px;
+    0% {
+        left: 210px;
+        top: 15px;
     }
-    50%{
-        top:-30px
+
+    50% {
+        top: -30px
     }
-    100%{
-        left:380px;
-        top:15px;
+
+    100% {
+        left: 380px;
+        top: 15px;
     }
 }
 
@@ -128,40 +131,45 @@ button {
     cursor: pointer;
 }
 
-.presenting{
-    height: 75vh;
+.presenting {
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.presenting img{
+
+.presenting img {
     height: 120px;
     width: 120px;
     border-radius: 50%;
 }
-.presenting h1{
-    color: #22061b; 
+
+.presenting h1 {
+    color: #22061b;
 }
 
-.presenting p{
-    color:#22061b; 
+.presenting p {
+    color: #22061b;
 }
-#presentingparag span{
-    background-color:#0078d7;
+
+#presentingparag span {
+    background-color: #0078d7;
     color: white;
 }
-.presenting p:last-child{
-    color:#22061b87;
+
+.presenting p:last-child {
+    color: #22061b87;
 }
-.presenting span{
+
+.presenting span {
     color: #0a5db8;
 }
 
-.campobject{
+.campobject {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -169,65 +177,80 @@ button {
     align-items: center;
 }
 
-.obj1 .pic{
-    height: 70%;
+.obj1 .pic {
+    height: 50%;
     width: 25%;
 }
-.pic img{
+
+.pic img {
     height: 100%;
     width: 100%;
 }
-.text h1, .text p{
+
+.text h1,
+.text p {
     color: #22061b;
 }
 
-.obj1{
+.obj1 {
     background-color: #003c3c;
 }
-.obj1 h1{
+
+.obj1 h1 {
     color: #f5f9fa;
 }
-.obj1 p{
-    color:#bceee2;
+
+.obj1 p {
+    color: #bceee2;
 }
-.obj1 span{
+
+.obj1 span {
     background-color: #02d37f;
-    color:var(--Titulo);
-}
-.obj2{
-    background-color: #f6ecda;
-}
-.obj2 h1{
-    color:var(--btn-fg);
-}
-.obj2 span{
-    background-color:  var(--btn-fg);
-    color: white;
-}
-.obj2 .pic{
-    width:35%;
-}
-.obj3{
-    background-color: #1a2c44;
-}
-.obj3 .pic{
-    width:35%;
-    height: 90%;
-}
-.obj3 h1{
-    
-    color: var(--btn-fg);
-}
-.obj3 p{
-    color: #eeb35f;
-}
-.obj3 span{
-    background-color:#119493;
     color: var(--Titulo);
 }
 
-.wher-are-we{
-    height: 60vh;
+.obj2 {
+    background-color: #f6ecda;
+}
+
+.obj2 h1 {
+    color: var(--btn-fg);
+}
+
+.obj2 span {
+    background-color: var(--btn-fg);
+    color: white;
+}
+
+.obj2 .pic {
+    width: 35%;
+}
+
+.obj3 {
+    background-color: #1a2c44;
+}
+
+.obj3 .pic {
+    width: 40%;
+    height: 70%;
+}
+
+.obj3 h1 {
+
+    color: var(--btn-fg);
+}
+
+.obj3 p {
+    color: #eeb35f;
+}
+
+.obj3 span {
+    background-color: #119493;
+    color: var(--Titulo);
+}
+
+.wher-are-we {
+    height: 80vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -236,53 +259,116 @@ button {
     align-items: center;
     margin-bottom: 30px;
 }
-.wher-are-we h1{
+
+.wher-are-we h1 {
     width: 100%;
     text-align: center;
     color: var(--btn-bg);
+    font-size: 70px;
 }
 
-.city{
-    width: 18%;
-    height: 70%;
-    border-radius: 20px;
-    
+.our-camps-logo {
+    height: 140px;
+    width: 100%;
+    margin: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-.city img{
-    height: 60%;
+
+.our-camps-logo img {
+    height: 100%;
+    width: 130px;
+    border-radius: 50%;
+}
+
+.city {
+    width: 23%;
+    height: 50%;
+    /* border-radius: 20px; */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.city img {
+    height: 100%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    transition: all ease-in-out 1s;
 }
-.city .desc{
-    background-color:var(--btn-fg);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+
+.city:hover img {
+    transform: scale(1.2);
 }
-.desc h3{
+
+.city .desc {
+    background-color: var(--btn-fg);
+    border-top-right-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    bottom: -72px;
+    left: -130px;
+    transition: all ease-in-out 1s;
+    overflow: hidden;
+}
+
+.city:hover .desc {
+    bottom: 0;
+    left: 0;
+}
+
+.city:hover h3 {
+    margin-left: 0%;
+}
+
+.desc h3 {
     color: var(--Titulo);
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
+    margin-left: 120px;
+    transition: all ease-in-out 1s;
+    width: 100%;
 }
-.desc img{
+
+.desc img {
     height: 30px;
     width: 30px;
     padding-right: 5px;
-}
-.desc p{
-    margin: 0;
-    font-size: 22px;
+
 }
 
-footer{
+.desc p {
+    margin: 0;
+    font-size: 22px;
+    width: 100%;
+}
+
+#desc1 {
+    background-color: var(--btn-bg);
+}
+
+#desc3 {
+    background-color: #02d37f;
+}
+
+#desc4 {
+    background-color: #eeb35f;
+}
+
+footer {
     height: 8vh;
     background-color: var(--btn-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-footer p{
+
+footer p {
     color: var(--Titulo);
     font-size: 16px;
     margin-top: 50px;
+    margin-left: 20px;
 }

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap');
 
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
 }
@@ -31,21 +31,23 @@ a {
     margin-left: 8px;
 }
 
-.signupForm{
+.signupForm {
     width: 100%;
     display: flex;
 }
-.Signupback{
-    width: 40%;
-    height: 100vh;
-} 
 
-.Signupback img{
+.Signupback {
+    width: 45%;
+    height: 100vh;
+}
+
+.Signupback img {
     height: 100%;
     width: 100%;
     display: block;
 }
-.signupInfo{
+
+.signupInfo {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -53,24 +55,28 @@ a {
     align-items: center;
 
 }
-#signup-form-container{
+
+#signup-form-container {
     width: 400px;
     margin: auto;
 }
-form{
+
+form {
     margin: 32px auto 0;
 }
-form h4{
+
+form h4 {
     text-align: end;
     font-family: 'Anek Devanagari', sans-serif;
     font-weight: 300;
     font-size: 15px;
 }
 
-form a{
+form a {
     color: #ce2856;
 }
-.signuptitle{
+
+.signuptitle {
     width: 100%;
     text-align: left;
     margin-bottom: 46px;
@@ -80,18 +86,25 @@ form a{
     font-weight: 600;
     letter-spacing: -0.03rem;
 }
-.signupsubtitle{
+
+.signuptitle h1 span {
+    color: #ce2856;
+}
+
+.signupsubtitle {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: 32px;
 }
-.signupsubtitle h5{
+
+.signupsubtitle h5 {
     color: rgba(0, 0, 0, 0.267);
     margin: 10px;
 }
-.signupsubtitle hr{
+
+.signupsubtitle hr {
     flex-grow: 1;
     height: 0;
     color: rgba(0, 0, 0, 0.267);
@@ -103,11 +116,12 @@ form a{
     flex-direction: column;
     margin-bottom: 10px;
 }
+
 .field input {
     border: 3px solid #f3f3f4;
     background-color: #f3f3f4;
     padding: 5px 12px;
-    border-radius:8px ;
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 28px;
@@ -120,7 +134,8 @@ form a{
 .field input.valid {
     border: 3px solid #28ce56;
 }
-label{
+
+label {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -132,7 +147,7 @@ label{
     margin-top: 6px;
 }
 
-button{
+button {
     background-color: #ce2856;
     color: white;
     padding: 8px 25px;
@@ -143,14 +158,10 @@ button{
     font-weight: 600;
     transition: 0.3s all;
 }
-button:hover{
+
+button:hover {
     color: #ce2856;
     background-color: white;
     border: 2px solid #ce2856;
     cursor: pointer;
 }
-
-
-
-
-
