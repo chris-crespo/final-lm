@@ -15,6 +15,8 @@ const fileTypes = {
     js:   "text/javascript",
     png:  "image/png",
     jpg:  "image/jpg",
+    webp: "image/webp",
+    svg:  "text/svg+xml",
     mp4:  "video/mp4"
 }
 const last = arr => arr[arr.length - 1];
