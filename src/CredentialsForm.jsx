@@ -34,7 +34,7 @@ const CredentialsForm = ({ next }) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        const credentails = { username, email, password };
+        const credentials = { username, email, password };
         fetchAvailable()
             .then(({ username, email }) => username && email && next(credentials)); 
     }
@@ -46,7 +46,7 @@ const CredentialsForm = ({ next }) => {
             </div>
             <div class="form-field">
                 <label for="username">Username</label>
-                <input type="text" name="username" required
+                <input type="text" name="username" required autoFocus
                        value={username} onChange={updateUsername} />
             </div>
             <div class="form-field">
