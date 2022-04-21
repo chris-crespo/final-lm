@@ -16,12 +16,12 @@ const SignUp = props => {
 
     const register = userData => {
         fetch("https://scm-daw.herokuapp.com/api/register", {
-            method: "PUT",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ ...credentials, ...userData })
-        }).then(res => console.log(res.json()));
+        }).then(res => res.json()).then(console.log);
     }
 
     return atSecondStage 
