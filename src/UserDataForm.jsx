@@ -1,40 +1,33 @@
+import useForm from './hooks/useForm.js';
+
 const { useState } = React;
 
-const UserDataForm = ({ register }) => {
-    const updateField = setter => e => setter(e.target.value);
+const UserDataForm = ({ registerUser }) => {
+    const { register, handleSubmit } = useForm();
 
-    const [firstName, setFirstName] = useState("");
-    const updateFirstName = updateField(setFirstName);
-
-    const [lastName, setLastName] = useState("");
-    const updateLastName = updateField(setLastName);
-
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const updatePhoneNumber = updateField(setPhoneNumber);
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        register({ firstName, lastName, phoneNumber }); 
-    }
+    const onSubmit = userData =>
+        registerUser(userData);
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div class="form-title">
-                <h1><span>Sign up</span> to Our Camp</h1>
+                <h1><span>Sign up</span> to our camp</h1>
             </div>
             <div class="form-field"> 
                 <label for="first-name">First Name</label>
                 <input type="text" name="first-name" autoFocus
-                       value={firstName} onChange={updateFirstName}/>
+                    { ...register("first-name", {}) }  />
             </div>
 
             <div class="form-field">
                 <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" value={lastName} onChange={updateLastName} />
+                <input type="text" name="last-name"
+                    { ...register("last-name", {}) } />
             </div>
             <div class="form-field">
                 <label for="phone-number">Phone Number</label>
-                <input type="tel" name="phone-number" value={phoneNumber} onChange={updatePhoneNumber} />
+                <input type="tel" name="phone-number"
+                    { ...register("phone-number", {}) } />
             </div>
             <div class="form-button-wrapper">
                 <button>Create Account</button>

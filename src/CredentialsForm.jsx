@@ -1,66 +1,63 @@
-const { useState } = React;
+import useForm from './hooks/useForm.js';
 
-const validUsername = username => /[A-Za-z0-9_\-]{6}/.test(username);
-const validPassword = password => /[a-z0-9]{6}/i.test(password);
-const validEmail = email => /[a-z0-9_\.\-]+@[a-z]+\.[a-z]+/i.test(email);
+const { useState, useRef, useEffect } = React;
 
-const getClass = (field, validate) => {
-    if (!validate(field)) return "invalid"
-    else if (field.length === 0) return ""
-    else return "valid";
-}
+const usernamePattern = /[a-z0-9_\-]{6}/i;
+const emailPattern = /[a-z0-9_\.\-]+@[a-z]+\.[a-z]+/i;
+const passwordPattern = /[a-z0-9]{6}/i;
 
 const CredentialsForm = ({ next }) => {
-    const updateField = (field, set, validate) => e => {
-        set(e.target.value);
-        e.target.className = getClass(field, validate);
-    }
+    const button = useRef(null);
+    const { invalidate, register, watch, handleSubmit } = useForm();
 
-    const [username, setUsername] = useState("");
-    const updateUsername = updateField(username, setUsername, validUsername);
+    useEffect(() => {
+        const listener = ({ valid }) => button.current.disabled = !valid;
+        const sub = watch(listener);
+        return () => sub.unsub();
+    }, []);
 
-    const [email, setEmail] = useState("");
-    const updateEmail = updateField(email, setEmail, validEmail);
-
-    const [password, setPassword] = useState("");
-    const updatePassword = updateField(password, setPassword, validPassword);
-
-    const fetchAvailable = () => {
+    const fetchAvailable = ({ username, email }) => {
         const url = "https://scm-daw.herokuapp.com/api/available?";
-        return fetch(`${url}username=${username}&email=${email}`, { mode: "cors" })
-            .then(res => { console.log(res); return res.json() })
+        return fetch(`${url}username=${username}&email=${email}`)
+            .then(res => res.json());
     }
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const onSubmit = credentials => {
+        fetchAvailable(credentials)
+            .then(({ username, email }) => {
+                if (!username)
+                    invalidate("username");
 
-        const credentials = { username, email, password };
-        fetchAvailable()
-            .then(({ username, email }) => username && email && next(credentials)); 
+                if (!email)
+                    invalidate("email");
+
+                if (username && email)
+                    next(credentials);
+            })
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div class="form-title">
                 <h1><span>Sign up</span> to our camp</h1>
             </div>
             <div class="form-field">
                 <label for="username">Username</label>
-                <input type="text" name="username" required autoFocus
-                       value={username} onChange={updateUsername} />
+                <input type="text" name="username" autoFocus
+                       { ...register("username", { required: true, pattern: usernamePattern })} />
             </div>
             <div class="form-field">
                 <label for="email">Email</label>
-                <input type="email" name="email" required
-                       value={email} onChange={updateEmail} />
+                <input type="email" name="email" 
+                       { ...register("email", { required: true, pattern: emailPattern }) } />
             </div>
             <div class="form-field">
                 <label for="password">Password</label>
-                <input type="password" name="password" required
-                       value={password} onChange={updatePassword} />
+                <input type="password" name="password" 
+                       { ...register("password", { required: true, pattern: passwordPattern })} />
             </div>
             <div class="form-button-wrapper">
-                <button>Next</button>
+                <button disabled ref={button}>Next</button>
             </div>
         </form>
     )

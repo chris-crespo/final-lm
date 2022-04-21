@@ -134,3 +134,10 @@ button {
     background-color: white;
     border: 2px solid var(--red);
 }
+
+.sign button:disabled {
+    background-color: #f3f3f4;
+    border-color: #f3f3f4;
+    color: white;
+    cursor: not-allowed;
+}

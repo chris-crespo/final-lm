@@ -25,7 +25,7 @@ const SignUp = props => {
     }
 
     return atSecondStage 
-        ? <UserDataForm register={register} /> 
+        ? <UserDataForm registerUser={register} /> 
         : <CredentialsForm next={next} />
 } 
 
