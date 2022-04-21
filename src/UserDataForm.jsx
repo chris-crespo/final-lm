@@ -24,7 +24,8 @@ const UserDataForm = ({ register }) => {
             </div>
             <div class="form-field"> 
                 <label for="first-name">First Name</label>
-                <input type="text" name="first-name" value={firstName} onChange={updateFirstName}/>
+                <input type="text" name="first-name" autoFocus
+                       value={firstName} onChange={updateFirstName}/>
             </div>
 
             <div class="form-field">
