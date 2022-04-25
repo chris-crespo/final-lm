@@ -2,6 +2,9 @@ import useForm from './hooks/useForm.js';
 
 const { useState } = React;
 
+const namePattern  = /^[a-z \.]+$/i;
+const phonePattern = /^\d{9}$/;
+
 const UserDataForm = ({ registerUser }) => {
     const { register, handleSubmit } = useForm();
 
@@ -16,18 +19,18 @@ const UserDataForm = ({ registerUser }) => {
             <div class="form-field"> 
                 <label for="first-name">First Name</label>
                 <input type="text" name="first-name" autoFocus
-                    { ...register("first-name", {}) }  />
+                    { ...register("first-name", { pattern: namePattern }) }  />
             </div>
 
             <div class="form-field">
                 <label for="last-name">Last Name</label>
                 <input type="text" name="last-name"
-                    { ...register("last-name", {}) } />
+                    { ...register("last-name", { pattern: namePattern }) } />
             </div>
             <div class="form-field">
                 <label for="phone-number">Phone Number</label>
                 <input type="tel" name="phone-number"
-                    { ...register("phone-number", {}) } />
+                    { ...register("phone-number", { pattern: phonePattern }) } />
             </div>
             <div class="form-button-wrapper">
                 <button>Create Account</button>

@@ -1,7 +1,11 @@
 const { useState, useRef, useEffect } = React;
 
-const changeClass = (element, valid) => 
-    element.className = valid ? "valid" : "invalid";
+const changeClass = (element, { valid, required, empty }) => 
+    element.className = valid 
+        ? "valid" 
+        : required || !empty
+        ? "invalid"
+        : "";
 
 const useForm = () => {
     const [states, setStates] = useState({});
@@ -48,7 +52,7 @@ const useForm = () => {
             setValid({ ...valid, [name]: isValid });
 
             if (isFirst.current) isFirst.current = false;
-            else changeClass(ref.current, isValid);
+            else changeClass(ref.current, { valid: isValid, required, empty: state.length === 0 });
         }, [state]);
 
         return { ref, name, onChange }
