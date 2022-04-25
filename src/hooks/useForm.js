@@ -1,3 +1,5 @@
+import useDidUpdateEffect from './useDidUpdateEffect.js';
+
 const { useState, useRef, useEffect } = React;
 
 const changeClass = (element, { valid, required, empty }) => 
@@ -7,52 +9,85 @@ const changeClass = (element, { valid, required, empty }) =>
         ? "invalid"
         : "";
 
-const useForm = () => {
-    const [states, setStates] = useState({});
+const isValid = (state, { required, pattern }) =>
+    pattern.test(state) && (!required || required && state.length > 0);
 
-    const [valid, setValid] = useState({});
-    const invalidate = name => {
-        setValid({ ...valid, [name]: false });
+const useFormState = () => {
+    const [fields, setFields] = useState({});
+
+    const text = name => fields[name];
+    const updateField = (name, value) => setFields({ ...fields, [name]: value });
+
+    return { fields, text, updateField };
+}
+
+const useFormValidity = () => {
+    const [fields, setFields] = useState({});
+
+    const valid = name => fields[name];
+    const setValidity = valid => name => setFields({ ...fields, [name]: valid });
+    const validate = setValidity(true);
+    const invalidate = setValidity(false);
+
+    return { fields, valid, validate, invalidate };
+}
+
+const useFormRefs = () => {
+    const refs = useRef({});
+
+    const ref = name => refs.current[name];
+    const registerRef = (name, ref) => refs.current = { ...refs.current, [name]: ref };
+
+    return { refs, ref, registerRef };
+}
+
+const useFormWatchers = () => {
+    const watchers = useRef(new Set());
+
+    const sub = fn => watchers.current.add(fn);
+    const watch = fn => {
+        sub(fn);
+        return { unsub: () => unwatch(fn) }
+    }
+    const unwatch = fn => watchers.current.delete(fn);
+
+    const invokeWatchers = state => watchers.current.forEach(fn => fn(state));
+
+    return { watch, invokeWatchers }
+}
+
+const useForm = () => {
+    const { fields: inputs, text, updateField } = useFormState();
+    const { fields: valids, valid, validate, invalidate } = useFormValidity();
+    const { refs, ref, registerRef } = useFormRefs();
+    const { watch, invokeWatchers } = useFormWatchers();
+
+    const invalidateWithEffect = name => {
+        invalidate(name);
         changeClass(refs.current[name].current, false);
     }
 
-    const refs = useRef({});
-    const registerRef = (name, ref) => refs.current[name] = ref;
-
-    const watchers = useRef([]);
-    const validForm = () => Object.values(valid).every(x => x);
-    const invokeWatchers = () => watchers.current.forEach(fn => fn({
-        valid: validForm()
-    }));
-
-    useEffect(() => { invokeWatchers() }, [valid]);
-
-    const watch = fn => {
-        watchers.current.push(fn);
-        return { 
-            unsub: () => unwatch(fn)
-        }
-    }
-    const unwatch = fn =>
-        watchers.current = watchers.current.filter(x => x !== fn);
+    const validForm = () => Object.values(valids).every(x => x);
+    useEffect(() => { invokeWatchers({ valid: validForm() }) }, [inputs]);
 
     const register = (name, { required = false, pattern = /./ }) => {
         const [state, setState] = useState("");
         const ref = useRef(null);
+
         registerRef(name, ref);
 
         const onChange = e => {
             setState(e.target.value);
-            setStates({ ...states, [name]: e.target.value });
+            updateField(name, e.target.value);
         }
 
-        const isFirst = useRef(true);
+        const validInput = isValid(state, { pattern, required });
         useEffect(() => {
-            const isValid = pattern.test(state) && (!required || required && state.length > 0);
-            setValid({ ...valid, [name]: isValid });
+            validInput ? validate(name) : invalidate(name);
+        }, [state]);
 
-            if (isFirst.current) isFirst.current = false;
-            else changeClass(ref.current, { valid: isValid, required, empty: state.length === 0 });
+        useDidUpdateEffect(() => {
+            changeClass(ref.current, { valid: validInput, required, empty: state.length === 0 });
         }, [state]);
 
         return { ref, name, onChange }
@@ -60,7 +95,7 @@ const useForm = () => {
 
     const handleSubmit = onSubmit => e => {
         e.preventDefault();
-        onSubmit(states);
+        onSubmit(inputs);
     }
 
     return {

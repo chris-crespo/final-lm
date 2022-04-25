@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #F4F4EC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+ul{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    list-style: none;
+}
+li{
+    width: fit-content;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+li a{
+    color: #868590;
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+}
+li img{
+    width: 80%;
+    height: 100%;
+    border-radius: 50%;
+}
+ul:first-child{
+    justify-content: start;
+}
+#navLogo{
+    margin: 5px;
+}
+#signup{
+    padding-left:15px;
+    padding-right: 15px;
+    background-color: #CE2856;
+    border-radius: 8px;
+}
+#signup:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+#signup a{
+    color: white;
+}
+#signin{
+    margin-left: 20%;
+}

@@ -25,11 +25,8 @@ const CredentialsForm = ({ next }) => {
     const onSubmit = credentials => {
         fetchAvailable(credentials)
             .then(({ username, email }) => {
-                if (!username)
-                    invalidate("username");
-
-                if (!email)
-                    invalidate("email");
+                if (!username) invalidate("username");
+                if (!email) invalidate("email");
 
                 if (username && email)
                     next(credentials);
