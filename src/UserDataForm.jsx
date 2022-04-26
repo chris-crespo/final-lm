@@ -6,7 +6,7 @@ const namePattern  = /^[a-z \.]+$/i;
 const phonePattern = /^\d{9}$/;
 
 const UserDataForm = ({ registerUser }) => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm({ "first-name": "", "last-name": "", "phone-number": "" });
 
     const onSubmit = userData =>
         registerUser(userData);

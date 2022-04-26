@@ -85,7 +85,7 @@ button {
 
 .form-field {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 .form-field label {
@@ -103,7 +103,18 @@ button {
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
-    margin-bottom: 28px;
+    margin-bottom: 10px;
+}
+
+.form-field p {
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 500;
+    visibility: hidden;
+}
+
+.form-field input.invalid + p.show {
+    visibility: visible; 
 }
 
 .form-field input.invalid {

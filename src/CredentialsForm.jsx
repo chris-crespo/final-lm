@@ -7,11 +7,19 @@ const emailPattern = /[a-z0-9_\.\-]+@[a-z]+\.[a-z]+/i;
 const passwordPattern = /[a-z0-9]{6}/i;
 
 const CredentialsForm = ({ next }) => {
+    const { 
+        valid, 
+        errorMsg,
+        invalidate, 
+        register, 
+        watch, 
+        handleSubmit 
+    } = useForm({ username: "", email: "", password: "" });
+
     const button = useRef(null);
-    const { invalidate, register, watch, handleSubmit } = useForm();
 
     useEffect(() => {
-        const listener = ({ valid }) => button.current.disabled = !valid;
+        const listener = ({ valid }) => button.current.disabled = !valid; 
         const sub = watch(listener);
         return () => sub.unsub();
     }, []);
@@ -25,8 +33,8 @@ const CredentialsForm = ({ next }) => {
     const onSubmit = credentials => {
         fetchAvailable(credentials)
             .then(({ username, email }) => {
-                if (!username) invalidate("username");
-                if (!email) invalidate("email");
+                if (!username) invalidate("username", "Username already exists");
+                if (!email) invalidate("email", "Email address in use");
 
                 if (username && email)
                     next(credentials);
@@ -41,17 +49,38 @@ const CredentialsForm = ({ next }) => {
             <div class="form-field">
                 <label for="username">Username</label>
                 <input type="text" name="username" autoFocus
-                       { ...register("username", { required: true, pattern: usernamePattern })} />
+                       { ...register("username", { 
+                           required: true, 
+                           pattern: usernamePattern,
+                           errorMsg: "Username must containt at least 6 characters"
+                       })} />
+                <p className={`${valid("username") ? "hide" : "show" }`}>
+                    { errorMsg("username") }
+                </p>
             </div>
             <div class="form-field">
                 <label for="email">Email</label>
                 <input type="email" name="email" 
-                       { ...register("email", { required: true, pattern: emailPattern }) } />
+                       { ...register("email", { 
+                           required: true, 
+                           pattern: emailPattern,
+                           errorMsg: "Invalid email address"
+                       })} />
+                <p className={`${valid("email") ? "hide" : "show" }`}>
+                    { errorMsg("email") }
+                </p>
             </div>
             <div class="form-field">
                 <label for="password">Password</label>
                 <input type="password" name="password" 
-                       { ...register("password", { required: true, pattern: passwordPattern })} />
+                       { ...register("password", { 
+                           required: true, 
+                           pattern: passwordPattern,
+                           errorMsg: "Password must contain at least 6 characters" 
+                       })} />
+                <p className={`${valid("password") ? "hide" : "show" }`}>
+                    { errorMsg("password") }
+                </p>
             </div>
             <div class="form-button-wrapper">
                 <button disabled ref={button}>Next</button>
