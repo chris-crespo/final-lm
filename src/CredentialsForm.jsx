@@ -6,6 +6,15 @@ const usernamePattern = /[a-z0-9_\-]{6}/i;
 const emailPattern = /[a-z0-9_\.\-]+@[a-z]+\.[a-z]+/i;
 const passwordPattern = /[a-z0-9]{6}/i;
 
+const Loader = ({ i }) => 
+    <div class="form-button-loading" style={{ animationDelay: `${i * 200}ms` }} />;
+
+const Loaders = () => (
+    <div class="form-loaders">
+        { [...Array(3).keys()].map(i => <Loader i={i} />) }
+    </div>
+)
+
 const CredentialsForm = ({ next }) => {
     const { 
         valid, 
@@ -15,6 +24,8 @@ const CredentialsForm = ({ next }) => {
         watch, 
         handleSubmit 
     } = useForm({ username: "", email: "", password: "" });
+
+    const [loading, setLoading] = useState(false);
 
     const button = useRef(null);
 
@@ -31,10 +42,14 @@ const CredentialsForm = ({ next }) => {
     }
 
     const onSubmit = credentials => {
+        setLoading(true);
+
         fetchAvailable(credentials)
             .then(({ username, email }) => {
                 if (!username) invalidate("username", "Username already exists");
                 if (!email) invalidate("email", "Email address in use");
+
+                setLoading(false);
 
                 if (username && email)
                     next(credentials);
@@ -83,7 +98,9 @@ const CredentialsForm = ({ next }) => {
                 </p>
             </div>
             <div class="form-button-wrapper">
-                <button disabled ref={button}>Next</button>
+                <button disabled ref={button} className={`${loading ? "loading" : ""}`}>
+                    { loading ? <Loaders /> : "Next" }
+                </button>
             </div>
         </form>
     )
