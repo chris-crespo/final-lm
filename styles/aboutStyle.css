@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+:root {
+    --btn-fg: #CE2856;
+    --btn-bg: #22061b;
+    --Titulo: #fff;
+    --body-bg: #F4F4EC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+.about{
+    margin-top: 70px;
+}
+.aboutUs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.aboutUs h1{
+    font-size: 100px;
+    font-family: 'Amatic SC', cursive;
+    color: var(--btn-fg);
+}
+.aboutUs p{
+    width: 55%;
+    text-align: center;
+}
+.aboutUs span{
+    color: var(--btn-fg);
+}
+.aboutimg{
+    height: 60%;
+    width: 60%;
+}
+.aboutimg img {
+    height: 100%;
+    width: 100%;
+}
+.campname{
+    color: var(--btn-fg);
+    background-color:#ce285742;
+    padding: 5px;
+}
+.numbers{
+    color: var(--btn-fg);
+    font-weight: 600;
+}
+#redbg-paragraph{
+    color: #fff;
+    background-color: var(--btn-fg);
+}
+.missions{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.missions h2{
+    padding-bottom: 50px;
+}
+.mission{
+    width: 60%;
+    height: auto;
+    display: flex;
+}
+.mission-desc{
+    width: 50%;
+    height: 100%;
+    background-color:var(--body-bg);
+    border-radius: 12px;
+    padding:15px;
+}
+.mission-desc h1{
+    color: var(--btn-fg);
+}
+.mission-desc h3{
+    color: var(--btn-bg);
+}
+.mission-desc p{
+    color: var(--btn-bg);
+    font-weight: lighter;
+}
+.mission-img{
+    width: 50%;
+    height: 100%;
+}
+.mission-img img{
+    width: 80%;
+    height: 90%;
+}
+
+
