@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --btn-fg: #CE2856;
+    --btn-bg: #22061b;
+    --Titulo: #fff;
+    --body-bg: #F4F4EC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.wrapper {
+    width: 90%;
+    margin-top: 70px;
+    margin: auto;
+}
+
+.terms-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.terms-pic {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.terms-pic img {
+    width: 80%;
+}
+
+.terms-text {
+    width: 40%;
+}
+
+.terms-text h1 {
+    font-size: 60px;
+    color: #8080808c;
+    font-weight: 300;
+}
+
+.terms-text p {
+    color: var(--btn-fg);
+    font-size: 22px;
+}
+
+ol {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-of-uses {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 50px;
+}
+
+.terms-of-uses p {
+    margin: 0 0 15px;
+}
+
+.terms-of-uses li {
+    margin: 0 0 5px 30px;
+}
+
+.terms-of-uses a {
+    color: var(--btn-fg);
+}
+
+.terms-of-uses h2 {
+    text-align: start;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.445);
+}

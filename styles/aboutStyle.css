@@ -123,85 +123,29 @@
 }
 
 /************statistics*************/
-.statistics{
+.statistics {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.statistics-desc{
-    width: 40%;
-}
-.statistics-desc h1{
-    font-size: 70px;
-    color: var(--btn-fg);
-    font-family: 'Amatic SC', cursive;
-    margin-bottom: 50px;
-}
-.statistics-desc button{
-    color: white;
-    background-color: var(--btn-fg);
-    padding: 16px 28px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    border: none;
-    font-size: 21px;
-    cursor: pointer;
-    margin-top: 40px;
-}
-.statistics-desc button img{
-    width: 30px;
-    height: 30px; 
-    margin-right: 10px;
-}
-.statistics-img{
-    width: 40%;
-}
-.statistics-img img{
+
+.statistics-galery {
     width: 100%;
-    height: 100%;
-    /* filter: drop-shadow(2px 1px 1px rgb(0 0 0 / 0.4)); */
-}
-.statistics-numbers{
-    width: 40%;
-    display: flex;
-}
-.statistic-card{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-.card-img{
-    width: 80%;
-}
-.card-img img{
-    width: 100%;
-}
-.statistic-card h1{
-    color: #0000008a;
-    text-align: center;
-}
-.statistic-card p{
-    text-align: center;
-}
-.statistics-galery{
-    width: 90%;
     overflow: hidden;
     display: flex;
     margin-top: 70px;
     background-image: url(../assets/img/galerybg.png);
     background-repeat: repeat;
     background-attachment: fixed;
-    background-position: end;
 }
-.statistic-pic{
+
+.statistic-pic {
     margin: 20px;
 }
-.statistic-pic img{
+
+.statistic-pic img {
     width: 100%;
     border-radius: 10px;
     padding: 10px;

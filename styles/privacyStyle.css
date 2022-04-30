@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --btn-fg: #CE2856;
+    --btn-bg: #22061b;
+    --Titulo: #fff;
+    --body-bg: #F4F4EC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.wrapper {
+    width: 90%;
+    margin-top: 70px;
+    margin: auto;
+}
+
+.privacy-container {
+    width: 100%;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.privacy-pic {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.privacy-pic img {
+    width: 80%;
+}
+
+.privacy-text {
+    width: 40%;
+}
+
+.privacy-text h1 {
+    font-size: 60px;
+    color: #8080808c;
+    font-weight: 300;
+}
+
+.privacy-text p {
+    color: #1A68BA;
+    font-size: 22px;
+}
+
+ol {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.privacy-policy {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 50px;
+}
+
+.privacy-policy p {
+    margin: 0 0 15px;
+}
+
+.privacy-policy li {
+    margin: 0 0 5px 30px;
+}
+
+.privacy-policy a {
+    color: #1A68BA;
+}
+
+.privacy-policy h2 {
+    text-align: start;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.445);
+}

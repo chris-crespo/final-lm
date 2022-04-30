@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
-nav{
+:root {
+    --btn-fg: #CE2856;
+    --btn-bg: #22061b;
+    --Titulo: #fff;
+    --body-bg: #F4F4EC;
+}
+
+nav {
     width: 100%;
     height: 70px;
-    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -11,7 +17,8 @@ nav{
     top: 0;
     z-index: 1;
 }
-ul{
+
+nav ul {
     width: 40%;
     height: 100%;
     display: flex;
@@ -19,42 +26,57 @@ ul{
     justify-content: end;
     list-style: none;
 }
-li{
+
+nav li {
     width: fit-content;
     margin: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-li a{
+
+li a {
     color: #868590;
     text-decoration: none;
     font-family: 'Noto Sans', sans-serif;
 }
-li img{
+
+li a:hover {
+    color: var(--btn-fg);
+    cursor: pointer;
+}
+
+li img {
     max-width: 100%;
     border-radius: 50%;
 }
-ul:first-child{
+
+ul:first-child {
     justify-content: start;
 }
-#navLogo{
+
+#navLogo {
     margin: 5px;
     width: 67px;
+    border-radius: 50%;
 }
-#signup{
-    padding-left:15px;
+
+#signup {
+    padding-left: 15px;
     padding-right: 15px;
     background-color: #CE2856;
     border-radius: 8px;
 }
-#signup:hover{
+
+#signup:hover {
     opacity: 0.5;
     cursor: pointer;
 }
-#signup a{
+
+#signup a {
     color: white;
 }
-#signin{
+
+#signin {
     margin-left: 20%;
 }
