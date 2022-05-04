@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Camps | KiddyCamp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
@@ -13,9 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <link rel="stylesheet" href="../styles/404Style.css">
+    <link rel="stylesheet" href="../styles/campsStyle.css">
     <link rel="stylesheet" href="../styles/navStyle.css">
     <link rel="stylesheet" href="../styles/footerStyle.css">
+    <link rel="icon" href="../assets/img/tab-icon.png">
+
 </head>
 
 <body>
@@ -34,24 +36,78 @@
             <li id="signup"><a href="">SignUp</a></li>
         </ul>
     </nav>
-    <div class="errorseccion">
-        <div class="errorpage-pic">
-            <img src="../assets/img/error404.png" alt="error404">
+
+
+    <div class="camps-wrapper">
+        <div class="filters">
+            <h1>KidyCamp</h1>
+
+            <div class="fliter">
+                <div class="age">
+                    <label for="Age">kids Age Rang</label>
+                    <input type="text" name="Age" placeholder="Min">
+                    <input type="text" name="Age" placeholder="Max">
+                </div>
+
+                <div class="hobbies">
+                    <label for="Hobby">kids Age Rang</label>
+                    <input type="text" name="Hobby" placeholder="Min">
+                </div>
+
+                <div class="price-range">
+                    <label for="price">Price</label>
+                    <input type="range" name="price">
+                </div>
+            </div>
+
+            <div class="filters-img">
+                <img src="" alt="">
+            </div>
+            <div class="logout">
+                <h2>Logout</h2>
+            </div>
         </div>
-        <div class="errorpage">
-            <h1 id="firsth1">Oooops.</h1>
-            <h1>Relax, take it easy. <br>
-                Keep fresh your mind!</h1>
-            <p>You find our page 404, this is not your fault, it
-                is just a little bit mistakes. But don't worry, as an
-                apology. you can just click the button below and we will
-                take you back to main page.
-            </p>
-            <a href="index.html">
-                <button>Take me back to the main</button>
-            </a>
+
+        <div class="camps">
+            <div class="navigating-head">
+                <button></button>
+                <button></button>
+                <input type="text" placeholder="Search a Camp or a Direction">
+                <button>Search</button>
+            </div>
+            <div class="camps-cards">
+                <div class="camp-card">
+                    <div class="card-img">
+                        <h2>San Sebastian Camp</h2>
+                        <p>San Sebastian</p>
+                        <p>4.7</p>
+                    </div>
+                </div>
+                <div class="camp-card">
+                    <h2>Bilbao Camp</h2>
+                        <p>Bilbao</p>
+                        <p>4.9</p>
+                    </div>
+                </div>
+                <div class="camp-card">
+                    <h2> Santander Camp</h2>
+                        <p>San Sebastian</p>
+                        <p>4.5</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <div class="logged-seccion"></div>
     </div>
+
+
+
+
+
+
+
+
 
     <footer>
         <div class="title">
@@ -89,6 +145,7 @@
         </div>
         <p>© 2022 KiddyCamp. All rights reserved.</p>
     </footer>
+
 
 </body>
 

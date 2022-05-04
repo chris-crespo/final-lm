@@ -56,7 +56,7 @@
 }
 
 .privacy-text p {
-    color: #1A68BA;
+    color:var(--btn-fg);
     font-size: 22px;
 }
 
@@ -84,7 +84,8 @@ ol {
 }
 
 .privacy-policy a {
-    color: #1A68BA;
+    color: var(--btn-fg);
+    text-decoration: none;
 }
 
 .privacy-policy h2 {

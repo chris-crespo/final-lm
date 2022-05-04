@@ -40,23 +40,23 @@
 
 }
 
-.terms-pic img {
-    width: 80%;
-}
-
 .terms-text {
     width: 40%;
+    margin-left: 100px;
+
 }
 
 .terms-text h1 {
     font-size: 60px;
     color: #8080808c;
     font-weight: 300;
+    width: auto;
 }
 
 .terms-text p {
     color: var(--btn-fg);
     font-size: 22px;
+    width: auto;
 }
 
 ol {
@@ -66,7 +66,7 @@ ol {
 }
 
 .terms-of-uses {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
