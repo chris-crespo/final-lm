@@ -1,10 +1,7 @@
 import useForm from './hooks/useForm.js';
+import { usernamePattern, emailPattern, passwordPattern } from './patterns.js';
 
 const { useState, useRef, useEffect } = React;
-
-const usernamePattern = /[a-z0-9_\-]{6}/i;
-const emailPattern = /[a-z0-9_\.\-]+@[a-z]+\.[a-z]+/i;
-const passwordPattern = /[a-z0-9]{6}/i;
 
 const Loader = ({ i }) => 
     <div class="form-button-loading" style={{ animationDelay: `${i * 200}ms` }} />;
@@ -28,7 +25,6 @@ const CredentialsForm = ({ next }) => {
     const [loading, setLoading] = useState(false);
 
     const button = useRef(null);
-
     useEffect(() => {
         const listener = ({ valid }) => button.current.disabled = !valid; 
         const sub = watch(listener);
