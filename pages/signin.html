@@ -7,12 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In | KiddyCamp</title>
     <link rel="stylesheet" href="../styles/signup.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c8f9f330ff.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script type="module" src="../out/SignIn.js"></script>
     <link rel="icon" href="../assets/img/tab-icon.png">
 
 </head>
@@ -22,48 +19,12 @@
         <div class="img-wrapper">
             <img src="../assets/img/signinback.png" alt="">
         </div>
-        <form action="">
-
-            <h4>Not a member? <a href="http://localhost:3000/signup">Sign Up now</a></h4>
-
-            <div class="signinInfo">
-
-                <div class="signintitle">
-                    <h1> Sign in </h1>
-                </div>
-
-                <div class="signinsubtitle">
-                    <hr>
-                    <h5>SignIn</h5>
-                    <hr>
-                </div>
-
-                <div class="email">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                </div>
-
-                <div class="password">
-                    <label for="passwored">Password</label>
-                    <input type="password" name="passwored" id="password" placeholder="6+ caracters">
-                </div>
-
-            </div>
-
-            <div class="button">
-                <button>Sign In</button>
-            </div>
-
-            <div class="redcaptcha">
-                <p>This site is protected by reCAPTCHA and the Google
-                    <a href="">Privacy Policy</a>
-                    and
-                    <a href="">Terms of Service</a>
-                    apply.</p>
-            </div>
-        </form>
+        <div class="corner">
+            <h4>Not a member? <a href="http://localhost:3000/signup">Sign Up</a></h4>
+        </div>
+        <div class="form-wrapper" id="signin-form-container">
+            <!-- Formulario contenido en src/SignIn.jsx -->
+        </div>
     </div>
-
 </body>
-
 </html>

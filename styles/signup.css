@@ -59,7 +59,7 @@ button {
     display: block;
 }
 
-#signup-form-container {
+.form-wrapper {
     width: 400px;
     margin: auto;
 }
