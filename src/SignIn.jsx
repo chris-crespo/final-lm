@@ -15,6 +15,7 @@ const SignIn = () => {
         watch,
         handleSubmit
     } = useForm({ "user": "", "password": "" });
+    const { store } = useSessionStorage();
 
     const button = useRef(null);
     useEffect(() => {
@@ -32,10 +33,14 @@ const SignIn = () => {
             .then(res => res.json());
     }
 
+    const storeUser = user => store(user);
     const onSubmit = credentials => {
         fetchAuth(credentials).then(({ user, password }) => {
             if (!user) invalidate("user", userErrorMsg);
             if (!password) invalidate("password", passwordErrorMsg);
+
+            if (user && password) 
+                fetchUser(user).then(storeUser);
         });
     }
 

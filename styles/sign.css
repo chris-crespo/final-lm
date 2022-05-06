@@ -1,31 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
-
-:root {
-    --primary: var(--red);
-    --red: #ce2856;
-    --green: #27cf27;
-    --blue: #279ACF;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-input {
-    outline: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-}
-
 .corner {
     position: absolute;
     top: 20px;
