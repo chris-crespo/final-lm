@@ -1,9 +1,7 @@
 import useForm from './hooks/useForm.js';
+import { namePattern, phonePattern } from './patterns.js'; 
 
 const { useState } = React;
-
-const namePattern  = /^[a-z \.]+$/i;
-const phonePattern = /^\d{9}$/;
 
 const UserDataForm = ({ registerUser }) => {
     const { 

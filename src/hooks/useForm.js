@@ -28,7 +28,7 @@ const useFormValidity = initialState => {
     const [fields, setFields] = useState(initialState);
 
     const valid = name => fields[name];
-    const setValidity = valid => name => setFields({ ...fields, [name]: valid });
+    const setValidity = valid => name => setFields(prev => ({ ...prev, [name]: valid }));
     const validate = setValidity(true);
     const invalidate = setValidity(false);
 
