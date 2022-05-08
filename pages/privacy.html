@@ -9,28 +9,13 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/terms.css">
-    <!--<link rel="stylesheet" href="../styles/privacyStyle.css">-->
     <link rel="stylesheet" href="../styles/navStyle.css">
     <link rel="stylesheet" href="../styles/footerStyle.css">
     <link rel="icon" href="../assets/img/tab-icon.png">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li id="navLogo">
-                <img src="../assets/img/logoC.png" alt="Nav logo">
-            </li>
-        </ul>
-        <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">CAMPS</a></li>
-            <li><a href="">ABOUT</a></li>
-
-            <li id="signin"><a href="">SignIn</a></li>
-            <li id="signup"><a href="">SignUp</a></li>
-        </ul>
-    </nav>
+    <div id="nav-container"></div>
 
     <div class="wrapper">
         <div class="terms-container">
@@ -442,6 +427,8 @@
         </div>
         <p>© 2022 KiddyCamp. All rights reserved.</p>
     </footer>
+
+    <script src="../out/Nav.js"></script>
 </body>
 
 </html>
