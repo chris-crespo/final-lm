@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+.wrapper {
+    margin: 70px 11% 0;
+}
+
+.terms-container {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.terms-pic {
+    width: 600px;
+    flex-grow: 2;
+}
+
+.terms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 128px 0 96px;
+}
+
+.terms-text {
+    flex-basis: 440px;
+}
+
+.terms-text h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.terms-text p {
+    color: var(--red);
+    font-size: 18px;
+    width: auto;
+    font-weight: 700;
+}
+
+.terms-text p span {
+    color: initial;
+    font-weight: 900;
+}
+
+ol {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-of-uses {
+    margin: 0 2%;
+    margin-bottom: 112px;
+}
+
+.terms-of-uses p {
+    font-size: 15px;
+    letter-spacing: 0.015em;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.terms-of-uses strong {
+    font-weight: 600;
+}
+
+.terms-of-uses li {
+    margin-bottom: 18px;
+    margin-left: 22px;
+}
+
+.terms-of-uses a {
+    color: var(--btn-fg);
+}
+
+.terms-of-uses h2 {
+    font-size: 16px;
+    letter-spacing: 0.018em;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.445);
+}
+
+.terms-of-uses h3 {
+    margin-bottom: 18px;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+}
+
+.terms-of-uses h3:not(:nth-child(2)) {
+    margin-top: 36px;
+}
