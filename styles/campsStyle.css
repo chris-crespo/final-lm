@@ -4,8 +4,6 @@
 .camps-wrapper {
     width: 100%;
     display: flex;
-    margin-top: 70px;
-    margin-bottom: 70px;
 }
 
 /***************filters******************/
@@ -38,7 +36,7 @@
 }
 
 .filter input {
-    width: 25%;
+    width: 55%;
     border: 3px solid #f3f3f4;
     background-color: #f3f3f4;
     padding: 5px 12px;
@@ -49,17 +47,185 @@
 }
 
 input[type="range"] {
-    font-size: 1.5rem;
-    width: 12.5em;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 input[type="range"]:hover {
     cursor: grabbing;
 }
 
-.hobbies input {
-    width: 55%;
+
+/*************age slider**************/
+
+#form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+form {
+    width: 90%;
+    max-width: 500px;
+}
+
+form #form-title {
+    margin-top: 0;
+    font-weight: 400;
+    text-align: center;
+}
+
+form #debt-amount-slider {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    user-select: none;
+}
+
+form #debt-amount-slider::before {
+    content: " ";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    width: calc(100% * (3 / 4));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+}
+
+form #debt-amount-slider input,
+form #debt-amount-slider label {
+    box-sizing: border-box;
+    flex: 1;
+    user-select: none;
+    cursor: pointer;
+}
+
+form #debt-amount-slider label {
+    display: inline-block;
+    position: relative;
+    width: 25%;
+    height: 100%;
+    user-select: none;
+}
+
+form #debt-amount-slider label::before {
+    content: attr(data-debt-amount);
+    position: absolute;
+    left: 50%;
+    padding-top: 10px;
+    transform: translate(-50%, 45px);
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0.85;
+    transition: all 0.15s ease-in-out;
+}
+
+form #debt-amount-slider label::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+form #debt-amount-slider label:hover::after {
+    transform: translate(-50%, -50%) scale(1.25);
+    border: 2px solid var(--btn-fg);
+}
+
+form #debt-amount-slider input {
+    display: none;
+}
+
+form #debt-amount-slider input:checked+label::before {
+    font-weight: 800;
+    opacity: 1;
+}
+
+form #debt-amount-slider input:checked+label::after {
+    border-width: 4px;
+    transform: translate(-50%, -50%) scale(0.75);
+}
+
+form #debt-amount-slider input:checked~#debt-amount-pos {
+    opacity: 1;
+}
+
+form #debt-amount-slider input:checked:nth-child(1)~#debt-amount-pos {
+    left: 12.5%;
+}
+
+form #debt-amount-slider input:checked:nth-child(3)~#debt-amount-pos {
+    left: 37.5%;
+}
+
+form #debt-amount-slider input:checked:nth-child(5)~#debt-amount-pos {
+    left: 62.5%;
+}
+
+form #debt-amount-slider input:checked:nth-child(7)~#debt-amount-pos {
+    left: 87.5%;
+}
+
+form #debt-amount-slider #debt-amount-pos {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: var(--btn-fg);
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    opacity: 0;
+    z-index: 2;
+}
+
+form:valid #debt-amount-slider input+label::before {
+    transform: translate(-50%, 45px) scale(0.9);
+    transition: all 0.2s linear;
+}
+
+form:valid #debt-amount-slider input:checked+label::before {
+    transform: translate(-50%, 45px) scale(1.1);
+    transition: all 0.15s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+        width: 24px;
+        opacity: 1;
+        margin-right: 12px;
+    }
+
+    to {
+        transform: rotate(360deg);
+        width: 24px;
+        opacity: 1;
+        margin-right: 12px;
+    }
+}
+
 
 .filter label {
     width: 40%;
@@ -105,6 +271,8 @@ input[type="range"]:hover {
     justify-content: center;
     align-items: center;
     font-size: 25px;
+    color: var(--Titulo);
+    margin-bottom: 15px;
 }
 
 .filters-img-text p {
@@ -112,9 +280,9 @@ input[type="range"]:hover {
     font-size: 14px;
 }
 
-.age,
+.type,
 .hobbies,
-.price-range {
+.age-range {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -139,6 +307,7 @@ input[type="range"]:hover {
 
 .logout img {
     height: 25px;
+    width: auto;
 }
 
 
@@ -188,12 +357,14 @@ input[type="range"]:hover {
     width: 60%;
     border: 3px solid #f3f3f4;
     background-color: var(--Titulo);
-    padding: 5px 12px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
-    background-image: url(bg.jpg);
+    background-image: url(../assets/img/search.png);
     background-repeat: no-repeat;
+    background-position: 10px 50%;
+    background-size: 40px 40px;
+    padding: 12px 20px 12px 40px;
     text-indent: 20px;
 }
 
@@ -208,7 +379,7 @@ input[type="range"]:hover {
 }
 
 .camps-cards {
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -216,14 +387,14 @@ input[type="range"]:hover {
 }
 
 .camps-cards .camp-card {
-    width: 30%;
+    width: 32%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 15px;
     background-color: var(--Titulo);
     border-radius: 8px;
-
+    margin-bottom: 30px;
 }
 
 .card-img {
@@ -255,7 +426,8 @@ input[type="range"]:hover {
     margin-left: 10px;
 }
 
-.staricon, .gpsicon {
+.staricon,
+.gpsicon {
     height: 20px;
 }
 
@@ -384,6 +556,8 @@ input[type="range"]:hover {
     flex-direction: column;
     align-items: center;
     position: relative;
+    background-color: var(--btn-fg);
+    color: var(--Titulo);
 }
 
 .logged-header {
@@ -407,13 +581,19 @@ input[type="range"]:hover {
     background-color: var(--btn-fg);
     border-radius: 4px;
     padding: 5px;
+    height: auto;
+    width: auto;
+}
+
+.close-button img:hover {
+    cursor: pointer;
 }
 
 .picture {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: 1px solid var(--btn-fg);
+    border: 1px solid var(--Titulo);
     padding: 5px;
 }
 
@@ -441,15 +621,15 @@ input[type="range"]:hover {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
-    height: 120px;
-    background-color: var(--btn-fg);
-    color: white;
+    /* height: 120px; */
+    color: var(--btn-fg);
+    background-color: var(--Titulo);
     padding: 10px;
     border-radius: 8px;
 }
 
 .current-location-img {
-    width: 45%;
+    width: 50%;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -479,10 +659,14 @@ input[type="range"]:hover {
     text-align: end;
     height: 20px;
 }
-.icon img{
-    width: auto}
-.gpsicon img{
-    width: auto}
+
+.icon img {
+    width: auto
+}
+
+.gpsicon img {
+    width: auto
+}
 
 
 .current-location-text p {

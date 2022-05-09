@@ -24,10 +24,9 @@
             <h1>Kidy<span id="title">C</span>amp</h1>
 
             <div class="filter">
-                <div class="age">
-                    <label for="Age">kids Age Rang</label>
-                    <input type="text" name="Age" placeholder="Min">
-                    <input type="text" name="Age" placeholder="Max">
+                <div class="type">
+                    <label for="type">Camp type</label>
+                    <input type="text" name="type" placeholder="Art ...">
                 </div>
 
                 <div class="hobbies">
@@ -35,9 +34,21 @@
                     <input type="text" name="Hobby" placeholder="Swimming, Biking ...">
                 </div>
 
-                <div class="price-range">
-                    <label for="price">Price</label>
-                    <input type="range" name="price">
+                <div id="form-wrapper">
+                    <form action="/p/quote.php" method="GET">
+                        <div id="debt-amount-slider">
+                            <input type="radio" name="debt-amount" id="1" value="1" required>
+                            <label for="1" data-debt-amount="4yo"></label>
+                            <input type="radio" name="debt-amount" id="2" value="2" required>
+                            <label for="2" data-debt-amount="<8yo"></label>
+                            <input type="radio" name="debt-amount" id="3" value="3" required>
+                            <label for="3" data-debt-amount="<12yo"></label>
+                            <input type="radio" name="debt-amount" id="4" value="4" required>
+                            <label for="4" data-debt-amount="<=16yo"></label>
+
+                            <div id="debt-amount-pos"></div>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -72,15 +83,17 @@
                 <div class="camps-cards">
                     <div class="camp-card">
                         <div class="card-img">
-                            <img src="../assets/img/camp-card1.png" alt="">
+                            <img src="../assets/img/camp-card1.jpg" alt="">
                         </div>
                         <h2>San Sebastian Camp</h2>
                         <p>
                             <div class="gpsicon"><img src="../assets/img/gps-icon.png" alt=""> </div>
-                            San Sebastian</p>
+                            San Sebastian
+                        </p>
                         <p>
                             <div class="staricon"><img src="../assets/img/star-icon.png" alt=""> </div>
-                            4.7</p>
+                            4.7
+                        </p>
                     </div>
                     <div class="camp-card">
                         <div class="card-img">
@@ -89,10 +102,12 @@
                         <h2>Bilbao Camp</h2>
                         <p>
                             <div class="gpsicon"><img src="../assets/img/gps-icon.png" alt=""> </div>
-                            Bilbao</p>
+                            Bilbao
+                        </p>
                         <p>
                             <div class="staricon"><img src="../assets/img/star-icon.png" alt=""> </div>
-                            4.9</p>
+                            4.9
+                        </p>
                     </div>
                     <div class="camp-card">
                         <div class="card-img">
@@ -101,22 +116,26 @@
                         <h2>Santander Camp</h2>
                         <p>
                             <div class="gpsicon"><img src="../assets/img/gps-icon.png" alt=""> </div>
-                            Santander</p>
+                            Santander
+                        </p>
                         <p>
                             <div class="staricon"><img src="../assets/img/star-icon.png" alt=""> </div>
-                             4.5</p>
+                            4.5
+                        </p>
                     </div>
                     <div class="camp-card">
                         <div class="card-img">
-                            <img src="../assets/img/camp-card4.png" alt="">
+                            <img src="../assets/img/camp-card4.jpg" alt="">
                         </div>
                         <h2>San Sebastian Camp</h2>
                         <p>
                             <div class="gpsicon"><img src="../assets/img/gps-icon.png" alt=""> </div>
-                             San Sebastian</p>
+                            San Sebastian
+                        </p>
                         <p>
                             <div class="staricon"><img src="../assets/img/star-icon.png" alt=""> </div>
-                            4.7</p>
+                            4.7
+                        </p>
                     </div>
                     <div class="camp-card">
                         <div class="card-img">
@@ -125,22 +144,26 @@
                         <h2>Bilbao Camp</h2>
                         <p>
                             <div class="gpsicon"><img src="../assets/img/gps-icon.png" alt=""> </div>
-                            Bilbao</p>
+                            Bilbao
+                        </p>
                         <p>
                             <div class="staricon"><img src="../assets/img/star-icon.png" alt=""> </div>
-                            4.9</p>
+                            4.9
+                        </p>
                     </div>
                     <div class="camp-card">
                         <div class="card-img">
-                            <img src="../assets/img/camp-card6.jpg" alt="">
+                            <img src="../assets/img/camp-card6.png" alt="">
                         </div>
                         <h2>Santander Camp</h2>
                         <p>
                             <div class="gpsicon"><img src="../assets/img/gps-icon.png" alt=""> </div>
-                            Santander</p>
+                            Santander
+                        </p>
                         <p>
                             <div class="staricon"><img src="../assets/img/star-icon.png" alt=""> </div>
-                             4.5</p>
+                            4.5
+                        </p>
                     </div>
                 </div>
             </div>
@@ -157,9 +180,9 @@
                     <img src="../assets/img/kid-pic.jpg" alt="">
                 </div>
                 <h1>Victory William</h1>
-                <p>Premuim Member 
+                <p>Premuim Member
                     <div class="crown"><img src="../assets/img/crown.png" alt=""></div>
-                    </p>
+                </p>
             </div>
             <div class="curent-location">
                 <div class="current-location-img">
@@ -173,11 +196,12 @@
                         <div class="gpsicon">
                             <img src="../assets/img/gps-icon.png" alt="">
                         </div>
-                        San Sebastian</p>
+                        San Sebastian
+                    </p>
                 </div>
             </div>
             <div class="loged-bg">
-                <img src="../assets/img/profile-bg.jpg" alt="">
+                <img src="../assets/img/profile-bg.png" alt="">
             </div>
         </div>
 
@@ -185,5 +209,8 @@
     <script src="../out/Nav.js"></script>
 
 </body>
+<script>
+
+</script>
 
 </html>
