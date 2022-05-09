@@ -2,6 +2,7 @@
 
 :root {
     --primary: var(--red);
+    --white: #f3f3f4;
     --red: #ce2856;
     --green: #27cf27;
     --blue: #279ACF;
@@ -19,6 +20,7 @@ input {
 }
 
 a {
+    color: inherit;
     text-decoration: none;
     font-weight: 500;
 }
