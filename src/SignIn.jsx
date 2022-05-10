@@ -27,21 +27,19 @@ const SignIn = () => {
     const usernameOrEmail = user => 
         emailPattern.test(user) ? "email" : "username";
 
-    const fetchAuth = ({ user, password }) => {
+    const fetchAuth = async ({ user, password }) => {
         const url = "https://scm-daw.herokuapp.com/api/auth?";
-        return fetch(`${url}${usernameOrEmail(user)}=${user}&password=${password}`)
-            .then(res => res.json());
+        const res = await fetch(`${url}${usernameOrEmail(user)}=${user}&password=${password}`);
+        return res.json();
     }
 
     const storeUser = user => store(user);
-    const onSubmit = credentials => {
-        fetchAuth(credentials).then(({ user, password }) => {
-            if (!user) invalidate("user", userErrorMsg);
-            if (!password) invalidate("password", passwordErrorMsg);
+    const onSubmit = async credentials => {
+        const { user, password } = await fetchAuth(credentials);
 
-            if (user && password) 
-                fetchUser(user).then(storeUser);
-        });
+        if (!user) invalidate("user", userErrorMsg);
+        if (!password) invalidate("password", passwordErrorMsg);
+        if (user && password) fetchUser(user).then(storeUser);
     }
 
     return (
