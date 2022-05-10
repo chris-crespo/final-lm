@@ -561,9 +561,9 @@ form:valid #debt-amount-slider input:checked+label::before {
 }
 
 .logged-header {
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 20px;
 }
 
@@ -671,6 +671,7 @@ form:valid #debt-amount-slider input:checked+label::before {
 
 .current-location-text p {
     font-weight: 100;
+    color: #000;
 }
 
 .current-location-text p img {
