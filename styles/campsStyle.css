@@ -35,8 +35,8 @@
     align-items: center;
 }
 
-.filter input {
-    width: 55%;
+.filter button {
+    width: auto;
     border: 3px solid #f3f3f4;
     background-color: #f3f3f4;
     padding: 5px 12px;
@@ -44,17 +44,19 @@
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;
+    margin-left: 10px;
 }
-
-input[type="range"] {
-    margin-bottom: 0;
-    width: 100%;
+.filter button:hover {
+    border-color:#d87792;
+    background-color:#d87792;
+    color: var(--Titulo);
+    transition: all 0.3s;
 }
-
-input[type="range"]:hover {
-    cursor: grabbing;
+.filter button:focus {
+    border-color:var(--btn-fg);
+    background-color: var(--btn-fg);
+    color: var(--Titulo);
 }
-
 
 /*************age slider**************/
 
@@ -280,13 +282,10 @@ form:valid #debt-amount-slider input:checked+label::before {
     font-size: 14px;
 }
 
-.type,
-.hobbies,
-.age-range {
+.type{
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .text h1 {
@@ -335,22 +334,9 @@ form:valid #debt-amount-slider input:checked+label::before {
 .navigating-head {
     width: 100%;
     display: flex;
-    justify-content: space-around;
-}
-
-.navigating-button {
-    width: 10%;
-    display: flex;
-}
-
-.navigating-button button {
-    width: 32%;
-    background-color: transparent;
-    border: none;
-}
-
-.navigating-button button:hover {
-    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .navigating-head input {
@@ -370,12 +356,12 @@ form:valid #debt-amount-slider input:checked+label::before {
 
 #search-button {
     width: 100px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 80%;
     background-color: #CE2856;
     border-radius: 8px;
     color: var(--Titulo);
     border: none;
+    margin-left: 10px;
 }
 
 .camps-cards {
@@ -387,7 +373,7 @@ form:valid #debt-amount-slider input:checked+label::before {
 }
 
 .camps-cards .camp-card {
-    width: 32%;
+    width: 22%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -409,6 +395,7 @@ form:valid #debt-amount-slider input:checked+label::before {
 
 .card-img img {
     height: 100%;
+    width: 150%;
     border-radius: 8px;
 }
 
@@ -558,6 +545,8 @@ form:valid #debt-amount-slider input:checked+label::before {
     position: relative;
     background-color: var(--btn-fg);
     color: var(--Titulo);
+    border-top-left-radius: 8px;    
+    border-bottom-left-radius: 8px;
 }
 
 .logged-header {
