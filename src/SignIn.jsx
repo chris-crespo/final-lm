@@ -1,8 +1,10 @@
+import LoginBanner from './LoginBanner.js';
 import useForm from './hooks/useForm.js';
 import useSessionStorage from './hooks/useSessionStorage.js';
 import { emailPattern, passwordPattern } from './patterns.js';
+import redirect from './redirect.js';
 
-const { useRef, useEffect } = React;
+const { useState, useRef, useEffect } = React;
 
 const userErrorMsg = "Username or email does not exist";
 const passwordErrorMsg = "Passwords do not match";
@@ -17,6 +19,12 @@ const SignIn = () => {
         handleSubmit
     } = useForm({ "user": "", "password": "" });
     const [user, storeUser] = useSessionStorage("user", { "username": "", "email": "", "name": ""  });
+    const [login, setLogin] = useState({ attempted: false, success: false });
+
+    const attemptLogin = success => {
+        setLogin({ attempted: true, success });
+        setTimeout(() => setLogin({ attempted: false, success }), 3000);
+    }
 
     const button = useRef(null);
     useEffect(() => {
@@ -43,37 +51,50 @@ const SignIn = () => {
         fetchAuth(credentials).then(({ user, password }) => {
             if (!user) invalidate("user", userErrorMsg);
             if (!password) invalidate("password", passwordErrorMsg);
-            if (user && password) fetchUser(credentials.user).then(storeUser);
+
+            if (user && password) {
+                fetchUser(credentials.user).then(user => {
+                    attemptLogin(user);
+                    if (user) {
+                        attemptLogin(user);
+                        redirect("/camps");
+                    }
+                }).catch(_ => attemptLogin(false));
+            }
         });
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-title">
-                <h1><span>Sign in</span> to our camp</h1>
-            </div>
-            <div class="form-field">
-                <label for="user">Username or Email</label>
-                <input type="text" name="user" { ...register("user", {
-                    errorMsg: userErrorMsg
-                })}/>
-                <p className={`${valid("user") ? "hide" : "show"}`}>
-                    { errorMsg("user") }
-                </p>
-            </div>
-            <div class="form-field">
-                <label for="password">Password</label>
-                <input type="password" name="password" { ...register("password", {
-                    errorMsg: passwordErrorMsg
-                })} />
-                <p className={`${valid("password") ? "hide" : "show"}`}>
-                    { errorMsg("password") }
-                </p>
-            </div>
-            <div class="form-button-wrapper">
-                <button disabled ref={button}>Sign In</button>
-            </div>
-        </form>
+        <>
+            <LoginBanner render={login.attempted} success={login.success} />
+
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div class="form-title">
+                    <h1><span>Sign in</span> to our camp</h1>
+                </div>
+                <div class="form-field">
+                    <label for="user">Username or Email</label>
+                    <input type="text" name="user" autoFocus { ...register("user", {
+                        errorMsg: userErrorMsg
+                    })}/>
+                    <p className={`${valid("user") ? "hide" : "show"}`}>
+                        { errorMsg("user") }
+                    </p>
+                </div>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" { ...register("password", {
+                        errorMsg: passwordErrorMsg
+                    })} />
+                    <p className={`${valid("password") ? "hide" : "show"}`}>
+                        { errorMsg("password") }
+                    </p>
+                </div>
+                <div class="form-button-wrapper">
+                    <button disabled ref={button}>Sign In</button>
+                </div>
+            </form>
+        </>
     );
 }
 
