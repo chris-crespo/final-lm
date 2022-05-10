@@ -1,4 +1,5 @@
 import useForm from './hooks/useForm.js';
+import useSessionStorage from './hooks/useSessionStorage.js';
 import { emailPattern, passwordPattern } from './patterns.js';
 
 const { useRef, useEffect } = React;
@@ -15,7 +16,7 @@ const SignIn = () => {
         watch,
         handleSubmit
     } = useForm({ "user": "", "password": "" });
-    const { store } = useSessionStorage();
+    const [user, storeUser] = useSessionStorage("user", { "username": "", "email": "", "name": ""  });
 
     const button = useRef(null);
     useEffect(() => {
@@ -27,19 +28,23 @@ const SignIn = () => {
     const usernameOrEmail = user => 
         emailPattern.test(user) ? "email" : "username";
 
-    const fetchAuth = async ({ user, password }) => {
-        const url = "https://scm-daw.herokuapp.com/api/auth?";
-        const res = await fetch(`${url}${usernameOrEmail(user)}=${user}&password=${password}`);
-        return res.json();
+    const apiUrl = "https://scm-daw.herokuapp.com/api";
+    const fetchAuth = ({ user, password }) => {
+        const fullUrl = `${apiUrl}/auth?${usernameOrEmail(user)}=${user}&password=${password}`;
+        return fetch(fullUrl).then(res => res.json());
     }
 
-    const storeUser = user => store(user);
-    const onSubmit = async credentials => {
-        const { user, password } = await fetchAuth(credentials);
+    const fetchUser = user => {
+        const fullUrl = `${apiUrl}/user?username=${user}&email=${user}`;
+        return fetch(fullUrl).then(res => res.json());
+    }
 
-        if (!user) invalidate("user", userErrorMsg);
-        if (!password) invalidate("password", passwordErrorMsg);
-        if (user && password) fetchUser(user).then(storeUser);
+    const onSubmit = credentials => {
+        fetchAuth(credentials).then(({ user, password }) => {
+            if (!user) invalidate("user", userErrorMsg);
+            if (!password) invalidate("password", passwordErrorMsg);
+            if (user && password) fetchUser(credentials.user).then(storeUser);
+        });
     }
 
     return (
