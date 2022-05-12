@@ -5,76 +5,181 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/bookingStyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <title>Booking | KiddyCamp</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/booking.css">
+    <link rel="stylesheet" href="../styles/loggedSection.css">
     <link rel="icon" href="../assets/img/tab-icon.png">
-
 </head>
 
 <body>
-    <div class="container">
-        <div class="register-child-form">
-            <form action="">
-                <h4>REGISTER <span>YOUR KIDS</span> TO OUR <span>CAMP</span></h4>
-                <div class="registerInfo">
-                    <div class="registertitle">
-                        <h1> MAKE YOUR <span>KIDS</span> HAVE <span>FUN</span> THIS SUMMER </h1>
-                    </div>
+    <div id="nav-container"></div>
+    <div id="wrapper">
 
-                    <div class="kid-full-name">
-                        <div id="Kname" class="KName">
-                            <label for="kid-name">Name</label>
-                            <input type="text" name="kid-name" id="Name" placeholder="Rocky" />
-                        </div>
+        <div class="main-container">
+            <div class="camp-pic-container">
+                <div class="camp-pic">
+                    <img src="../assets/img/camp-card1.jpg" alt="camp-pic">
+                </div>
 
-                        <div id="KLname" class="kid-LastName">
-                            <label for="KLastName">LastName</label>
-                            <input type="text" name="KLastName" id="LastName" placeholder="Balboa" />
-                        </div>
+            </div>
+            <div class="camp-info">
+                <div class="camp-title">
+                    <h1>SAN SEBASTIAN CAMP</h1>
+                </div>
+                <div class="camp-location">
+                    <div class="gps-icon">
+                        <img src="../assets/img/gps-icon.png" alt="">
                     </div>
+                    <h2>San Sebastian, Spain</h3>
+                </div>
 
-                    <div id="Age" class="Age">
-                        <label for="kid-age"> Child Age</label>
-                        <input type="text" name="kid-age" id="kid-age-input" placeholder="Age" />
-                    </div>
-
-                    <div class="camps-choice">
-                        <div class="camps">
-                            <label for="camp">Camps</label>
-                            <select class="camp-select" name="camp" id="camp" placeholder="Select a camp">
-                                <option value="option1">Bilbao Camp</option>
-                                <option value="option2">Donostia Camp</option>
-                                <option value="option3">Barcelona Camp</option>
-                                <option value="option4">Santander Camp</option>
-                            </select>
+                <div class="camp-description">
+                    <p>San Sebastian camp is the perfect camp for your kids Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Tempore natus odit explicabo libero ducimus optio laboriosam vel nihil fuga
+                        officia animi voluptas architecto recusandae doloremque repellendus, necessitatibus blanditiis
+                        nesciunt asperiores.</p>
+                </div>
+                <div class="camp-filters">
+                    <div class="camp-type">
+                        <div class="type-icon">
+                            <img src="../assets/img/type-icon.png" alt="type-icon">
                         </div>
-                        <div class="camps-date">
-                            <label for="date">Camps-Date</label>
-                            <select class="camp-select" name="camp" id="camp" placeholder="Select a Date">
-                                <option value="option1">22/06/2022</option>
-                                <option value="option2">14/07/2022</option>
-                                <option value="option3">07/08/20022</option>
-                            </select>
+                        <h4>camp type |</h4>
+                        <p>Art</p>
+                    </div>
+                    <div class="permited-age">
+                        <div class="age-icon">
+                            <img src="../assets/img/age-icon.png" alt="age-icon">
                         </div>
+                        <h4>Age |</h4>
+                        <p>3-6 years</p>
                     </div>
-                    <div class="data-info-check">
-                        <input type="checkbox" name="data" id="data-check">
-                        <label for="data">I certify that I <span> accept </span> the Terms of Use and Privacy Statment
-                            and
-                            I<span>understand the Rate Rules</span> for my reserveation. </label>
-                    </div>
-                    <div class="button">
-                        <button>Reserve A Place</butt on>
+                    <div class="camp-languages">
+                        <div class="language-icon">
+                            <img src="../assets/img/languages-icon.png" alt="languages-icon">
+                        </div>
+                        <h4>Languages |</h4>
+                        <p>English </p>
+                        <span> / </span>
+                        <p> Spanish</p>
                     </div>
                 </div>
-            </form>
+                <div class="booking">
+                    <button>Booking</button>
+                </div>
+            </div>
+            <div class="camp-activities">
+                <div class="activity-title">
+                    <h1>ACTIVITIES</h1>
+                </div>
+                <div class="activity-container">
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-climbing-50.png" alt="activity-pic">
+                        </div>
+                        <p>Climbing Hills</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-cycling-50.png" alt="activity-pic">
+                        </div>
+                        <p>Cycling / Mountain Biking</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-dinghy-50.png" alt="activity-pic">
+                        </div>
+                        <p>Kyaking</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-fisherman-in-a-boat-50.png" alt="activity-pic">
+                        </div>
+                        <p>Fishing</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-horseback-riding-50.png" alt="activity-pic">
+                        </div>
+                        <p>Horseback Riding</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-kicking-50.png" alt="activity-pic">
+                        </div>
+                        <p>Kick Boxing / Karate</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-scuba-diving-50.png" alt="activity-pic">
+                        </div>
+                        <p>Swiming / Scuba Diving</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-surf-50.png" alt="activity-pic">
+                        </div>
+                        <p>Surfing</p>
+                    </div>
+                    <div class="activity-card">
+                        <div class="activity-pic">
+                            <img src="../assets/img/icons8-goalkeeper-50.png" alt="activity-pic">
+                        </div>
+                        <p>Foot ball</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="logged-section">
+            <div class="logged-header">
+                <h1>My Profile</h1>
+                <div class="close-button">
+                    <img src="../assets/img/close-icon.png" alt="">
+                </div>
+            </div>
+            <div class="profile-pic">
+                <div class="picture">
+                    <img src="../assets/img/kid-pic.jpg" alt="">
+                </div>
+                <h1>Victory William</h1>
+                <p>Premuim Member
+                    <div class="crown"><img src="../assets/img/crown.png" alt=""></div>
+                </p>
+            </div>
+            <div class="curent-location">
+                <div class="current-location-img">
+                    <img src="../assets/img/profile-city.jpg" alt="">
+                </div>
+                <div class="current-location-text">
+                    <div class="icon"><img src="../assets/img/info-icon.png" alt=""></div>
+                    <p>Current Place</p>
+                    <div id="address"></div>
+
+                    <div class="gpsicon">
+                        <img src="../assets/img/gps-icon.png" alt="">
+                    </div>
+                    <p>
+                        San Sebastian
+                    </p>
+                </div>
+            </div>
+            <div class="loged-bg">
+                <img src="../assets/img/profile-bg.png" alt="">
+            </div>
         </div>
     </div>
+
+
+
+    <script src="../out/Nav.js"></script>
+
 </body>
 
 </html>
