@@ -1,0 +1,39 @@
+.filters {
+    width: 20%;
+    min-width: 200px;
+    padding: 28px 20px;
+}
+
+.filter {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.filter-title {
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.camp-filter-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.camp-filter-option {
+    color: black;
+    width: auto;
+    border: 3px solid #f3f3f4;
+    background-color: #f3f3f4;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 10px 10px 0;
+}
+
+.camp-filter-option:hover {
+    border-color:#d87792;
+    background-color:#d87792;
+    transition: all 0.3s;
+}

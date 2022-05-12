@@ -6,58 +6,6 @@
     display: flex;
 }
 
-/***************filters******************/
-
-.filters {
-    width: 20%;
-    padding: 10px;
-    margin-bottom: 30px;
-}
-
-.filters h1 {
-    width: 100%;
-    font-family: 'Amatic SC', cursive;
-    font-size: 50px;
-    margin-bottom: 30px;
-
-}
-
-#title {
-    color: var(--btn-fg);
-    font-family: 'Amaric SC', cursive;
-}
-
-.filter {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.filter button {
-    width: auto;
-    border: 3px solid #f3f3f4;
-    background-color: #f3f3f4;
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-.filter button:hover {
-    border-color:#d87792;
-    background-color:#d87792;
-    color: var(--Titulo);
-    transition: all 0.3s;
-}
-.filter button:focus {
-    border-color:var(--btn-fg);
-    background-color: var(--btn-fg);
-    color: var(--Titulo);
-}
-
 /*************age slider**************/
 .card {
     display: flex;
