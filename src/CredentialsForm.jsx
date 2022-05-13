@@ -1,5 +1,6 @@
 import useForm from './hooks/useForm.js';
 import { usernamePattern, emailPattern, passwordPattern } from './patterns.js';
+import { api } from './api.js';
 
 const { useState, useRef, useEffect } = React;
 
@@ -32,8 +33,7 @@ const CredentialsForm = ({ next }) => {
     }, []);
 
     const fetchAvailable = ({ username, email }) => {
-        const url = "https://scm-daw.herokuapp.com/api/available?";
-        return fetch(`${url}username=${username}&email=${email}`)
+        return fetch(`${api}/user/available?username=${username}&email=${email}`)
             .then(res => res.json());
     }
 

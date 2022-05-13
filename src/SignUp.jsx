@@ -1,5 +1,6 @@
 import CredentialsForm from './CredentialsForm.js'
 import UserDataForm from './UserDataForm.js'
+import { api } from './api.js';
 
 const { useState } = React;
 
@@ -15,7 +16,7 @@ const SignUp = props => {
     }
 
     const register = userData => {
-        fetch("https://scm-daw.herokuapp.com/api/register", {
+        fetch(`${api}/user/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
