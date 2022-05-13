@@ -47,6 +47,7 @@ const routes = createRoutes(dirs);
 
 const server = http.createServer((req, res) => {
     const route = routes[req.url];
+    console.log(req.url, route);
     route && route(res);
 });
 
