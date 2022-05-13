@@ -1,6 +1,3 @@
-const { useState, useEffect } = React
-import { api } from './api.js'
-
 const Filter = ({ title, children }) => (
     <section className="filter">
         <h4 className="filter-title">{title}</h4>
@@ -8,41 +5,27 @@ const Filter = ({ title, children }) => (
     </section>
 )
 
-const OptionsFilter = ({ title, options }) => (
+const OptionsFilter = ({ title, options, toggle }) => (
     <Filter title={title}>
         <div className="camp-filter-options">
-            { options.map(option => <span className="camp-filter-option">{option}</span>) }
+            { options.map(option => <span className="camp-filter-option" onClick={toggle.bind(null, option.name)}>{option.name}</span>) }
         </div>
     </Filter>
 )
 
-const CampKindFilter = () => {
-    const [kinds, setKinds] = useState([])
-    useEffect(() => {
-        fetch(`${api}/camps/kinds`)
-            .then(res => res.json())
-            .then(({ kinds }) => setKinds(kinds))
-    }, [])
-    
-    return <OptionsFilter title="Kinds" options={kinds} />
-}
-
-const CampLangFilter = () => {
-    const [langs, setLangs] = useState([])
-    useEffect(() => {
-        fetch(`${api}/camps/langs`)
-            .then(res => res.json())
-            .then(({ langs }) => setLangs(langs))
-    }, [])
-    
-    return <OptionsFilter title="Languages" options={langs} />
-}
-
-const CampFilters = () => {
+const CampFilters = ({ kinds, langs, toggleKind, toggleLang }) => {
+    console.log({ toggleKind, toggleLang });
     return (
         <div className="filters">
-            <CampKindFilter /> 
-            <CampLangFilter />
+            <OptionsFilter
+                 title="Kinds"
+                 options={kinds}
+                 toggle={toggleKind}
+            /> 
+            <OptionsFilter
+                 title="Languages"
+                 options={langs}
+                 toggle={toggleLang} />
             <div id="root"></div>
 
         {/* 

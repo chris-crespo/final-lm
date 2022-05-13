@@ -1,11 +1,51 @@
 import CampFilters from './CampFilters.js'
 import CampList from './CampList.js'
+import { api } from './api.js'
+
+const { useState, useEffect } = React
 
 const Camps = () => {
+    // Filters
+    const [kinds, setKinds] = useState([])
+    const [langs, setLangs] = useState([])
+    useEffect(() => {
+        fetch(`${api}/camps/kinds`)
+            .then(res => res.json())
+            .then(({ kinds }) => setKinds(
+                kinds.map(kind => ({ name: kind, active: false }))
+            ));
+
+        fetch(`${api}/camps/langs`)
+            .then(res => res.json())
+            .then(({ langs }) => setLangs(
+                langs.map(lang => ({ name: lang, active: false }))
+            ));
+    }, []);
+
+    useEffect(() => {
+        console.log({ kinds, langs });
+    }, [kinds, langs]);
+
+    const toggle = (options, setOptions) => name => {
+        // Is there a more efficient way to toggle an option?
+        const target = options.find(k => k.name === name);
+        const rest = options.filter(k => k.name !== name);
+        
+        setOptions([ ...rest, { ...target, active: !target.active }].sort((o1, o2) => o1.name > o2.name));
+    }
+
+    const toggleKind = toggle(kinds, setKinds);
+    const toggleLang = toggle(langs, setLangs);
+
     return (
         <>
-            <CampFilters />
-            <CampList />
+            <CampFilters 
+                kinds={kinds} 
+                langs={langs}
+                toggleKind={toggleKind}
+                toggleLang={toggleLang}
+            />
+            <CampList kinds={kinds} langs={langs} />
             <div class="logged-section">
                 <div class="logged-header">
                     <h1>My Profile</h1>
