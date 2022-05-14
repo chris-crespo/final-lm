@@ -1,6 +1,8 @@
 .camp-list {
     background-color: #f3f5f7;
     padding: 20px;
+    height: calc(100vh - 68px);
+    overflow-y: scroll;
 }
 
 .search {
@@ -15,7 +17,6 @@
     font-size: 14px;
     font-weight: 500;
     padding: 8px 12px;
-    margin-right: 14px;
 }
 
 .search button {
@@ -37,14 +38,27 @@
 }
 
 .camp-card {
-    width: 225px;
+    width: 340px;
     display: flex;
     flex-direction: column;
     padding: 14px;
     background-color: white;
     border-radius: 8px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+}
+
+.camp-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img img {
+    transition: transform ease 1s;
+}
+
+.camp-card:hover .card-img img {
+    transform: scale(1.1);
 }
 
 .card-img {
@@ -63,10 +77,15 @@
     margin-bottom: 4px;
 }
 
-.camp-card span {
+.card-info-items span {
     color: black;
     font-size: 14px;
     font-weight: 500;
+    margin-right: 10px;
+}
+
+.card-info-items span:not(:first-child) {
+    margin-left: 10px;
 }
 
 .location-icon {

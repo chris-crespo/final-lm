@@ -3,9 +3,9 @@ import { curry, and } from './utils.js'
 
 const { useState, useEffect } = React
 
-const LocationIcon = () => (
+const Icon = ({ name }) => (
     <div className="location-icon">
-        <img src="../assets/img/gps-icon.png" alt="" />
+        <img src={`../assets/img/${name}-icon.png`} alt="" />
     </div>
 )
 
@@ -18,10 +18,22 @@ const CampCard = ({ camp }) => {
             </div>
             <div className="card-info">
                 <h2>{ camp.name }</h2>
-                <span>
-                    <LocationIcon />
-                    { camp.location }
-                </span>
+                <div className="card-info-items">
+                    <span>
+                        <Icon name="gps" />
+                        { camp.location }
+                    </span>
+                    |
+                    {/* TODO: Add more icons */}
+                    <span>
+                        { camp["min-age"] } - { camp["max-age"] } years
+                    </span>
+                    |
+                    <span>
+                        { camp.kind } 
+                    </span>
+                        
+                </div>
             </div>
         </div>
     )
