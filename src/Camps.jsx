@@ -22,10 +22,6 @@ const Camps = () => {
             ));
     }, []);
 
-    useEffect(() => {
-        console.log({ kinds, langs });
-    }, [kinds, langs]);
-
     const toggle = (options, setOptions) => name => {
         // Is there a more efficient way to toggle an option?
         const target = options.find(k => k.name === name);
@@ -36,6 +32,8 @@ const Camps = () => {
 
     const toggleKind = toggle(kinds, setKinds);
     const toggleLang = toggle(langs, setLangs);
+    
+    const activeOptions = options => options.filter(o => o.active);
 
     return (
         <>
@@ -45,7 +43,11 @@ const Camps = () => {
                 toggleKind={toggleKind}
                 toggleLang={toggleLang}
             />
-            <CampList kinds={kinds} langs={langs} />
+            <CampList 
+                kinds={activeOptions(kinds)} 
+                langs={activeOptions(langs)} 
+            />
+            {/*
             <div class="logged-section">
                 <div class="logged-header">
                     <h1>My Profile</h1>
@@ -83,6 +85,7 @@ const Camps = () => {
                     <img src="../assets/img/profile-bg.png" alt="" />
                 </div>
             </div>
+            */}
         </>
     )
 }

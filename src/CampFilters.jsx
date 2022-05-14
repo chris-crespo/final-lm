@@ -8,13 +8,16 @@ const Filter = ({ title, children }) => (
 const OptionsFilter = ({ title, options, toggle }) => (
     <Filter title={title}>
         <div className="camp-filter-options">
-            { options.map(option => <span className="camp-filter-option" onClick={toggle.bind(null, option.name)}>{option.name}</span>) }
+            { options.map(option => 
+                <span className={`camp-filter-option ${option.active ? "active" : ""}`}
+                    onClick={toggle.bind(null, option.name)}>
+                        {option.name}
+                </span>) }
         </div>
     </Filter>
 )
 
 const CampFilters = ({ kinds, langs, toggleKind, toggleLang }) => {
-    console.log({ toggleKind, toggleLang });
     return (
         <div className="filters">
             <OptionsFilter

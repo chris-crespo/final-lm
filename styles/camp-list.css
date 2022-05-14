@@ -30,8 +30,8 @@
 
 
 .camps-cards {
+    margin: auto;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -39,22 +39,18 @@
 .camp-card {
     width: 225px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding: 14px;
     background-color: white;
     border-radius: 8px;
     margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .card-img {
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 14px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .card-info {
