@@ -1,6 +1,7 @@
 .camp-list {
     background-color: #f3f5f7;
     padding: 20px;
+    width: calc(100vw - 240px);
     height: calc(100vh - 68px);
     overflow-y: scroll;
 }
@@ -69,6 +70,7 @@
 
 .card-info {
     padding-left: 8px;
+    margin-bottom: 4px;
 }
 
 .camp-card h2 {

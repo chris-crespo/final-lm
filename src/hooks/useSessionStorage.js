@@ -1,6 +1,6 @@
 const { useState, useEffect } = React;
 
-const useSessionStorage = (key, defaultValue) => {
+const useSessionStorage = (key, defaultValue = null) => {
     const [value, setValue] = useState(defaultValue);
 
     useEffect(() => {

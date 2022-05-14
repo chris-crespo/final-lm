@@ -91,3 +91,16 @@
     border-color: var(--primary);
     cursor: pointer;
 }
+
+.navbar-user {
+    margin-right: 14px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+}
+
+.navbar-user svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--primary);
+}
