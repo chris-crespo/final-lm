@@ -10,13 +10,16 @@
 }
 
 .terms-pic {
-    width: 600px;
-    flex-grow: 2;
+    width: 500px;
+}
+
+.terms-pic img {
+    height: auto;
 }
 
 .terms-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 128px 0 96px;
 }

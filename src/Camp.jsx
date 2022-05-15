@@ -1,4 +1,4 @@
-import BookingModal from './BookingModal.js'
+// import BookingModal from './BookingModal.js'
 
 const Camp = () => {
     return (
@@ -120,7 +120,9 @@ const Camp = () => {
             </div>
 
             {/* Logged Section */}
-            <BookingModal />
+            {/* <BookingModal /> */}
         </>
     )
 } 
+const container = document.querySelector("#wrapper");
+ReactDOM.createRoot(container).render(<Camp />);

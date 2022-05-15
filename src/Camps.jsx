@@ -24,6 +24,7 @@ const Camps = () => {
 
     const toggle = (options, setOptions) => name => {
         // Is there a more efficient way to toggle an option?
+        // I'm sure there is. by copilot btw 
         const target = options.find(k => k.name === name);
         const rest = options.filter(k => k.name !== name);
         
