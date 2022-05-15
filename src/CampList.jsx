@@ -1,5 +1,7 @@
+import useSessionStorage from './hooks/useSessionStorage.js'
 import { api } from './api.js'
 import { curry, and } from './utils.js'
+import to from './redirect.js'
 
 const { useState, useEffect } = React
 
@@ -11,8 +13,14 @@ const Icon = ({ name }) => (
 
 const randBetween = (low, high) => Math.floor(Math.random() * high + low)
 const CampCard = ({ camp }) => {
+    const [_, storeCamp] = useSessionStorage("camp", { id: 0 })
+    const redirectToCamp = () => {
+        storeCamp({ id: camp.id })
+        to("/camp");
+    }
+
     return (
-        <div className="camp-card">
+        <div className="camp-card" onClick={redirectToCamp}>
             <div className="card-img">
                 <img src={ camp.img } alt="Camp image" />
             </div>
