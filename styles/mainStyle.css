@@ -105,9 +105,14 @@
 
 .presenting-wrapper,
 .destination-wrapper,
+.booking-step-wrapper,
 .services-camps,
 .camps-showcase,
-.card-icon {
+.next-summer-camp-img,
+.card-icon,
+.step,
+.sponores,
+.camp-info-icons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -138,6 +143,7 @@
 }
 
 .presenting-text,
+.steps-text,
 .presenting-picture {
     width: 50%;
 }
@@ -145,7 +151,12 @@
 .presenting-text h1,
 .presenting-text h3,
 .presenting-text p,
-.service-card h3 {
+.steps-text h1,
+.steps-text h3,
+.steps-text p,
+.service-card h3,
+.steps-image h3,
+.steps-image p {
     width: 80%;
     margin-bottom: 20px;
 }
@@ -157,13 +168,15 @@
 
 .presenting-text h1,
 .services-wrapper h1,
-.destination-wrapper h1 {
+.destination-wrapper h1,
+.steps-text h1 {
     font-size: 70px;
     font-family: 'Merriweather', serif;
 }
 
 .presenting-text p,
-.service-card p {
+.service-card p,
+.steps-text p {
     font-size: 18px;
     font-weight: 100;
 }
@@ -178,29 +191,20 @@
     cursor: pointer;
 }
 
-.presenting-picture {
-    position: relative;
-}
-
-.image-shape {
-    position: absolute;
-    top: -399px;
-    right: -37%;
-    z-index: -1;
-}
-
 /**********services**********/
 .services-wrapper,
 .destination-title,
 .service-title,
-.service-card {
+.service-card,
+.logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
-.destination-wrapper{
+
+.destination-wrapper {
     align-content: space-evenly;
 }
 
@@ -242,9 +246,11 @@
 }
 
 /**********destination**********/
-.destination-wrapper{
+.destination-wrapper {
     height: 80vh;
+    margin: 50px;
 }
+
 .camp-card {
     width: 19vw !important;
     height: 45vh;
@@ -253,9 +259,16 @@
     box-shadow: 0 30px 20px 5px rgb(0 0 0 / 6%) !important;
     margin: 30px !important;
 }
-.camp-card:hover{
+
+
+.camp-card:hover {
     box-shadow: 0 40px 20px 5px rgb(0 0 0 / 7%) !important;
 }
+
+.steps-image {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
 .location-icon {
     width: 11px;
     display: inline-block;
@@ -267,7 +280,7 @@
 .card-img {
     height: 80%;
     overflow: hidden;
-    border-radius: 0px !important ;
+    border-radius: 0px !important;
     border-top-left-radius: 1.5rem !important;
     border-top-right-radius: 1.5rem !important;
 }
@@ -278,15 +291,85 @@
 }
 
 .camp-info,
-.card-img {
+.card-img,
+.camp-info-icons,
+.steps-image h3 {
     width: 100%;
     justify-content: flex-start;
 }
-.card-info{
-    padding: 15px !important; 
+
+.card-info {
+    padding: 15px !important;
+}
+
+.step-icon {
+    width: 3vw;
+    margin-right: 10px;
+}
+
+.step-info {
+    width: 80%;
+    padding: 5px;
+}
+
+.steps-image,
+.next-summer-camp-img {
+    border-radius: 1.5rem;
+
+}
+
+.steps-image {
+    width: 400px;
+    padding: 20px;
+}
+
+.next-summer-camp-img {
+    height: 20vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.next-summer-camp-img img {
+    width: 100%;
+    height: auto;
+}
+
+.steps-image span {
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.steps-image span,
+.steps-image h3:last-child {
+    opacity: 0.5;
 }
 
 
+
+.camp-info-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: rgba(153, 151, 151, 0.19);
+    border-radius: 50%;
+    padding: 5px;
+    opacity: 0.6;
+}
+
+.sponores {
+    height: 30vh;
+}
+
+.logo {
+    width: 150px;
+    margin: 30px;
+}
+
+.logo img {
+    height: auto;
+}
 
 /* 
 .titulo {
@@ -633,4 +716,4 @@ button {
 
 #desc4 {
     background-color: #0078D7;
-} */
+} /*
