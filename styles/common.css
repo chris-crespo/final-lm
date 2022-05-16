@@ -6,6 +6,21 @@
     --red: #ce2856;
     --green: #27cf27;
     --blue: #2077d4;
+
+    /* For reference:
+     *
+     * Smartphone:
+     * 480px / 950px landscape
+     *
+     * Table:
+     * 1024px / 1366px
+     *
+     * Laptop:
+     * 1366px
+     *
+     * Desktop:
+     * 1600px
+     */
 }
 
 * {
@@ -17,6 +32,7 @@
 
 input {
     outline: none;
+    -webkit-appearance: none;
 }
 
 a {

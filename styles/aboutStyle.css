@@ -151,3 +151,68 @@
     padding: 10px;
     border: 3px solid #FF3D8B;
 }
+
+/**************kids-coments*************/
+.kids-comments {
+    margin: 50px;
+}
+
+.kid-comment {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.pic {
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.pic img {
+    width: auto;
+}
+
+.comment {
+    width: 450px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--btn-fg);
+    z-index: 1;
+    align-self: flex-end;
+}
+
+.comment1,
+.comment3 {
+    margin-left: -50px;
+}
+
+.comment2 {
+    margin-right: -50px;
+}
+
+.comment-text {
+    color: var(--Titulo);
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px;
+}
+
+#kid-age {
+    font-weight: 100;
+}
+
+.comment-text p:last-child {
+    font-size: 12px;
+    font-weight: 500;
+}

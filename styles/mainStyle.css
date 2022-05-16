@@ -69,9 +69,7 @@
     }
 }
 
-
-
-
+/*******video********/
 .mainBackground {
     width: 100%;
     height: 100vh;
@@ -97,6 +95,122 @@
     overflow: hidden;
 }
 
+/**********content**********/
+/*******presentation*******/
+
+.presenting-wrapper,
+.services-camps {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.presenting-wrapper,
+.services-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.presenting-text {
+    padding: 70px;
+}
+
+.presenting-text,
+.presenting-picture {
+    width: 50%;
+}
+
+.presenting-text h1,
+.presenting-text h3,
+.presenting-text p,
+.card-img,
+.service-card h3 {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.presenting-text h3,
+.services-wrapper h3 {
+    color: var(--btn-fg);
+}
+
+.presenting-text h1 {
+    font-size: 70px;
+    font-family: 'Merriweather', serif;
+}
+
+.presenting-text p,
+.service-card p {
+    font-size: 30px;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.presenting-text button {
+    color: white;
+    background-color: var(--btn-fg);
+    padding: 16px 28px;
+    border-radius: 8px;
+    border: none;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.presenting-picture {
+    position: relative;
+}
+
+.image-shape {
+    position: absolute;
+    top: -399px;
+    right: -37%;
+    z-index: -1;
+}
+
+/**********services**********/
+.services-wrapper,
+.service-title,
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.services-wrapper,
+.services-camps {
+    justify-content: space-around;
+}
+
+.service-card {
+    width: 20%;
+    padding: 10px;
+}
+
+.card-img {
+    width: 80%;
+}
+
+.card-img img {
+    height: auto;
+}
+
+.services-title p {
+    opacity: 0.5;
+}
+
+.services-wrapper h1,
+.services-wrapper h3,
+.services-wrapper p {
+    width: 100%;
+    text-align: center;
+}
+
+/* 
 .titulo {
     height: auto;
     width: fit-content;
@@ -298,7 +412,6 @@ button {
 .statistics-img img {
     width: 100%;
     height: 100%;
-    /* filter: drop-shadow(2px 1px 1px rgb(0 0 0 / 0.4)); */
 }
 
 .statistics-numbers {
@@ -373,7 +486,6 @@ button {
 .city {
     width: 23%;
     height: 50%;
-    /* border-radius: 20px; */
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -443,4 +555,4 @@ button {
 
 #desc4 {
     background-color: #0078D7;
-}
+} */

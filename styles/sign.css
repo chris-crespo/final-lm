@@ -23,16 +23,15 @@
 .sign .img-wrapper {
     width: 42%;
     height: 100vh;
+    display: none; 
 }
 
 .sign img {
-    height: 100%;
-    width: 100%;
     display: block;
 }
 
 .form-wrapper {
-    width: 400px;
+    width: 85%;
     margin: auto;
 }
 
@@ -43,12 +42,13 @@
 .sign .form-title {
     width: 100%;
     text-align: left;
-    margin-bottom: 46px;
+    margin-bottom: 40px;
 }
 
 .sign .form-title h1 {
     font-weight: 900;
     letter-spacing: -0.03rem;
+    font-size: 28px;
 }
 
 .sign .form-title h1 span {
@@ -199,4 +199,28 @@
 
 .login-banner.failure {
     background-color: var(--red);
+}
+
+@media (max-width: 999px), (max-width: 950px) and (orientation: landscape) { 
+    .form-wrapper {
+        margin-top: 20vh;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 1000px) {
+    /* TODO: Media query should be as low enough for displays that can render 
+     * the image */
+    .form-wrapper {
+        width: 400px;
+    }
+
+    .sign .form-title {
+        font-size: 32px;
+        margin-bottom: 46px;
+    }
+
+    .sign .img-wrapper {
+        display: block; 
+    }
 }

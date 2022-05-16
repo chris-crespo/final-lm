@@ -57,6 +57,7 @@ const SignIn = () => {
                 fetchUser(credentials.user).then(user => {
                     attemptLogin(user);
                     if (user) {
+                        storeUser(user);
                         attemptLogin(user);
                         redirect("/camps");
                     }

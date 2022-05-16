@@ -2,7 +2,7 @@ const http = require("http");
 const fs   = require("fs");
 const { exec } = require("child_process");
 
-const dirs = ["out", "pages", "styles", "assets"];
+const dirs = ["node_modules", "out", "pages", "styles", "assets"];
 
 const serveAs = (name, type) => res => {
     res.writeHead(200, { "content-type": type });

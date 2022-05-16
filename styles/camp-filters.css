@@ -1,7 +1,6 @@
 .filters {
-    width: 20%;
-    min-width: 200px;
-    padding: 28px 20px;
+    flex: 0 0 240px;
+    padding: 38px 20px;
 }
 
 .filter {
@@ -30,10 +29,20 @@
     font-size: 14px;
     font-weight: 500;
     margin: 0 10px 10px 0;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.camp-filter-option.active,
+.camp-filter-option.active:hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: white;
 }
 
 .camp-filter-option:hover {
-    border-color:#d87792;
-    background-color:#d87792;
-    transition: all 0.3s;
+    border-color: var(--primary);
+    background-color: white;
+    color: var(--primary);
 }
+
