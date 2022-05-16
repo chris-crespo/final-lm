@@ -1,57 +1,14 @@
-import useSessionStorage from './hooks/useSessionStorage.js'
+import CampCard from './CampCard.js'
 import { api } from './api.js'
 import { curry, and } from './utils.js'
-import to from './redirect.js'
 
 const { useState, useEffect } = React
 
-const Icon = ({ name }) => (
-    <div className="location-icon">
-        <img src={`../assets/img/${name}-icon.png`} alt="" />
-    </div>
-)
-
 const randBetween = (low, high) => Math.floor(Math.random() * high + low)
-const CampCard = ({ camp }) => {
-    const [_, storeCamp] = useSessionStorage("camp", { id: 0 })
-    const redirectToCamp = () => {
-        storeCamp({ id: camp.id })
-        to("/camp");
-    }
-
-    return (
-        <div className="camp-card" onClick={redirectToCamp}>
-            <div className="card-img">
-                <img src={ camp.img } alt="Camp image" />
-            </div>
-            <div className="card-info">
-                <h2>{ camp.name }</h2>
-                <div className="card-info-items">
-                    <span>
-                        <Icon name="gps" />
-                        { camp.location }
-                    </span>
-                    |
-                    {/* TODO: Add more icons */}
-                    <span>
-                        { camp["min-age"] } - { camp["max-age"] } years
-                    </span>
-                    |
-                    <span>
-                        { camp.kind } 
-                    </span>
-                        
-                </div>
-            </div>
-        </div>
-    )
-}
-
 const CampList = ({ kinds, langs }) => {
     const [camps, setCamps] = useState([])
     const [filteredCamps, setFilteredCamps] = useState([])
     useEffect(() => {
-        console.log(filteredCamps)
         fetch(`${api}/camps`)
             .then(res => res.text())
             .then(text => (new window.DOMParser()).parseFromString(text, "text/xml"))

@@ -95,11 +95,19 @@
     overflow: hidden;
 }
 
+.videocont video {
+    width: 100%;
+    height: 100%;
+}
+
 /**********content**********/
 /*******presentation*******/
 
 .presenting-wrapper,
-.services-camps {
+.destination-wrapper,
+.services-camps,
+.camps-showcase,
+.card-icon {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -109,9 +117,20 @@
 }
 
 .presenting-wrapper,
-.services-wrapper {
+.services-wrapper,
+.destination-wrapper {
     width: 100%;
     height: 100vh;
+}
+
+.presenting-wrapper {
+    height: auto;
+    width: fit-content;
+    position: absolute;
+    top: 20%;
+    left: -15%;
+    z-index: 2;
+    color: var(--Titulo);
 }
 
 .presenting-text {
@@ -126,7 +145,6 @@
 .presenting-text h1,
 .presenting-text h3,
 .presenting-text p,
-.card-img,
 .service-card h3 {
     width: 80%;
     margin-bottom: 20px;
@@ -137,14 +155,15 @@
     color: var(--btn-fg);
 }
 
-.presenting-text h1 {
+.presenting-text h1,
+.services-wrapper h1,
+.destination-wrapper h1 {
     font-size: 70px;
     font-family: 'Merriweather', serif;
 }
 
 .presenting-text p,
 .service-card p {
-    font-size: 30px;
     font-size: 18px;
     font-weight: 100;
 }
@@ -172,6 +191,7 @@
 
 /**********services**********/
 .services-wrapper,
+.destination-title,
 .service-title,
 .service-card {
     display: flex;
@@ -180,22 +200,26 @@
     align-items: center;
     align-content: center;
 }
+.destination-wrapper{
+    align-content: space-evenly;
+}
 
 .services-wrapper,
 .services-camps {
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
-.service-card {
+.service-card,
+.camp-info {
     width: 20%;
     padding: 10px;
 }
 
-.card-img {
-    width: 80%;
+.card-icon {
+    width: 30%;
 }
 
-.card-img img {
+.card-icon img {
     height: auto;
 }
 
@@ -203,12 +227,66 @@
     opacity: 0.5;
 }
 
+.services-title h3 {
+    font-size: 30px;
+}
+
 .services-wrapper h1,
 .services-wrapper h3,
-.services-wrapper p {
+.services-wrapper p,
+.destination-wrapper h1,
+.destination-wrapper p,
+.destination-title {
     width: 100%;
     text-align: center;
 }
+
+/**********destination**********/
+.destination-wrapper{
+    height: 80vh;
+}
+.camp-card {
+    width: 19vw !important;
+    height: 45vh;
+    padding: 0 !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 30px 20px 5px rgb(0 0 0 / 6%) !important;
+    margin: 30px !important;
+}
+.camp-card:hover{
+    box-shadow: 0 40px 20px 5px rgb(0 0 0 / 7%) !important;
+}
+.location-icon {
+    width: 11px;
+    display: inline-block;
+    margin-right: 6px;
+    position: relative;
+    top: 3px;
+}
+
+.card-img {
+    height: 80%;
+    overflow: hidden;
+    border-radius: 0px !important ;
+    border-top-left-radius: 1.5rem !important;
+    border-top-right-radius: 1.5rem !important;
+}
+
+.card-img img {
+    height: 100%;
+    width: auto;
+}
+
+.camp-info,
+.card-img {
+    width: 100%;
+    justify-content: flex-start;
+}
+.card-info{
+    padding: 15px !important; 
+}
+
+
 
 /* 
 .titulo {

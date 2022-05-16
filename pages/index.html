@@ -16,8 +16,10 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <link rel="stylesheet" href="../styles/mainStyle.css">
     <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
     <link rel="stylesheet" href="../styles/footerStyle.css">
     <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/camp-card.css">
     <link rel="icon" href="../assets/img/tab-icon.png">
 </head>
 
@@ -38,7 +40,6 @@
         </div>
         <div id="nav-container"></div>
     </div>
-
     <div class="presenting-wrapper">
         <div class="presenting-text">
             <h3>BEST CAMPS AROUND THE WORLD</h3>
@@ -46,26 +47,6 @@
             <p>Live the most fulfilling experiencepossible around the world with our experienced team and our well
                 equiped camps with all the difrents activity you imagine </p>
             <button>Discover our camps</button>
-        </div>
-        <div class="presenting-picture">
-            <div class="presenting-img">
-                <img src="../assets/img/presenting-img.png" alt="presenting-img">
-            </div>
-            <div class="image-shape">
-                <!--?xml version="1.0" standalone="no"?--> <svg id="sw-js-blob-svg" viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                            <stop id="stop1" stop-color="rgba(206, 40, 86, 0.4)" offset="0%"></stop>
-                            <stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path fill="rgba(206, 40, 86, 0.4)"
-                        d="M23.6,-30.9C29.1,-23.6,31,-14.7,33.1,-5.5C35.2,3.8,37.4,13.3,33.7,19.2C30,25.1,20.4,27.3,11,31.1C1.6,35,-7.6,40.5,-16,39.4C-24.4,38.3,-32,30.6,-35.6,21.8C-39.1,13,-38.6,3.2,-35.8,-5.3C-33.1,-13.7,-28.1,-20.6,-21.8,-27.8C-15.4,-34.9,-7.7,-42.2,0.7,-43C9.1,-43.8,18.2,-38.1,23.6,-30.9Z"
-                        width="100%" height="100%" transform="translate(50 50)" style="transition: all 0.3s ease 0s;"
-                        stroke-width="0" stroke="url(#sw-gradient)"></path>
-                </svg>
-            </div>
         </div>
     </div>
     <div class="services-wrapper">
@@ -76,34 +57,43 @@
         </div>
         <div class="services-camps">
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/responsability.png" alt="Responsability">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-responsability-96.png" alt="Responsability">
                 </div>
                 <h3>Take Responsability</h3>
                 <p>Kids must learn to make their beds, tidy their room and keep their clothes clean.</p>
             </div>
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/well-equiped.png" alt="well-equiped">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-facilities-100.png" alt="well-equiped">
                 </div>
                 <h3>Well Equiped</h3>
                 <p>KIDDYCAMP has the most adequate and well-equipped facilities to run a summer camp</p>
             </div>
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/activities.png" alt="activities">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-activities-100.png" alt="activities">
                 </div>
                 <h3>Different Activities</h3>
                 <p>KIDDYCAMP has been giving children the Best
                     creative and joyful learning experience ever.</p>
             </div>
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/health.png" alt="">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-health-100.png" alt="health care">
                 </div>
-                <h3>Health</h3>
+                <h3>Health Care</h3>
                 <p>A pediatrician is at our disposal during the summer camps. </p>
             </div>
+        </div>
+    </div>
+
+    <div class="destination-wrapper">
+        <div class="destination-title">
+            <p>DESTINATION</p>
+            <h1>Top Camp Destination</h1>
+        </div>
+        <div class="camps-showcase" id="camps-showcase">
         </div>
     </div>
 
@@ -118,14 +108,7 @@
 
 
 
-
-    <!-- <div class="titulo">
-        <h1>KiddyCamp</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis quia natus, corrupti qui deserunt
-            recusandae obcaecati ad, itaque dolorem dolore quidem unde ducimus minus tempora rem molestiae eligendi
-            inventore impedit.</p>
-        <button>+ information</button>
-    </div>
+    <!-- 
     <div class="presenting">
         <div class="presenting-img">
             <img src="../assets/img/logoC.png" alt="main-logo">
@@ -309,7 +292,8 @@
         <p>© 2022 KiddyCamp. All rights reserved.</p>
     </footer>
 
-    <script src="../out/Nav.js"></script>
+    <script type="module" src="../out/Nav.js"></script>
+    <script type="module" src="../out/CampsShowCase.js"></script>
 </body>
 
 </html>
