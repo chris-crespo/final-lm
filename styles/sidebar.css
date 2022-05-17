@@ -1,10 +1,9 @@
 .sidebar-container {
-    width: 100vw;
-    height: calc(100vh - 67px);
-    position: absolute;
+    height: calc(100vh - 68px);
+    position: sticky;
     top: 67px;
     z-index: 99;
-
+    overflow: hidden;
     transition: background-color ease 300ms;
 }
 
@@ -81,5 +80,3 @@
     font-size: 20px;
     font-weight: 700;
 }
-
-.sidebar-bokk

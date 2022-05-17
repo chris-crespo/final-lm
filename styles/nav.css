@@ -1,4 +1,13 @@
+#nav-container {
+    height: 68px;
+}
+
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    background-color: white;
     width: 100%;
     padding: 0 24px;
     display: flex;

@@ -12,12 +12,17 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <!--FONT AWESOME (footer)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <link rel="stylesheet" href="../styles/mainStyle.css">
     <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
     <link rel="stylesheet" href="../styles/footerStyle.css">
     <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/camp-card.css">
     <link rel="icon" href="../assets/img/tab-icon.png">
 </head>
 
@@ -28,6 +33,7 @@
             <img src="../assets/img/logo.jpg" alt="loading-logo">
         </div>
     </div>
+    <div id="nav-container"></div>
     <div class="mainBackground">
         <div class="videocont">
             <video id="video" playsinline autoplay muted loop>
@@ -36,9 +42,7 @@
             </video>
             <div class="blackcover"></div>
         </div>
-        <div id="nav-container"></div>
     </div>
-
     <div class="presenting-wrapper">
         <div class="presenting-text">
             <h3>BEST CAMPS AROUND THE WORLD</h3>
@@ -46,26 +50,6 @@
             <p>Live the most fulfilling experiencepossible around the world with our experienced team and our well
                 equiped camps with all the difrents activity you imagine </p>
             <button>Discover our camps</button>
-        </div>
-        <div class="presenting-picture">
-            <div class="presenting-img">
-                <img src="../assets/img/presenting-img.png" alt="presenting-img">
-            </div>
-            <div class="image-shape">
-                <!--?xml version="1.0" standalone="no"?--> <svg id="sw-js-blob-svg" viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                            <stop id="stop1" stop-color="rgba(206, 40, 86, 0.4)" offset="0%"></stop>
-                            <stop id="stop2" stop-color="rgba(251, 168, 31, 1)" offset="100%"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path fill="rgba(206, 40, 86, 0.4)"
-                        d="M23.6,-30.9C29.1,-23.6,31,-14.7,33.1,-5.5C35.2,3.8,37.4,13.3,33.7,19.2C30,25.1,20.4,27.3,11,31.1C1.6,35,-7.6,40.5,-16,39.4C-24.4,38.3,-32,30.6,-35.6,21.8C-39.1,13,-38.6,3.2,-35.8,-5.3C-33.1,-13.7,-28.1,-20.6,-21.8,-27.8C-15.4,-34.9,-7.7,-42.2,0.7,-43C9.1,-43.8,18.2,-38.1,23.6,-30.9Z"
-                        width="100%" height="100%" transform="translate(50 50)" style="transition: all 0.3s ease 0s;"
-                        stroke-width="0" stroke="url(#sw-gradient)"></path>
-                </svg>
-            </div>
         </div>
     </div>
     <div class="services-wrapper">
@@ -76,56 +60,156 @@
         </div>
         <div class="services-camps">
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/responsability.png" alt="Responsability">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-responsability-96.png" alt="Responsability">
                 </div>
                 <h3>Take Responsability</h3>
                 <p>Kids must learn to make their beds, tidy their room and keep their clothes clean.</p>
             </div>
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/well-equiped.png" alt="well-equiped">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-facilities-100.png" alt="well-equiped">
                 </div>
                 <h3>Well Equiped</h3>
                 <p>KIDDYCAMP has the most adequate and well-equipped facilities to run a summer camp</p>
             </div>
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/activities.png" alt="activities">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-activities-100.png" alt="activities">
                 </div>
                 <h3>Different Activities</h3>
                 <p>KIDDYCAMP has been giving children the Best
                     creative and joyful learning experience ever.</p>
             </div>
             <div class="service-card">
-                <div class="card-img">
-                    <img src="../assets/img/health.png" alt="">
+                <div class="card-icon">
+                    <img src="../assets/img/icons8-health-100.png" alt="health care">
                 </div>
-                <h3>Health</h3>
+                <h3>Health Care</h3>
                 <p>A pediatrician is at our disposal during the summer camps. </p>
             </div>
         </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="titulo">
-        <h1>KiddyCamp</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis quia natus, corrupti qui deserunt
-            recusandae obcaecati ad, itaque dolorem dolore quidem unde ducimus minus tempora rem molestiae eligendi
-            inventore impedit.</p>
-        <button>+ information</button>
+    <div class="destination-wrapper">
+        <div class="destination-title">
+            <p>DESTINATION</p>
+            <h1>Top Camp Destination</h1>
+        </div>
+        <div class="camps-showcase" id="camps-showcase">
+        </div>
     </div>
+
+    <div class="booking-step-wrapper">
+        <div class="steps-text">
+            <p>EASY AND FAST</p>
+            <h1>Book your Next Summer Camp in 3 Easy steps</h1>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="https://uploads-ssl.webflow.com/6170700f1a1db6b3a0ac16ed/617938d08573df8aa0b825af_icon-chosedestination.svg"
+                        alt="first-step-icon">
+                </div>
+                <div class="step-info">
+                    <h3>Choose Destination</h3>
+                    <p>Choose your favourite Destination. No matter
+                        where you are inside the World.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="https://uploads-ssl.webflow.com/6170700f1a1db6b3a0ac16ed/617938cec00b4023cfe65e13_icon-makepayment.svg"
+                        alt="second-step">
+                </div>
+                <div class="step-info">
+                    <h3>Choose Camp</h3>
+                    <p>Choose the Camp kind ,time and the prefered age range. and you
+                        are ready to book your next summer camp.</p>
+                    </p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="https://uploads-ssl.webflow.com/6170700f1a1db6b3a0ac16ed/617938cfc00b4049bee65e26_icon-reachairport.svg"
+                        alt="third-step">
+                </div>
+                <div class="step-info">
+                    <h3>Make your booking</h3>
+                    <p> You can book a camp by filling the form below.
+                        We will contact you as soon as possible to confirm your booking.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="steps-image">
+            <div class="next-summer-camp-img">
+                <img src="../assets/img/camp-card7.jpg" alt="new camp">
+            </div>
+            <h3>New Camp for this Summer</h3>
+            <p>
+                <span>New York</span>|<span>6 - 14 yo</span>|<span>Music</span>
+            </p>
+            <div class="camp-info-icons">
+                <div class="camp-info-icon">
+                    <img src="../assets/img/icons8-horas-extras-50.png" alt="calendar">
+                </div>
+                <div class="camp-info-icon">
+                    <img src="../assets/img/icons8-comida-natural-50.png" alt="nature">
+                </div>
+                <div class="camp-info-icon" id="last-camp-icon">
+                    <img src="../assets/img/icons8-cerca-de-mi-80.png" alt="location">
+                </div>
+                <h3>Book it Now on Our WebSite </h3>
+            </div>
+        </div>
+    </div>
+    <div class="sponores">
+        <div class="logo"><img src="../assets/img/logo1.jpg" alt="decathlon"></div>
+        <div class="logo"><img src="../assets/img/logo2.png" alt="billabong"></div>
+        <div class="logo"><img src="../assets/img/logo1.png" alt="newfill"></div>
+        <div class="logo"><img src="../assets/img/logo3.png" alt=""></div>
+        <div class="logo"><img src="../assets/img/logo4.png" alt=""></div>
+    </div>
+
+    <div class="mailing-section">
+        <h1>Subscribe to get information, latest news and other interesting offers about KIDDYCAMP</h1>
+        <div class="mailing-inputs">
+            <input type="text" placeholder="Enter email">
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    </head>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                KiddyYCAMP Copyright © 2022 - All rights reserved 
+            </div>
+
+            <div class="row">
+                <ul>     
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
     <div class="presenting">
         <div class="presenting-img">
             <img src="../assets/img/logoC.png" alt="main-logo">
@@ -271,7 +355,7 @@
                 <p>this summer gone be the best summer </p>
             </div>
         </div>
-    </div> -->
+    </div> 
     <footer>
         <div class="title">
             <h1>Kiddy<span>C</span>amp</h1>
@@ -307,9 +391,12 @@
             <img src="../assets/img/Instagram.png" alt="InstagramLogo">
         </div>
         <p>© 2022 KiddyCamp. All rights reserved.</p>
-    </footer>
+    </footer>-->
 
-    <script src="../out/Nav.js"></script>
+
+
+    <script type="module" src="../out/Nav.js"></script>
+    <script type="module" src="../out/CampsShowCase.js"></script>
 </body>
 
 </html>
