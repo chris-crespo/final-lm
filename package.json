@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku": "node server.js",
     "start": "npm run compile && node server.js",
     "compile": "npx babel src --out-dir out"
   },
