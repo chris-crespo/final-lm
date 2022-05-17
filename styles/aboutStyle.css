@@ -74,8 +74,8 @@ h1 {
 }
 
 .campname {
-    color: var(--btn-fg);
-    background-color: #ce285742;
+    color: black;
+    background-color: #fbc9014f;
     padding: 5px;
 }
 
