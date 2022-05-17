@@ -68,10 +68,6 @@ const Sidebar = ({ toggled, user }) => (
 
 const Nav = () => {
     const [user] = useSessionStorage("user");
-    useEffect(() => {
-        console.log(user);
-    }, [user]);
-
     const [sidebar, setSidebar] = useState(false);
     const toggleSidebar = () => setSidebar(!sidebar);
 
