@@ -1,22 +1,15 @@
-const Infolayout = ({ firstname,lastname,age }) => 
+const Infolayout = ({ firstname,lastname }) => 
     (
         <div className="kid-info">
             <div className="kid-avatar">
                 <img src="../assets/img/kid-pic.jpg" alt="avatar" />
             </div>
             <div className="first-name">
-                <h3>First Name</h3>
                 <p>{ firstname }</p>            
             </div>
             <div className="last-name">
-                <h3>Last Name</h3>
                 <p>{ lastname }</p>
              </div>
-             <div className="age">
-                <h3>Age</h3>
-                <p>{ age }</p>
-            </div>
-            <button>Reserve camp</button>
         </div>
     )
 const Addinglayout = () => {
@@ -38,16 +31,13 @@ const Addinglayout = () => {
                         <img src="../assets/img/kid-pic.jpg" alt="avatar" />
                     </div>
                     <div className={visible ? 'element-visible' : 'element-hidden'} id="IDsection" >
-                        <label for="DNI">DNI</label>
                         <input type="text" placeholder="DNI" />
                     </div>
                     <div className={visible ? 'element-visible' : 'element-hidden'} id="complete-name">
-                        <label for="">Complete Name</label>
                         <input type="text" placeholder="First Name" />
                         <input type="text" placeholder="Last Name" />
                     </div>
                     <div className={visible ? 'element-visible' : 'element-hidden'} id="age">
-                        <label for="age">Age</label>
                         <input type="text" placeholder="Age" />
                     </div>
                     <button className={visible ? 'element-visible' : 'element-hidden'}>Add kid</button>
@@ -58,8 +48,8 @@ const Addinglayout = () => {
 const InfoCards = () => 
      (
                 <div className="kid-cards">
-                    <Infolayout firstname="Juan" lastname="Perez" age="9" />
-                    <Infolayout firstname="Adrian" lastname="Perez" age="14" />
+                    <Infolayout firstname="Juan" lastname="Perez" />
+                    <Infolayout firstname="Adrian" lastname="Perez" />
                 </div>
     )     
 
