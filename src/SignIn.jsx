@@ -3,6 +3,7 @@ import useForm from './hooks/useForm.js';
 import useSessionStorage from './hooks/useSessionStorage.js';
 import { emailPattern, passwordPattern } from './patterns.js';
 import redirect from './redirect.js';
+import { api } from './api.js'
 
 const { useState, useRef, useEffect } = React;
 
@@ -33,17 +34,13 @@ const SignIn = () => {
         return () => sub.unsub();
     }, []);
 
-    const usernameOrEmail = user => 
-        emailPattern.test(user) ? "email" : "username";
-
-    const apiUrl = "https://scm-daw.herokuapp.com/api";
     const fetchAuth = ({ user, password }) => {
-        const fullUrl = `${apiUrl}/auth?${usernameOrEmail(user)}=${user}&password=${password}`;
+        const fullUrl = `${api}/user/auth?user=${user}&password=${password}`;
         return fetch(fullUrl).then(res => res.json());
     }
 
     const fetchUser = user => {
-        const fullUrl = `${apiUrl}/user?username=${user}&email=${user}`;
+        const fullUrl = `${api}/user?user=${user}`;
         return fetch(fullUrl).then(res => res.json());
     }
 

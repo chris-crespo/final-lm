@@ -1,3 +1,7 @@
+#nav-container {
+    height: 68px;
+}
+
 .navbar {
     position: sticky;
     top: 0;

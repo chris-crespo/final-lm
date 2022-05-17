@@ -35,7 +35,7 @@ const User = ({ toggle, user, loadBookings }) => {
     )
 }
 
-const Sidebar = ({ toggled, user }) => (
+const Sidebar = ({ toggled, user, bookings }) => (
     <div className={`sidebar-container ${toggled ? "show" : "hide"}`}>
         <div className="sidebar">
             <div className="sidebar-header">
@@ -97,7 +97,7 @@ const Nav = () => {
                     { user ? <User user={user} toggle={toggleSidebar} loadBookings={loadBookings} /> : <Sign /> }
                 </div>
             </nav>
-            <Sidebar toggled={sidebar} user={user} />
+            <Sidebar toggled={sidebar} user={user} bookings={bookings} />
         </>
     )
 }

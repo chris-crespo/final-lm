@@ -112,7 +112,9 @@
 .card-icon,
 .step,
 .sponores,
-.camp-info-icons {
+.camp-info-icons,
+.mailing-section,
+.mailing-inputs {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -169,9 +171,10 @@
 .presenting-text h1,
 .services-wrapper h1,
 .destination-wrapper h1,
-.steps-text h1 {
+.steps-text h1,
+.mailing-section h1 {
     font-size: 70px;
-    font-family: 'Merriweather', serif;
+    font-family: var(--header-font);
 }
 
 .presenting-text p,
@@ -181,7 +184,8 @@
     font-weight: 100;
 }
 
-.presenting-text button {
+.presenting-text button,
+.mailing-section button {
     color: white;
     background-color: var(--btn-fg);
     padding: 16px 28px;
@@ -248,7 +252,7 @@
 /**********destination**********/
 .destination-wrapper {
     height: 80vh;
-    margin: 50px;
+    margin-bottom: 20vh;
 }
 
 .camp-card {
@@ -370,6 +374,43 @@
 .logo img {
     height: auto;
 }
+
+/**********mailing-section**********/
+.mailing-section {
+    height: 40vh;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 20px;
+    background-color: #f8dce4;
+
+}
+.mailing-section h1{
+    font-size: 40px;
+    text-align: center;
+    width: 70%;
+    margin-bottom: 5vh;
+
+}
+.mailing-inputs{
+    width: 40%;
+}
+.mailing-inputs button {
+    padding: 5px 30px;
+    margin-left: 10px;
+}
+.mailing-section input{
+    width: 40%;
+    border: 3px solid #f3f3f4;
+    background-color: #f3f3f4;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+
 
 /* 
 .titulo {

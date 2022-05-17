@@ -1,6 +1,5 @@
 .sidebar-container {
-    width: 100vw;
-    height: calc(100vh - 67px);
+    height: calc(100vh - 68px);
     position: sticky;
     top: 67px;
     z-index: 99;
