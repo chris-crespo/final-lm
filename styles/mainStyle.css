@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 
 
 :root {
@@ -103,7 +104,6 @@
 /**********content**********/
 /*******presentation*******/
 
-.presenting-wrapper,
 .destination-wrapper,
 .booking-step-wrapper,
 .services-camps,
@@ -134,65 +134,63 @@
     height: auto;
     width: fit-content;
     position: absolute;
-    top: 20%;
-    left: -15%;
+    top: 32%;
+    left: 12%;
     z-index: 2;
-    color: var(--Titulo);
+    color: white;
 }
 
 .presenting-text {
-    padding: 70px;
+    width: 60%;
 }
 
-.presenting-text,
 .steps-text,
 .presenting-picture {
     width: 50%;
 }
 
-.presenting-text h1,
-.presenting-text h3,
-.presenting-text p,
-.steps-text h1,
-.steps-text h3,
-.steps-text p,
-.service-card h3,
-.steps-image h3,
-.steps-image p {
-    width: 80%;
-    margin-bottom: 20px;
+.presenting-text p {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.presenting-text h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 36px;
+}
+
+.presenting-text h3 {
+    margin-bottom: 28px;
+    font-weight: 900;
 }
 
 .presenting-text h3,
 .services-wrapper h3 {
-    color: var(--btn-fg);
+    color: var(--primary);
 }
 
-.presenting-text h1,
-.services-wrapper h1,
-.destination-wrapper h1,
-.steps-text h1,
-.mailing-section h1 {
-    font-size: 70px;
-    font-family: var(--header-font);
-}
-
-.presenting-text p,
-.service-card p,
-.steps-text p {
-    font-size: 18px;
-    font-weight: 100;
-}
-
-.presenting-text button,
+.presenting-text a,
 .mailing-section button {
     color: white;
-    background-color: var(--btn-fg);
-    padding: 16px 28px;
+    background-color: var(--primary);
+    padding: 8px 24px;
     border-radius: 8px;
-    border: none;
-    font-size: 21px;
+    border: 2px solid var(--primary);
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
+    transition: all ease 300ms;
+}
+
+.presenting-text a:hover,
+.mailing-section button:hover {
+    background-color: transparent;
+    color: var(--primary);
 }
 
 /**********services**********/
@@ -231,12 +229,15 @@
     height: auto;
 }
 
-.services-title p {
-    opacity: 0.5;
+.services-title h1 {
+    font-family: 'Noto Serif', sans-serif;
+    font-size: 48px;
+    letter-spacing: 0.02em;
 }
 
 .services-title h3 {
     font-size: 30px;
+    font-weight: 500;
 }
 
 .services-wrapper h1,
@@ -255,18 +256,15 @@
     margin-bottom: 20vh;
 }
 
-.camp-card {
-    width: 19vw !important;
-    height: 45vh;
-    padding: 0 !important;
-    border-radius: 1.5rem !important;
-    box-shadow: 0 30px 20px 5px rgb(0 0 0 / 6%) !important;
-    margin: 30px !important;
+.camps-showcase .camp-card {
+    width: 19vw; 
+    height: 20vw;
+    box-shadow: 0 10px 10px 5px rgb(0 0 0 / 6%);
+    margin: 30px;
 }
 
 
 .camp-card:hover {
-    box-shadow: 0 40px 20px 5px rgb(0 0 0 / 7%) !important;
 }
 
 .steps-image {
@@ -284,9 +282,6 @@
 .card-img {
     height: 80%;
     overflow: hidden;
-    border-radius: 0px !important;
-    border-top-left-radius: 1.5rem !important;
-    border-top-right-radius: 1.5rem !important;
 }
 
 .card-img img {
@@ -300,10 +295,6 @@
 .steps-image h3 {
     width: 100%;
     justify-content: flex-start;
-}
-
-.card-info {
-    padding: 15px !important;
 }
 
 .step-icon {
