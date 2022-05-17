@@ -35,6 +35,37 @@ const User = ({ toggle, user, loadBookings }) => {
     )
 }
 
+const Sidebar = ({ toggled, user }) => (
+    <div className={`sidebar-container ${toggled ? "show" : "hide"}`}>
+        <div className="sidebar">
+            <div className="sidebar-header">
+                <h1>My Profile</h1>
+            </div>
+            <div className="sidebar-user">
+                <div className="user-img">
+                    <img src="../assets/img/kid-pic.jpg" alt="" />
+                </div>
+                <h1>{user?.name}</h1>
+            </div>
+            <div className="sidebar-bookings">
+                <div className="sidebar-bookings-header">
+                    <h1>Last Bookings</h1>
+                </div>
+                <div className="sidebar-bookings-list">
+                    { 
+                        bookings?.map(b => 
+                            <div className="sidebar-booking">
+                                { b.camp }
+                            </div>)
+                        || <div className="sidebar-bookings-empty">
+                            There are no bookings to show.
+                            </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+)
+
 const Nav = () => {
     const [user] = useSessionStorage("user");
     useEffect(() => {
@@ -70,34 +101,7 @@ const Nav = () => {
                     { user ? <User user={user} toggle={toggleSidebar} loadBookings={loadBookings} /> : <Sign /> }
                 </div>
             </nav>
-            <div className={`sidebar-container ${sidebar ? "show" : "hide"}`}>
-                <div className="sidebar">
-                    <div className="sidebar-header">
-                        <h1>My Profile</h1>
-                    </div>
-                    <div className="sidebar-user">
-                        <div className="user-img">
-                            <img src="../assets/img/kid-pic.jpg" alt="" />
-                        </div>
-                        <h1>{user?.name}</h1>
-                    </div>
-                    <div className="sidebar-bookings">
-                        <div className="sidebar-bookings-header">
-                            <h1>Last Bookings</h1>
-                        </div>
-                        <div className="sidebar-bookings-list">
-                            { 
-                                bookings?.map(b => 
-                                    <div className="sidebar-booking">
-                                        { b.camp }
-                                    </div>)
-                                || <div className="sidebar-bookings-empty">
-                                    There are no bookings to show.
-                                    </div>}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Sidebar toggled={sidebar} user={user} />
         </>
     )
 }
