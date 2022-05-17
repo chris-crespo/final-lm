@@ -18,27 +18,40 @@
     width: 100%;
 }
 
-.aboutUs {
+.aboutUs,
+.missions,
+.values-text,
+.values {
     width: 100%;
-    height: 40vh;
-    margin: 0px 20px;
+    height: 50vh;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color:#f8dce4 ;
+}
+
+.aboutUs {
+    background-color: #f8dce4;
 }
 
 .aboutUs h1 {
-    font-size: 100px;
+    font-size: 50px;
+    text-align: center;
+    width: 35%;
+}
+
+.aboutUs h1,
+.missions h1,
+.values h1 {
     font-family: var(--header-font);
-    color: var(--btn-fg);
 }
 
 .aboutUs p {
-    width: 55%;
+    width: 25%;
     text-align: center;
 }
+
 
 .aboutUs span {
     color: var(--btn-fg);
@@ -77,22 +90,75 @@
     flex-direction: column;
     position: relative;
 }
-.circle{
+
+.circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     background-color: transparent;
     border: 5px solid var(--btn-fg);
 }
-.circle:first-child{
+
+.circle:first-child {
     position: absolute;
-    bottom: -10vh;
-}
-.circle:last-child{
-    position: absolute;
-    bottom: 15vh;
 }
 
+.circle:last-child {
+    position: absolute;
+    top: 6vh;
+}
+
+/*******missions*******/
+.missions {
+    height: 60vh;
+    justify-content: center;
+}
+
+.missions h1, .values-text h1 {
+    margin-bottom: 50px;
+}
+
+.missions h1,
+.missions p {
+    width: 40%;
+}
+
+/**********values**********/
+.values {
+    width: 100%;
+    height: 60vh;
+    flex-direction: row;
+}
+
+.values-text {
+    justify-content: center;
+    align-items: baseline;
+}
+
+.values-text,
+.values-icons {
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+}
+
+.wave {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.wave:before {
+    content: attr(data-text);
+    position: relative;
+    top: -10px;
+    color: white;
+    font-size: 28px;
+    text-decoration-style: wavy;
+    text-decoration-color: #f15a2b;
+    text-decoration-line: underline;
+}
 
 
 
@@ -113,7 +179,9 @@
 
 
 
-/*******************misssions*************/
+
+
+/*******************misssions************
 .missions {
     width: 100%;
     display: flex;
@@ -162,7 +230,7 @@
     height: 90%;
 }
 
-/************statistics*************/
+/************statistics************
 .statistics {
     width: 100%;
     display: flex;
@@ -192,7 +260,7 @@
     border: 3px solid #FF3D8B;
 }
 
-/**************kids-coments*************/
+/**************kids-coments************
 .kids-comments {
     margin: 50px;
 }
