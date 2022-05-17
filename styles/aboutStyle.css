@@ -21,7 +21,15 @@
 .aboutUs,
 .missions,
 .values-text,
-.values {
+.values,
+.values-icons,
+.value-icon,
+.globalization-title,
+.localisation-cards,
+.card,
+.teamwork,
+.teamwork-members,
+.member-avatar {
     width: 100%;
     height: 50vh;
     margin-bottom: 50px;
@@ -41,9 +49,7 @@
     width: 35%;
 }
 
-.aboutUs h1,
-.missions h1,
-.values h1 {
+h1 {
     font-family: var(--header-font);
 }
 
@@ -114,7 +120,8 @@
     justify-content: center;
 }
 
-.missions h1, .values-text h1 {
+.missions h1,
+.values-text h1 {
     margin-bottom: 50px;
 }
 
@@ -131,7 +138,7 @@
 }
 
 .values-text {
-    justify-content: center;
+    justify-content: start;
     align-items: baseline;
 }
 
@@ -160,26 +167,113 @@
     text-decoration-line: underline;
 }
 
+/********values-icons********/
+.values-icons,
+.value-icon {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
+.value-icon {
+    width: 50%;
+    height: auto;
+    justify-content: start;
+}
 
+.icon-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #fbc9014f;
+    margin-right: 2vw;
+}
 
+#second-icon {
+    background-color: #97a0f454;
+}
 
+#third-icon {
+    background-color: #0a58df6e;
+}
 
+#forth-icon {
+    background-color: #d9095521;
+}
 
+#fifth-icon {
+    background-color: #f15a2b6e;
+}
 
+/**********Globalizacion-cards**********/
+.localisation-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.globalization-title {
+    height: 70px;
+}
 
+.card {
+    width: 20%;
+    height: 35vh;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 5px rgb(0 0 0 / 6%);
+}
 
+.card-icon {
+    width: 40%;
+    height: 50%;
+}
 
+.card-icon img {
+    width: 100%;
+    height: auto;
+}
 
+.card p {
+    width: 100%;
+    text-align: center;
+}
 
+/**********teamwork**********/
+.teamwork {
+    width: 100%;
+    height: 100vh;
+}
 
+.teamwork-members {
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
+.member-card {
+    height: 40vh;
+    width: 20%;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 10px 10px 5px rgb(0 0 0 / 6%);
+    border-radius: 10px;
+}
 
+.member-avatar {
+    height: 70%;
+    width: 90%;
+    overflow: hidden;
+}
 
+.member-avatar img {
+    width: auto;
+}
 
-
-
+.member-info p {
+    opacity: 0.5;
+}
 
 /*******************misssions************
 .missions {
