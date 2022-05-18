@@ -1,14 +1,13 @@
 {
-    "presets": [
+    "plugins": [
         [
-            "@babel/preset-env", 
-            { 
-                "modules": false,
-                "useBuiltIns": "entry",
-                "corejs": 3,
-                "targets": "> 0.25%, not dead"
+            "@babel/plugin-transform-runtime", 
+            {
+                "regenerator": true
             }
-        ], 
+        ]
+    ],
+    "presets": [
         "@babel/preset-react"
     ]
 }
