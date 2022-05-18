@@ -8,7 +8,7 @@ const Icon = ({ name }) => (
 )
 
 const CampCard = ({ camp }) => {
-    const [_, storeCamp] = useSessionStorage("camp", { id: 0 })
+    const [_, storeCamp] = useSessionStorage("camp", { id: 1 })
     const redirectToCamp = () => {
         storeCamp({ id: camp.id })
         to("/camp");
