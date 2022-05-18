@@ -95,6 +95,7 @@ h1 {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 80px;
 }
 
 .circle {
@@ -279,7 +280,36 @@ h1 {
 
 
 /**********MediaQueries**********/
-/* Smaller devices (tablets, 1200px and down) */
-@media only screen and (max-width: 1200px) {
-   
+/* Smaller devices (laptop, 1600px and down) */
+@media only screen and (max-width: 1600px) {
+
+    .aboutUs h1,
+    .aboutUs p {
+        width: 50%;
+    }
+
+    .missions h1,
+    .missions p {
+        width: 60%;
+    }
+
+    .member-info p {
+        width: 100%;
+    }
+
+    .values-text,
+    .values-icons {
+        width: 45%;
+    }
+
+    .value-icon:nth-child(odd) {
+        width: 55%;
+    }
+
+    .value-icon:nth-child(even) {
+        width: 45%;
+    }
 }
+
+/* Smaller devices (phone, 1200px and down) */
+@media only screen and (max-width: 1200px) {}

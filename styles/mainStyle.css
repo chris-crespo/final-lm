@@ -510,6 +510,7 @@ h1 {
         width: 100%;
         height: auto;
     }
+
     .service-card {
         width: 228px;
         height: 37vh;
@@ -547,7 +548,7 @@ h1 {
     .sponores {
         height: 43vh;
     }
- 
+
 
     .presenting-wrapper {
         position: static;
@@ -573,17 +574,28 @@ h1 {
 
 /* Smaller devices (Smart phone, 500px and down) */
 @media only screen and (max-width: 500px) {
-    .presenting-wrapper h1, .services-title h1 {
+
+    .presenting-wrapper h1,
+    .services-title h1 {
         font-size: 8vw;
     }
-    .presenting-wrapper p, .services-title p {
+
+    .presenting-wrapper p,
+    .services-title p {
         font-size: 13px;
     }
-    .presenting-text a{
+
+    .presenting-text a {
         padding: 8px 4px;
     }
+
     .steps-image {
         width: 80%;
     }
-    
+
+    .mailing-section,
+    .sponores {
+        height: auto;
+    }
+
 }
