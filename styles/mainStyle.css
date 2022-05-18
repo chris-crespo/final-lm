@@ -95,6 +95,7 @@
 .camps-showcase,
 .next-summer-camp-img,
 .card-icon,
+.card-img,
 .step,
 .sponores,
 .camp-info-icons,
@@ -134,14 +135,14 @@
     width: 50%;
 }
 
-.presenting-text p {
+p {
     font-size: 16px;
     letter-spacing: 0.02em;
     line-height: 1.6;
     margin-bottom: 40px;
 }
 
-.presenting-text h1 {
+h1 {
     font-family: 'Noto Serif', serif;
     font-size: 56px;
     font-weight: 400;
@@ -248,14 +249,10 @@
 }
 
 .camps-showcase .camp-card {
-    width: 19vw; 
+    width: 19vw;
     height: 20vw;
     box-shadow: 0 10px 10px 5px rgb(0 0 0 / 6%);
     margin: 30px;
-}
-
-
-.camp-card:hover {
 }
 
 .steps-image {
@@ -271,21 +268,29 @@
 }
 
 .card-img {
+    width: 100%;
     height: 80%;
     overflow: hidden;
+    justify-content: center;
 }
 
 .card-img img {
     height: 100%;
     width: auto;
+    border-radius: 8px;
 }
 
 .camp-info,
-.card-img,
 .camp-info-icons,
 .steps-image h3 {
     width: 100%;
     justify-content: flex-start;
+}
+
+
+/**************steps***********/
+.booking-step-wrapper {
+    justify-content: space-evenly;
 }
 
 .step-icon {
@@ -365,7 +370,8 @@
     background-color: #f8dce4;
 
 }
-.mailing-section h1{
+
+.mailing-section h1 {
     font-size: 30px;
     font-family: 'Noto Serif', serif;
     text-align: center;
@@ -373,14 +379,17 @@
     margin-bottom: 5vh;
 
 }
-.mailing-inputs{
+
+.mailing-inputs {
     width: 40%;
 }
+
 .mailing-inputs button {
     padding: 5px 30px;
     margin-left: 10px;
 }
-.mailing-section input{
+
+.mailing-section input {
     width: 40%;
     border: 3px solid #f3f3f4;
     background-color: #f3f3f4;
@@ -390,359 +399,191 @@
     font-weight: 500;
 }
 
+/**********MediaQueries**********/
+/* Small devices (laptop, 1600px and down) */
+@media only screen and (max-width: 1600px) {
+    .camps-showcase .camp-card {
+        width: 21vw;
+        height: 25vw;
+    }
 
+    .steps-text {
+        transform: scale(0.9);
+    }
 
+    .step-icon {
+        width: 4vw;
+    }
 
+    .step-info p {
+        margin-bottom: 0;
+    }
 
-/* 
-.titulo {
-    height: auto;
-    width: fit-content;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    z-index: 2;
-}
-
-h1 {
-    font-size: 100px;
-    font-family: 'Amatic SC', cursive;
-    margin-bottom: 18px;
-    color: var(--Titulo);
-}
-
-p {
-    font-size: 22px;
-    width: 715px;
-    font-weight: 300;
-    margin-bottom: 48px;
-    color: var(--Titulo);
-}
-
-button {
-    color: white;
-    background-color: var(--btn-fg);
-    padding: 16px 28px;
-    border-radius: 8px;
-    border: none;
-    font-size: 21px;
-    cursor: pointer;
-}
-
-.presenting {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.presenting {
-    background-color: white;
-}
-
-.presenting-img {
-    width: 148px;
-}
-
-.presenting img {
-    max-width: 100%;
-    border-radius: 50%;
-}
-
-.presenting h1 {
-    color: #22061b;
-}
-
-.presenting p {
-    color: #22061b;
-}
-
-#presentingparag span {
-    background-color: #0078d7;
-    color: white;
-}
-
-.presenting p:last-child {
-    color: #22061b87;
-}
-
-.presenting span {
-    color: #0a5db8;
-}
-
-.campobject {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-}
-
-.obj1 .pic {
-    height: 50%;
-    width: 30%;
-}
-
-.pic img {
-    height: 100%;
-    width: 100%;
-}
-
-.obj1 h1 {
-    color: var(--btn-fg);
-}
-
-.text p {
-    color: #22061b;
-}
-
-.obj2 span {
-    background-color: #02d37f;
-    color: var(--Titulo);
-}
-
-.obj2 h1 {
-    color: var(--btn-fg);
-}
-
-.obj1 span {
-    background-color: var(--btn-fg);
-    color: white;
-}
-
-.obj2 .pic {
-    width: 35%;
-}
-
-.obj3 .pic {
-    width: 40%;
-    height: 70%;
-}
-
-.obj3 h1 {
-    color: var(--btn-fg);
-}
-
-.obj3 p {
-    color: #b98866;
-}
-
-.obj3 span {
-    background-color: #b3dce2;
-    color: black;
-}
-
-.statistics {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 70px;
-    margin-bottom: 20px;
-}
-
-.statistics-desc {
-    width: 40%;
-}
-
-.statistics-desc h1 {
-    font-size: 70px;
-    color: var(--btn-fg);
-    font-family: 'Amatic SC', cursive;
-    margin-bottom: 50px;
-}
-
-.statistics-desc p {
-    font-size: revert;
-    width: auto;
-    font-weight: 500;
-    margin-bottom: 0px;
-    color: rgb(22, 22, 22);
+    .step {
+        margin-bottom: 20px;
+    }
 }
 
 
-.statistics-desc button {
-    color: white;
-    background-color: var(--btn-fg);
-    padding: 16px 28px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    border: none;
-    font-size: 21px;
-    cursor: pointer;
-    margin-top: 40px;
-}
+/* Smaller devices (tablets, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+    .camps-showcase .camp-card {
+        width: 26vw;
+        height: 29vw;
+    }
 
-#Pbutton {
-    color: var(--Titulo);
-}
+    .card-icon {
+        width: 50%;
+    }
 
-.statistics-desc button img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-}
+    .mailing-section input {
+        width: 60%;
+    }
 
-.statistics-img {
-    width: 40%;
-}
+    .presenting-wrapper {
+        top: 18%;
+        left: 8%;
+    }
 
-.statistics-img img {
-    width: 100%;
-    height: 100%;
-}
+    .camp-card {
+        padding: 8px;
+    }
 
-.statistics-numbers {
-    width: 70%;
-    display: flex;
-}
+    .steps-text {
+        transform: scale(0.8);
+    }
 
-.statistic-card {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+    .step-icon {
+        width: 5vw;
+    }
 
-.card-img {
-    width: 80%;
-}
+    .service-card {
+        width: 25%;
+        height: 37vh;
+        justify-content: start;
+    }
 
-.card-img img {
-    width: 100%;
-}
+    .card-title {
+        height: 60px;
+    }
 
-.statistic-card h1 {
-    color: #0000008a;
-    text-align: center;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: revert;
-}
-
-.statistic-card p {
-    text-align: center;
-    font-family: 'Noto Sans', sans-serif;
-    width: auto;
-    color: rgb(77, 77, 77);
-    font-size: revert;
-}
-
-.wher-are-we {
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.wher-are-we h1 {
-    width: 100%;
-    text-align: center;
-    color: var(--btn-bg);
-    font-size: 70px;
-    margin-bottom: 0px;
-}
-
-.our-camps-logo {
-    height: 140px;
-    width: 100%;
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.our-camps-logo img {
-    height: 100%;
-    border-radius: 50%;
-}
-
-.city {
-    width: 23%;
-    height: 50%;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.city img {
-    height: 100%;
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: all ease-in-out 1s;
-}
-
-.city:hover img {
-    transform: scale(1.2);
-}
-
-.city .desc {
-    width: 100%;
-    background-color: var(--btn-fg);
-    border-top-right-radius: 10px;
-    padding: 10px;
-    position: absolute;
-    bottom: -72px;
-    left: -130px;
-    transition: all ease-in-out 1s;
-    overflow: hidden;
-}
-
-.city:hover .desc {
-    bottom: 0;
-    left: 0;
-}
-
-.city:hover h3 {
-    margin-left: 0%;
-}
-
-.desc h3 {
-    color: var(--Titulo);
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-    margin-left: 120px;
-    transition: all ease-in-out 1s;
-    width: 100%;
-}
-
-.desc img {
-    height: 30px;
-    width: 30px;
-    padding-right: 5px;
+    .card-icon {
+        margin-bottom: 15px;
+    }
 
 }
 
-.desc p {
-    margin: 0;
+/* Smaller devices (tablets, 1024 and down) */
+@media only screen and (max-width: 1024px) {
+    .camps-showcase .camp-card {
+        width: 26vw;
+        height: 30vw;
+    }
+
+    .presenting-wrapper {
+        top: 14%;
+        left: 4%;
+        transform: scale(0.8);
+    }
+
+    .steps-text {
+        transform: scale(0.7);
+    }
+
+    .step-info p {
+        font-size: 18px;
+    }
+
+    .step-icon {
+        width: 7vw;
+    }
+
+    .destination-wrapper {
+        margin-bottom: 0px;
+    }
 }
 
-#desc1 {
-    background-color: var(--btn-bg);
-}
+/* Smaller devices (Smart phone, 950px and down) */
+@media only screen and (max-width: 950px) {
 
-#desc3 {
-    background-color: #02d37f;
-}
+    .services-wrapper {
+        width: 100%;
+        height: auto;
+    }
+    .service-card {
+        width: 228px;
+        height: 37vh;
+        justify-content: start;
+    }
 
-#desc4 {
-    background-color: #0078D7;
-} 
+    .camps-showcase .camp-card {
+        padding: 6px;
+        margin: 10px;
+        width: 240px;
+        height: 30vh;
+    }
 
-@media (max-width: 450px) {
+    .destination-wrapper {
+        height: auto;
+    }
+
+    .steps-text {
+        width: 100%;
+    }
+
+    .steps-text {
+        transform: scale(0.8);
+    }
+
+    .booking-step-wrapper {
+        margin-bottom: 70px;
+    }
+
+    .mailing-section input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .sponores {
+        height: 43vh;
+    }
+ 
+
     .presenting-wrapper {
         position: static;
+        height: auto;
+        padding: 40px;
+        transform: scale(1);
     }
+
+    .presenting-text {
+        width: 100%;
+    }
+
+    .presenting-wrapper h1,
+    .presenting-text p {
+        color: black;
+    }
+
+    .mailing-section h1 {
+        width: 90%;
+    }
+
+}
+
+/* Smaller devices (Smart phone, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .presenting-wrapper h1, .services-title h1 {
+        font-size: 8vw;
+    }
+    .presenting-wrapper p, .services-title p {
+        font-size: 13px;
+    }
+    .presenting-text a{
+        padding: 8px 4px;
+    }
+    .steps-image {
+        width: 80%;
+    }
+    
 }

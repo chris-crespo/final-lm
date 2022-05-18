@@ -7,6 +7,7 @@ display:flex;
 justify-content:space-between;
 }
 
+
 .footer .row{
 color:gray;
 font-size:0.8em;
@@ -48,5 +49,17 @@ margin:0% 1%;
     }
     .footer .row a i{
     margin:0% 3%;
+    }
+}
+
+/* Smaller devices (Smart phone, 500px and down) */
+@media only screen and (max-width: 500px) {
+    footer{
+        padding:0px 0px;
+    }
+    .footer .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }

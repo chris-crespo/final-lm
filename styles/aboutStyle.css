@@ -275,146 +275,103 @@ h1 {
     opacity: 0.5;
 }
 
-/*******************misssions************
-.missions {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.missions h2 {
-    padding-bottom: 50px;
-}
 
-.mission {
-    width: 60%;
-    height: auto;
-    display: flex;
-}
 
-.mission-desc {
-    width: 50%;
-    height: 100%;
-    background-color: var(--body-bg);
-    border-radius: 12px;
-    padding: 15px;
-}
+/**********MediaQueries**********/
+/* Smaller devices (tablets, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+    .aboutUs h1 {
+        font-size: 40px;
+    }
 
-.mission-desc h1 {
-    color: var(--btn-fg);
-}
+    .aboutUs p {
+        width: 40%;
+    }
 
-.mission-desc h3 {
-    color: var(--btn-bg);
-}
+    .aboutimg {
+        width: 40%;
+        height: 40%;
+    }
 
-.mission-desc p {
-    color: var(--btn-bg);
-    font-weight: lighter;
-}
+    .aboutimg img {
+        width: 100%;
+        height: 100%;
+    }
 
-.mission-img {
-    width: 50%;
-    height: 100%;
-}
+    .circles-content {
+        flex-direction: row;
+    }
 
-.mission-img img {
-    width: 80%;
-    height: 90%;
-}
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
 
-/************statistics************
-.statistics {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+    .circle:first-child {
+        position: absolute;
+        top: -10px;
+    }
 
-.statistics-galery {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    margin-top: 70px;
-    background-image: url(../assets/img/galerybg.png);
-    background-repeat: repeat;
-    background-attachment: fixed;
-}
+    .circle:last-child {
+        position: absolute;
+        top: -10px;
+    }
 
-.statistic-pic {
-    margin: 20px;
-}
+    .values-text {
+        width: 60%;
+    }
 
-.statistic-pic img {
-    width: 100%;
-    border-radius: 10px;
-    padding: 10px;
-    border: 3px solid #FF3D8B;
-}
+    .values-icons {
+        width: 40%;
+    }
 
-/**************kids-coments************
-.kids-comments {
-    margin: 50px;
-}
+    .value-icon {
+        width: 30%;
+    }
 
-.kid-comment {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 30px;
-}
+    .value-icon img {
+        width: 100%;
+        height: auto;
+    }
 
-.pic {
-    width: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
+    .card {
+        width: 30%;
+    }
 
-.pic img {
-    width: auto;
-}
+    .card-icon {
+        width: 40%;
+    }
 
-.comment {
-    width: 450px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: var(--btn-fg);
-    z-index: 1;
-    align-self: flex-end;
-}
+    .card-icon img {
+        width: 100%;
+        height: auto;
+    }
 
-.comment1,
-.comment3 {
-    margin-left: -50px;
-}
+    .card p {
+        width: 100%;
+    }
 
-.comment2 {
-    margin-right: -50px;
-}
+    .teamwork-members {
+        flex-direction: column;
+    }
 
-.comment-text {
-    color: var(--Titulo);
-    width: 100%;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 15px;
-}
+    .member-card {
+        width: 100%;
+        height: auto;
+    }
 
-#kid-age {
-    font-weight: 100;
-}
+    .member-avatar {
+        height: 40%;
+        width: 90%;
+        overflow: hidden;
+    }
 
-.comment-text p:last-child {
-    font-size: 12px;
-    font-weight: 500;
+    .member-avatar img {
+        width: auto;
+    }
+
+    .member-info p {
+        opacity: 0.5;
+    }
 }
