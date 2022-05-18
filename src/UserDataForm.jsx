@@ -9,7 +9,7 @@ const UserDataForm = ({ registerUser }) => {
         errorMsg, 
         register, 
         handleSubmit 
-    } = useForm({ "first-name": "", "last-name": "", "phone-number": "" });
+    } = useForm({ "first-name": "", "last-name": "", "phone": "" });
 
     const onSubmit = userData =>
         registerUser(userData);
@@ -43,13 +43,13 @@ const UserDataForm = ({ registerUser }) => {
             </div>
             <div class="form-field">
                 <label for="phone-number">Phone Number</label>
-                <input type="tel" name="phone-number"
-                    { ...register("phone-number", { 
+                <input type="tel" name="phone"
+                    { ...register("phone", { 
                         pattern: phonePattern,
                         errorMsg: "Invalid phone number format"
                     })} />
-                <p className={`${valid("phone-number") ? "hide" : "show"}`}>
-                    { errorMsg("phone-number") }
+                <p className={`${valid("phone") ? "hide" : "show"}`}>
+                    { errorMsg("phone") }
                 </p>
             </div>
             <div class="form-button-wrapper">

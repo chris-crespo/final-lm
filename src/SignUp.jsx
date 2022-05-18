@@ -1,10 +1,13 @@
+import useSessionStorage from './hooks/useSessionStorage.js'
 import CredentialsForm from './CredentialsForm.js'
 import UserDataForm from './UserDataForm.js'
 import { api } from './api.js';
+import redirect from './redirect.js';
 
 const { useState } = React;
 
 const SignUp = props => {
+    const [user, storeUser] = useSessionStorage("user", { "username": "", "email": "", "name": ""  });
     const [atSecondStage, setAtSecondStage] = useState(false);
     const toggleStage = () => setAtSecondStage(!atSecondStage);
 
@@ -16,13 +19,23 @@ const SignUp = props => {
     }
 
     const register = userData => {
+        console.log(userData);
         fetch(`${api}/user/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ ...credentials, ...userData })
-        }).then(res => res.json()).then(console.log);
+        }).then(res => res.json())
+        .then(({ success, message }) => {
+            // TODO: Handle error
+            fetch(`${api}/user?user=${credentials.email}`)
+                .then(res => res.json())
+                .then(({ username, email, name }) => {
+                    storeUser({ username, email, name })
+                    redirect("/camps");
+                });
+        })
     }
 
     return atSecondStage 
