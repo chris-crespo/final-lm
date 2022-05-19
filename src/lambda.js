@@ -66,7 +66,7 @@ const step = () => new Promise(res => {
     setTimeout(() => {
         minimizeFor(rand(200, rand(1200))).then(_ => res())
     }, rand(20, rand(90, 40)))
-})
+});
 
 (async () => {
     while (true) await step()
