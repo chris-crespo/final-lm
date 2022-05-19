@@ -35,8 +35,9 @@ const User = ({ toggle, user, loadBookings }) => {
     )
 }
 
-const Sidebar = ({ toggled, user, bookings }) => (
-    <div className={`sidebar-container ${toggled ? "show" : "hide"}`}>
+const Sidebar = ({ toggled, close, user, bookings }) => (
+    <div className={`sidebar-container ${toggled ? "show" : "hide"}`}
+        onClick={close}>
         <div className="sidebar">
             <div className="sidebar-header">
                 <h1>My Profile</h1>
@@ -73,16 +74,16 @@ const Hamburger = ({ toggle }) => (
     </div>
 )
 
-const Close = ({ toggle }) => (
-    <div className="nav-close" onClick={toggle}>
+const Close = ({ close }) => (
+    <div className="nav-close" onClick={close}>
         <div className="close-row" />
         <div className="close-row" />
     </div>
 )
 
-const Menu = ({ toggled, toggle }) => (
+const Menu = ({ toggled, close }) => (
     <div className={`menu-container ${toggled ? "show" : "hide"}`}>
-        <Close toggle={toggle} />
+        <Close close={close} />
         <ul className="menu">
             <NavLink name="Home" to="/" /> 
             <NavLink name="Camps" to="/camps" /> 
@@ -95,6 +96,7 @@ const Nav = () => {
     const [user] = useSessionStorage("user");
     const [sidebar, setSidebar] = useState(false);
     const toggleSidebar = () => setSidebar(!sidebar);
+    const closeSidebar = () => setSidebar(false);
 
     const [loading, setLoading] = useState(true);
     const [bookings, setBookings] = useState(null)
@@ -127,8 +129,8 @@ const Nav = () => {
                     { user ? <User user={user} toggle={toggleSidebar} loadBookings={loadBookings} /> : <Sign /> }
                 </div>
             </nav>
-            <Sidebar toggled={sidebar} user={user} bookings={bookings} />
-            <Menu toggled={menu} toggle={close} />
+            <Sidebar toggled={sidebar} close={closeSidebar} user={user} bookings={bookings} />
+            <Menu toggled={menu} close={close} />
         </>
     )
 }

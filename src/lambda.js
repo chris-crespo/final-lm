@@ -62,14 +62,12 @@ const minimizeFor = time => new Promise(res => {
 })
 
 const step = () => new Promise(res => {
-    console.log("step")
     randomizeFx(glitch)
     setTimeout(() => {
         minimizeFor(rand(200, rand(1200))).then(_ => res())
     }, rand(20, rand(90, 40)))
 })
 
-console.log("lkdjf");
 (async () => {
     while (true) await step()
 })()
