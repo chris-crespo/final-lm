@@ -2,25 +2,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import useForm from './hooks/useForm.js';
 import { namePattern, phonePattern } from './patterns.js';
-var _React = React,
-    useState = _React.useState;
+const {
+  useState
+} = React;
 
-var UserDataForm = function UserDataForm(_ref) {
-  var registerUser = _ref.registerUser;
-
-  var _useForm = useForm({
+const UserDataForm = ({
+  registerUser
+}) => {
+  const {
+    valid,
+    errorMsg,
+    register,
+    handleSubmit
+  } = useForm({
     "first-name": "",
     "last-name": "",
-    "phone-number": ""
-  }),
-      valid = _useForm.valid,
-      errorMsg = _useForm.errorMsg,
-      register = _useForm.register,
-      handleSubmit = _useForm.handleSubmit;
+    "phone": ""
+  });
 
-  var onSubmit = function onSubmit(userData) {
-    return registerUser(userData);
-  };
+  const onSubmit = userData => registerUser(userData);
 
   return /*#__PURE__*/React.createElement("form", {
     onSubmit: handleSubmit(onSubmit)
@@ -38,7 +38,7 @@ var UserDataForm = function UserDataForm(_ref) {
     pattern: namePattern,
     errorMsg: "First name may only contain letters, spaces or ."
   }))), /*#__PURE__*/React.createElement("p", {
-    className: "".concat(valid("first-name") ? "hide" : "show")
+    className: `${valid("first-name") ? "hide" : "show"}`
   }, errorMsg("first-name"))), /*#__PURE__*/React.createElement("div", {
     class: "form-field"
   }, /*#__PURE__*/React.createElement("label", {
@@ -50,20 +50,20 @@ var UserDataForm = function UserDataForm(_ref) {
     pattern: namePattern,
     errorMsg: "Last name may only contain letters, spaces or ."
   }))), /*#__PURE__*/React.createElement("p", {
-    className: "".concat(valid("last-name") ? "hide" : "show")
+    className: `${valid("last-name") ? "hide" : "show"}`
   }, errorMsg("last-name"))), /*#__PURE__*/React.createElement("div", {
     class: "form-field"
   }, /*#__PURE__*/React.createElement("label", {
     for: "phone-number"
   }, "Phone Number"), /*#__PURE__*/React.createElement("input", _extends({
     type: "tel",
-    name: "phone-number"
-  }, register("phone-number", {
+    name: "phone"
+  }, register("phone", {
     pattern: phonePattern,
     errorMsg: "Invalid phone number format"
   }))), /*#__PURE__*/React.createElement("p", {
-    className: "".concat(valid("phone-number") ? "hide" : "show")
-  }, errorMsg("phone-number"))), /*#__PURE__*/React.createElement("div", {
+    className: `${valid("phone") ? "hide" : "show"}`
+  }, errorMsg("phone"))), /*#__PURE__*/React.createElement("div", {
     class: "form-button-wrapper"
   }, /*#__PURE__*/React.createElement("button", null, "Create Account")));
 };

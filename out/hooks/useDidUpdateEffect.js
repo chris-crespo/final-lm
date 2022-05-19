@@ -1,10 +1,11 @@
-var _React = React,
-    useRef = _React.useRef,
-    useEffect = _React.useEffect;
+const {
+  useRef,
+  useEffect
+} = React;
 
-var useDidUpdateEffect = function useDidUpdateEffect(fn, inputs) {
-  var didMount = useRef(false);
-  useEffect(function () {
+const useDidUpdateEffect = (fn, inputs) => {
+  const didMount = useRef(false);
+  useEffect(() => {
     if (didMount.current) return fn();
     didMount.current = true;
   }, inputs);

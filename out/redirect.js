@@ -1,3 +1,1 @@
-export default (function (to) {
-  return window.location.href = window.location.origin + to;
-});
+export default (to => window.location.href = window.location.origin + to);

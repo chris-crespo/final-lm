@@ -1,1 +1,1 @@
-export var api = "https://daw-racket.herokuapp.com/api";
+export const api = "https://daw-racket.herokuapp.com/api";
