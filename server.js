@@ -17,7 +17,8 @@ const fileTypes = {
     jpg:  "image/jpg",
     webp: "image/webp",
     svg:  "image/svg+xml",
-    mp4:  "video/mp4"
+    mp4:  "video/mp4",
+    map:  "text/javascript"
 }
 const last = arr => arr[arr.length - 1];
 const ext  = file => last(file.split("."));
@@ -36,7 +37,10 @@ const transformHtml = str => stripHtmlExt(stripIndex(str));
 const transform = file => 
     ext(file) === "html" ? transformHtml(last(file.split("/"))) : file;
 
-const toEntry = file => ["/" + transform(file), serveAs(file, fileType(file))];
+const toEntry = file => {
+    console.log(ext(file), fileType(file))
+    return ["/" + transform(file), serveAs(file, fileType(file))]
+};
 const createEntries = dirs => 
     dirs.filter(fs.existsSync)
         .flatMap(readDir)

@@ -11,7 +11,7 @@ const app = new PIXI.Application({
     background: 0x000000
 })
 
-const sprite = PIXI.Sprite.from("assets/img/white-lambda.png")
+const sprite = PIXI.Sprite.from("../assets/img/white-lambda.png")
 const glitch = new PIXI.filters.GlitchFilter(restingState)
 Object.assign(sprite, {
     width: 16,
