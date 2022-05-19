@@ -85,10 +85,6 @@ const InfoCards = () => {
             .then(setKids);
     }, [user])
 
-    useEffect(() => {
-        console.log(kids)
-    }, [kids]);
-
     return (
         <div className="kid-cards">
             {

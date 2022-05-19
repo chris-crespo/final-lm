@@ -59,12 +59,6 @@ class DoubleRangeSlider extends React.Component {
       const dragedWidhtInPercent = (dragedWidht*100)/sliderWidth;
       const currentMin = Math.abs(parseInt((max * dragedWidhtInPercent)/100));
       
-      console.log(e.pageX, e.clientX, offsetSliderWidht);
-      
-      console.log(currentMin , (currentMax-minValueBetween));
-      
-      console.log((max * dragedWidhtInPercent)/100);
-   
       if( (currentMin >= min) && (currentMin <= (currentMax-minValueBetween))){
         this.minValue.style.width = dragedWidhtInPercent + "%";
         this.minValue.dataset.content = currentMin;

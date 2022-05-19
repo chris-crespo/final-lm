@@ -19,7 +19,6 @@ const SignUp = props => {
     }
 
     const register = userData => {
-        console.log(userData);
         fetch(`${api}/user/register`, {
             method: "POST",
             headers: {
