@@ -44,9 +44,13 @@
 }
 
 .aboutUs h1 {
-    font-size: 50px;
     text-align: center;
     width: 35%;
+}
+
+.aboutUs h1,
+.missions h1 {
+    font-size: 50px;
 }
 
 h1 {
@@ -73,22 +77,9 @@ h1 {
     width: 100%;
 }
 
-.campname {
-    color: black;
-    background-color: #fbc9014f;
-    padding: 5px;
-}
-
-.numbers {
-    color: var(--btn-fg);
+.redparf {
+    color: var(--red);
     font-weight: 600;
-}
-
-#redbg-paragraph {
-    color: #fff;
-    background-color: var(--btn-fg);
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .circles-content {
@@ -206,7 +197,7 @@ h1 {
     background-color: #f15a2b6e;
 }
 
-/**********Globalizacion-cards**********/
+/***Globalizacion***/
 .localisation-cards {
     flex-direction: row;
     flex-wrap: wrap;
@@ -241,13 +232,14 @@ h1 {
     text-align: center;
 }
 
-/**********teamwork**********/
+/***teamwork***/
 .teamwork {
     width: 100%;
     height: 100vh;
 }
 
 .teamwork-members {
+    width: 90%;
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
@@ -277,26 +269,23 @@ h1 {
 }
 
 
-
-
 /**********MediaQueries**********/
-/* Smaller devices (laptop, 1600px and down) */
+/* large devices (laptop, 1600px and down) */
 @media only screen and (max-width: 1600px) {
 
+    /**********aboutUs**********/
     .aboutUs h1,
     .aboutUs p {
         width: 50%;
     }
-
+        /***mission***/
     .missions h1,
     .missions p {
         width: 60%;
     }
 
-    .member-info p {
-        width: 100%;
-    }
-
+    
+    /***values***/
     .values-text,
     .values-icons {
         width: 45%;
@@ -308,8 +297,148 @@ h1 {
 
     .value-icon:nth-child(even) {
         width: 45%;
+    } 
+    .card-icon {
+        width: 135px;
+    }
+
+    /***teamwork***/
+    .member-avatar {
+        height: 60%;
+        width: 100%;
+    }
+    .member-info p {
+        width: 100%;
     }
 }
 
-/* Smaller devices (phone, 1200px and down) */
-@media only screen and (max-width: 1200px) {}
+/* medium devices (tablet, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+
+    /***mission***/
+    .missions h1 {
+        font-size: 37px;
+    }
+
+        /***values***/
+    .value-icon {
+        width: 50% !important;
+    }
+
+    .value-icon h3 {
+        width: 150px;
+    }
+    /***teamwork***/
+    .card {
+        width: 25%;
+    }
+    .member-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .member-avatar {
+        justify-self: center;
+    }
+
+    .teamwork-members {
+        width: 100%;
+    }
+    .member-card {
+        height: 35vh;
+    }
+}
+/*small devices (tablet, 950px and down) */
+@media only screen and (max-width: 950px) {
+
+    /***aboutUs***/
+    .aboutUs h1, .aboutUs p {
+        width: 80%;
+    }
+    .aboutUs{
+        margin-bottom: 70px;
+    }
+
+/***missions***/
+    .missions {
+        min-height: 55vh;
+    }
+    .missions h1, .missions p {
+        width: 90%;
+    }    
+    .localisation-cards{
+        height: auto;
+    }
+
+/**********values**********/
+    .values{
+        flex-wrap:wrap;
+        height: auto;
+    }
+    .values-text, .values-icons {
+        width: 80%;
+    }
+    .value-icon {
+        width: 40% !important;
+    }
+
+    /***Globalizacion***/
+    .card {
+        width: 275px;
+    }
+
+
+    /***teamwork***/
+    .teamwork{
+        height: auto;
+    }
+    .member-card {
+        height: 25vh;
+        width: 200px;
+        padding: 10px;
+    }
+}
+/*small devices (phone, 450px and down) */
+@media only screen and (max-width: 450px) {
+
+    /***aboutUs***/
+    .aboutUs h1, .aboutUs p {
+        width: 100%;
+    }
+    .aboutUs h1,.missions h1 {
+        font-size: 25px;
+    }
+    .aboutUs{
+        margin-bottom: 70px;
+    }
+    .circles-content {
+        transform: scale(0.5)
+    }
+    .circle:first-child {
+        top: 6vh;
+    }
+    .circle:last-child {
+        top: 13vh;
+    }
+
+    /***missions***/
+    .missions {
+        height: auto;
+    }
+    /***globalization***/
+    .globalization-title h1,.teamwork-title h1 {
+        text-align: center;
+    }
+
+    /***teamwork***/
+    .member-card {
+        flex-direction: row;
+        height: 10vh;
+        width: 80%;
+    }
+    .member-avatar {
+    height: 100%;
+     width: 30%;
+     margin-bottom: 0px;
+    }
+
+}

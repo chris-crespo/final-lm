@@ -400,7 +400,7 @@ h1 {
 }
 
 /**********MediaQueries**********/
-/* Small devices (laptop, 1600px and down) */
+/* larg devices (laptop, 1600px and down) */
 @media only screen and (max-width: 1600px) {
     .camps-showcase .camp-card {
         width: 21vw;
@@ -425,7 +425,7 @@ h1 {
 }
 
 
-/* Smaller devices (tablets, 1200px and down) */
+/* medium devices (tablets, 1200px and down) */
 @media only screen and (max-width: 1200px) {
     .camps-showcase .camp-card {
         width: 26vw;
@@ -473,7 +473,7 @@ h1 {
 
 }
 
-/* Smaller devices (tablets, 1024 and down) */
+/* medium devices (tablets, 1024 and down) */
 @media only screen and (max-width: 1024px) {
     .camps-showcase .camp-card {
         width: 26vw;
@@ -503,7 +503,7 @@ h1 {
     }
 }
 
-/* Smaller devices (Smart phone, 950px and down) */
+/* Small devices (Smart phone, 950px and down) */
 @media only screen and (max-width: 950px) {
 
     .services-wrapper {
@@ -572,7 +572,7 @@ h1 {
 
 }
 
-/* Smaller devices (Smart phone, 500px and down) */
+/* Small devices (Smart phone, 500px and down) */
 @media only screen and (max-width: 500px) {
 
     .presenting-wrapper h1,
