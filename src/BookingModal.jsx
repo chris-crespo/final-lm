@@ -112,6 +112,9 @@ const BookingModal = ({ show, close }) => (
         </div>
         <InfoCards />
         <AddCard />
+        <div class="book-camp-btn">   
+            <button onClick={close}>book</button>
+            </div>
     </div>
 )
 

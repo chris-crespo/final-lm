@@ -48,8 +48,7 @@
     width: 35%;
 }
 
-.aboutUs h1,
-.missions h1 {
+.aboutUs h1 {
     font-size: 50px;
 }
 
@@ -314,12 +313,7 @@ h1 {
 
 /* medium devices (tablet, 1200px and down) */
 @media only screen and (max-width: 1200px) {
-
-    /***mission***/
-    .missions h1 {
-        font-size: 37px;
-    }
-
+    
         /***values***/
     .value-icon {
         width: 50% !important;

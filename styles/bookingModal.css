@@ -32,11 +32,10 @@ button:hover {
 
 #booking-modal,
 .IDsection,
-#IDsection,
 .complete-name,
-#complete-name,
-#age,
-.kid-cards {
+.kid-cards,
+.book-camp-btn {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -54,7 +53,7 @@ button:hover {
 #IDsection,
 #complete-name,
 #age {
-    width: 80%;
+    width: 85%;
 }
 
 .close-button {
@@ -81,7 +80,10 @@ button:hover {
 #booking-modal {
     width: 70%;
     padding: 20px;
+    padding-right: 55px;
     justify-content: center;
+    background-color: white;
+    border-radius: 10px
 }
 
 .kid-info,
@@ -154,6 +156,19 @@ input,
     flex-grow: 1;
     justify-content: space-evenly;
 }
+.book-camp-btn{
+    width:100%;
+}
+.book-camp-btn button{
+    color: var(--white);
+    background-color: var(--red);
+    border: 3px solid var(--red); 
+    transition: all 0.3s ease-in-out;
+}
+.book-camp-btn button:hover{
+    background-color: rgba(255, 255, 255, 0.697);
+    color: var(--red);
+}
 
 .add-kid-section input {
     width: 100%;
@@ -164,7 +179,12 @@ input,
     font-size: 14px;
     font-weight: 500;
 }
-
+.element-visible{
+    display: flex;
+}
+.element-hidden{
+    display: none;
+}
 button {
     border: none;
     border-radius: 10px;
@@ -182,6 +202,12 @@ button {
 #complete-name,
 .age {
     /* display: none; */
+}
+#complete-name {
+    justify-content: space-between;
+}
+#complete-name input{
+    width: 48%;
 }
 
 .addButton {

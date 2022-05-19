@@ -92,7 +92,9 @@ const Camp = () => {
                     </div>
                 </div>
             </div>
+            <div id="booking-modal-wrapper" class="booking-modal-wrapper">
             <BookingModal show={modalVisible} close={closeModal} />
+            </div>
         </>
     )
 } 
