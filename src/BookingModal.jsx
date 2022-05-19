@@ -102,15 +102,17 @@ const AddCard = () => (
 
 
 const BookingModal = ({ show, close }) => (
-    <div className={show ? 'element-visible' : 'element-hidden'} id="booking-modal">
-        <div className="close-button">
-            <button onClick={close}>X</button>
-        </div>
-        <InfoCards />
-        <AddCard />
-        <div class="book-camp-btn">   
-            <button onClick={close}>book</button>
+    <div className={show ? 'element-visible' : 'element-hidden'} id="booking-modal-wrapper" >
+        <div  id="booking-modal">  
+            <div className="close-button">
+                <button onClick={close}>X</button>
             </div>
+            <InfoCards />
+            <AddCard />
+            <div class="book-camp-btn">   
+                <button onClick={close}>book</button>
+            </div>
+        </div>
     </div>
 )
 

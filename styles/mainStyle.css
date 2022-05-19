@@ -510,66 +510,52 @@ h1 {
         width: 100%;
         height: auto;
     }
-
     .service-card {
         width: 228px;
         height: 37vh;
         justify-content: start;
     }
-
     .camps-showcase .camp-card {
         padding: 6px;
         margin: 10px;
         width: 240px;
         height: 30vh;
     }
-
     .destination-wrapper {
         height: auto;
     }
-
     .steps-text {
         width: 100%;
     }
-
     .steps-text {
         transform: scale(0.8);
     }
-
     .booking-step-wrapper {
         margin-bottom: 70px;
     }
-
     .mailing-section input {
         margin-bottom: 10px;
         width: 100%;
     }
-
     .sponores {
         height: 43vh;
     }
-
-
     .presenting-wrapper {
         position: static;
         height: auto;
         padding: 40px;
         transform: scale(1);
     }
-
     .presenting-text {
         width: 100%;
     }
-
     .presenting-wrapper h1,
     .presenting-text p {
         color: black;
     }
-
     .mailing-section h1 {
         width: 90%;
     }
-
 }
 
 /* Small devices (Smart phone, 500px and down) */
@@ -579,23 +565,18 @@ h1 {
     .services-title h1 {
         font-size: 8vw;
     }
-
     .presenting-wrapper p,
     .services-title p {
         font-size: 13px;
     }
-
     .presenting-text a {
         padding: 8px 4px;
     }
-
     .steps-image {
         width: 80%;
     }
-
     .mailing-section,
     .sponores {
         height: auto;
     }
-
 }
