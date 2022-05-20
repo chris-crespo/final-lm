@@ -106,6 +106,7 @@ const BookingModal = ({ show, close }) => (
         <div  id="booking-modal">  
             <div className="close-button">
                 <button onClick={close}>X</button>
+                <h3> Book A Camp </h3>
             </div>
             <InfoCards />
             <AddCard />

@@ -142,7 +142,7 @@ const BookingModal = ({
   className: "close-button"
 }, /*#__PURE__*/React.createElement("button", {
   onClick: close
-}, "X")), /*#__PURE__*/React.createElement(InfoCards, null), /*#__PURE__*/React.createElement(AddCard, null), /*#__PURE__*/React.createElement("div", {
+}, "X"), /*#__PURE__*/React.createElement("h3", null, " Book A Camp ")), /*#__PURE__*/React.createElement(InfoCards, null), /*#__PURE__*/React.createElement(AddCard, null), /*#__PURE__*/React.createElement("div", {
   class: "book-camp-btn"
 }, /*#__PURE__*/React.createElement("button", {
   onClick: close
