@@ -1,3 +1,7 @@
+.sidebar-container h1 {
+    font-family: 'Noto', sans-serif;
+}
+
 .sidebar-container {
     height: calc(100vh - 68px);
     position: sticky;
@@ -79,4 +83,29 @@
 .sidebar-bookings-header h1 {
     font-size: 20px;
     font-weight: 700;
+}
+
+.sidebar-logout {
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-logout button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar-logout img {
+    width: 30px;
+    height: 30px;
 }

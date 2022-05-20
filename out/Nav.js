@@ -78,7 +78,14 @@ const Sidebar = ({
   className: "sidebar-booking"
 }, b.camp)) || /*#__PURE__*/React.createElement("div", {
   className: "sidebar-bookings-empty"
-}, "There are no bookings to show.")))));
+}, "There are no bookings to show."))), /*#__PURE__*/React.createElement("div", {
+  className: "sidebar-logout"
+}, /*#__PURE__*/React.createElement("div", {
+  className: "sidebar-logout-img"
+}, /*#__PURE__*/React.createElement("img", {
+  src: "../assets/img/logout.png",
+  alt: ""
+})), /*#__PURE__*/React.createElement("button", null, "LOG OUT"))));
 
 const Hamburger = ({
   toggle

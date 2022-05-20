@@ -63,6 +63,12 @@ const Sidebar = ({ toggled, close, user, bookings }) => (
                             </div>}
                 </div>
             </div>
+            <div className="sidebar-logout">
+                <div className="sidebar-logout-img">
+                    <img src="../assets/img/logout.png" alt="" />
+                </div>
+                <button>LOG OUT</button>
+            </div>    
         </div>
     </div>
 )
