@@ -28,16 +28,16 @@
 
 .navbar-logo {
     width: 58px;
-    height: 53px;
+    height: 56px;
     margin: 5px;
     border-radius: 50%;
-
     position: relative;
     bottom: -2px;
 }
 
 .navbar-logo img {
     border-radius: 50%;
+    width: auto;
 }
 
 .navbar-menu,

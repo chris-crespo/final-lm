@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    /* z-index: 9999; */
+    z-index: 9999;
     /* display: none; */
 }
 
@@ -22,7 +22,6 @@ button:hover {
     opacity: 0.8;
 }
 
-.kid-info,
 .add-kid-section,
 .booking-modal-wrapper,
 .add-kid-card,
@@ -38,6 +37,8 @@ button:hover {
 .IDsection,
 .complete-name,
 .kid-cards,
+.kid-info,
+.kid-avatar,
 .book-camp-btn {
     display: flex;
     flex-direction: row;
@@ -50,7 +51,8 @@ button:hover {
 .IDsection,
 .complete-name,
 .age,
-.kid-cards {
+.kid-cards,
+.close-button {
     display: flex;
 }
 
@@ -62,7 +64,8 @@ button:hover {
 
 .close-button {
     width: 100%;
-    justify-content: end;
+    align-items: center;
+    align-content: center;
 }
 
 .close-button button {
@@ -79,15 +82,20 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.697);
 }
 
-
+.close-button h3 {
+    margin-right: 40px;
+    color: var(--red);
+}
 
 #booking-modal {
-    width: 70%;
-    padding: 20px;
-    padding-right: 55px;
+    width: 65%;
     justify-content: center;
     background-color: white;
-    border-radius: 10px
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%);
+    max-height: 85vh;
+    overflow-y: scroll;
+    align-content: flex-start;
 }
 
 .kid-info,
@@ -101,6 +109,8 @@ button:hover {
 .kid-info {
     padding: 20px;
     transition: all 0.5s ease-in-out;
+    min-height: 110px;
+    margin-top: 20px;
 }
 
 .kid-info:hover {
@@ -127,7 +137,7 @@ button:hover {
 .kid-avatar,
 #kid-avatar,
 #plus-icon {
-    width: 100px;
+    width: 100%;
     height: 100px;
     padding: 0;
     transition: all 500ms ease;
@@ -138,14 +148,14 @@ button:hover {
 }
 
 #plus-icon:hover {
-    transform:scale(1.2);
+    transform: scale(1.2);
 }
 
 .kid-avatar img,
 #kid-avatar img {
     border-radius: 50%;
+    width: 100px;
 }
-
 
 .kid-avatar,
 #kid-avatar,
@@ -156,20 +166,23 @@ input,
 }
 
 .kid-cards {
-    width: auto;
+    width: 100%;
     flex-grow: 1;
     justify-content: space-evenly;
 }
-.book-camp-btn{
-    width:100%;
+
+.book-camp-btn {
+    width: 100%;
 }
-.book-camp-btn button{
+
+.book-camp-btn button {
     color: var(--white);
     background-color: var(--red);
-    border: 3px solid var(--red); 
+    border: 3px solid var(--red);
     transition: all 0.3s ease-in-out;
 }
-.book-camp-btn button:hover{
+
+.book-camp-btn button:hover {
     background-color: rgba(255, 255, 255, 0.697);
     color: var(--red);
 }
@@ -183,12 +196,20 @@ input,
     font-size: 14px;
     font-weight: 500;
 }
-.element-visible{
-    display: flex;
+
+.add-kid-section {
+    margin-top: 40px;
 }
-.element-hidden{
+
+.element-visible {
+    display: flex;
+    justify-content: center;
+}
+
+.element-hidden {
     display: none;
 }
+
 button {
     border: none;
     border-radius: 10px;
@@ -196,7 +217,9 @@ button {
     font-size: 14px;
     font-weight: 500;
     margin: 10px;
+
 }
+
 
 .add-kid-card button,
 .add-kid-card #kid-avatar,
@@ -207,10 +230,12 @@ button {
 .age {
     /* display: none; */
 }
+
 #complete-name {
     justify-content: space-between;
 }
-#complete-name input{
+
+#complete-name input {
     width: 48%;
 }
 
@@ -229,11 +254,52 @@ button {
     color: var(--red);
 }
 
+.add-kid-card {
+    margin-top: 30px;
+}
+
 #kid-avatar {
     margin-top: 10px;
 }
 
 .first-name p,
 .last-name p {
-    font-size: 25px;
+    font-size: 20px;
+}
+
+/**********MediaQueries**********/
+/* large devices (laptop, 1600px and down) */
+@media only screen and (max-width: 1600px) {
+
+    /***main-container***/
+    .main-container {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .camp-filters {
+        align-self: flex-start;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 80%;
+    }
+
+    .camp-pic-container {
+        width: 335px;
+    }
+
+    .camp-pic {
+        width: 335px;
+    }
+    .kid-cards {
+        width: 70%;
+        flex-grow: 1;
+        justify-content: space-evenly;
+    }
+}
+/* small devices (Smart phone, 450 and down) */
+@media only screen and (max-width: 450px) {
+    .kid-info{
+        width: 90%;
+    }
 }
