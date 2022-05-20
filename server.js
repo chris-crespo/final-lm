@@ -4,7 +4,7 @@ const { exec } = require("child_process");
 
 const dirs = ["node_modules", "out", "pages", "styles", "assets"];
 
-const serveAs = (name, type) => res => {
+const serveAs = (name, type) => (res, code = 200) => {
     res.writeHead(200, { "content-type": type });
     fs.createReadStream(name).pipe(res);
 }
@@ -46,10 +46,12 @@ const createEntries = dirs =>
 const createRoutes = dirs => Object.fromEntries(createEntries(dirs));
 const routes = createRoutes(dirs);
 
+//const notFound = res => serveAs(res, 404)(
+
 const server = http.createServer((req, res) => {
     const route = routes[req.url];
     console.log(req.url, route);
-    route && route(res);
+    route ? route(res) : serveAs("pages/404.html", "text/html")(res, 404);
 });
 
 server.listen(process.env.PORT || 3000, () => console.log("Listening at port 3000..."));
