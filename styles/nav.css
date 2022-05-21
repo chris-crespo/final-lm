@@ -221,3 +221,19 @@
         display: none;
     }
 }
+
+.navbar-sign-item:nth-child(2) {
+    font-weight: 700;
+    color: white;
+    background-color: var(--primary);
+    padding: 6px 14px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+}
+
+/* larg devices (laptop, 1600px and down) */
+@media only screen and (max-width: 1600px) {
+    .navbar-sign-item:nth-child(2) {
+        padding: 6px 14px;
+    }
+}

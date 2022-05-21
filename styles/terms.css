@@ -95,3 +95,11 @@ ol {
 .terms-of-uses h3:not(:nth-child(2)) {
     margin-top: 36px;
 }
+
+
+/* small devices (phone, 950px and down) */
+@media only screen and (max-width: 950px) {
+    .terms-header {
+        flex-wrap: wrap-reverse;
+    }
+}

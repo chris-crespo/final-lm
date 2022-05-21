@@ -1,5 +1,5 @@
 .camp-card {
-    width: 340px;
+    width: 24%;
     display: flex;
     flex-direction: column;
     padding: 14px;
@@ -57,4 +57,69 @@
 
     position: relative;
     top: 3px;
+}
+
+/**********MediaQueries**********/
+/* larg devices (laptop, 1480px and down) */
+@media only screen and (max-width: 1480px) {
+    .camp-card {
+        width: 23%;
+    }
+}
+
+/* Meduim devices (tablets, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+    .camp-card {
+        width: 30%;
+    }
+}
+
+/* Meduim devices (tablets, 950px and down) */
+@media only screen and (max-width: 950px) {
+    .camp-card {
+        width: 45%;
+        margin-right: 3vw
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .camps-wrapper {
+        display: block;
+    }
+
+    .camp-list {
+        width: 100%;
+        height: auto;
+    }
+
+    .filters {
+        padding: 10px 20px;
+    }
+
+    .filter {
+        margin-bottom: 0px;
+    }
+}
+
+/* Meduim devices (tablets, 450px and down) */
+@media only screen and (max-width: 450px) {
+    .card-info-items span {
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .camp-card {
+        padding: 10px;
+        margin-right: 4.4vw;
+    }
+}
+
+/* Meduim devices (tablets, 300px and down) */
+@media only screen and (max-width: 300px) {
+
+    .camp-card {
+        padding: 14px;
+        width: 100%;
+    }
 }

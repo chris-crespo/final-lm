@@ -19,6 +19,7 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .errorpage-pic {
@@ -66,4 +67,31 @@ button {
     cursor: pointer;
     width: 35%;
     margin-top: 40px;
+}
+
+
+/**********MediaQueries**********/
+/* meduim devices (tablets, 1200px and down) */
+@media only screen and (max-width: 1200px) {
+    .errorpage-pic img {
+        height: 38vw;
+        width: auto;
+    }
+
+    button {
+        width: auto;
+    }
+}
+
+/* small devices (phone, 690px and down) */
+@media only screen and (max-width: 690px) {
+    .errorpage {
+        width: 80%;
+        margin: auto;
+    }
+
+    .errorpage-pic {
+        width: 100%;
+        height: auto;
+    }
 }

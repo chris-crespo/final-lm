@@ -277,13 +277,14 @@ h1 {
     .aboutUs p {
         width: 50%;
     }
-        /***mission***/
+
+    /***mission***/
     .missions h1,
     .missions p {
         width: 60%;
     }
 
-    
+
     /***values***/
     .values-text,
     .values-icons {
@@ -296,7 +297,8 @@ h1 {
 
     .value-icon:nth-child(even) {
         width: 45%;
-    } 
+    }
+
     .card-icon {
         width: 135px;
     }
@@ -306,6 +308,7 @@ h1 {
         height: 60%;
         width: 100%;
     }
+
     .member-info p {
         width: 100%;
     }
@@ -313,8 +316,8 @@ h1 {
 
 /* medium devices (tablet, 1200px and down) */
 @media only screen and (max-width: 1200px) {
-    
-        /***values***/
+
+    /***values***/
     .value-icon {
         width: 50% !important;
     }
@@ -322,14 +325,17 @@ h1 {
     .value-icon h3 {
         width: 150px;
     }
+
     /***teamwork***/
     .card {
         width: 25%;
     }
+
     .member-card {
         display: flex;
         flex-direction: column;
     }
+
     .member-avatar {
         justify-self: center;
     }
@@ -337,40 +343,50 @@ h1 {
     .teamwork-members {
         width: 100%;
     }
+
     .member-card {
         height: 35vh;
     }
 }
+
 /*small devices (tablet, 950px and down) */
 @media only screen and (max-width: 950px) {
 
     /***aboutUs***/
-    .aboutUs h1, .aboutUs p {
+    .aboutUs h1,
+    .aboutUs p {
         width: 80%;
     }
-    .aboutUs{
+
+    .aboutUs {
         margin-bottom: 70px;
     }
 
-/***missions***/
+    /***missions***/
     .missions {
         min-height: 55vh;
     }
-    .missions h1, .missions p {
+
+    .missions h1,
+    .missions p {
         width: 90%;
-    }    
-    .localisation-cards{
+    }
+
+    .localisation-cards {
         height: auto;
     }
 
-/**********values**********/
-    .values{
-        flex-wrap:wrap;
+    /**********values**********/
+    .values {
+        flex-wrap: wrap;
         height: auto;
     }
-    .values-text, .values-icons {
+
+    .values-text,
+    .values-icons {
         width: 80%;
     }
+
     .value-icon {
         width: 40% !important;
     }
@@ -382,34 +398,47 @@ h1 {
 
 
     /***teamwork***/
-    .teamwork{
+    .teamwork {
         height: auto;
     }
+
     .member-card {
         height: 25vh;
         width: 200px;
         padding: 10px;
     }
+
+    .member-avatar {
+        margin-bottom: 0px;
+    }
 }
+
 /*small devices (phone, 450px and down) */
 @media only screen and (max-width: 450px) {
 
     /***aboutUs***/
-    .aboutUs h1, .aboutUs p {
+    .aboutUs h1,
+    .aboutUs p {
         width: 100%;
     }
-    .aboutUs h1,.missions h1 {
+
+    .aboutUs h1,
+    .missions h1 {
         font-size: 25px;
     }
-    .aboutUs{
+
+    .aboutUs {
         margin-bottom: 70px;
     }
+
     .circles-content {
         transform: scale(0.5)
     }
+
     .circle:first-child {
         top: 6vh;
     }
+
     .circle:last-child {
         top: 13vh;
     }
@@ -418,8 +447,10 @@ h1 {
     .missions {
         height: auto;
     }
+
     /***globalization***/
-    .globalization-title h1,.teamwork-title h1 {
+    .globalization-title h1,
+    .teamwork-title h1 {
         text-align: center;
     }
 
@@ -429,10 +460,11 @@ h1 {
         height: 10vh;
         width: 80%;
     }
+
     .member-avatar {
-    height: 100%;
-     width: 30%;
-     margin-bottom: 0px;
+        height: 100%;
+        width: 30%;
+        margin-bottom: 0px;
     }
 
 }

@@ -109,3 +109,10 @@
     width: 30px;
     height: 30px;
 }
+
+/* Small devices (Smart phone, 950px and down) */
+@media only screen and (max-width: 950px) {
+    .sidebar {
+        min-width: 275px;
+    }
+}
