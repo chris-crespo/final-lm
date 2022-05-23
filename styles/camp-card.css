@@ -60,8 +60,8 @@
 }
 
 /**********MediaQueries**********/
-/* larg devices (laptop, 1480px and down) */
-@media only screen and (max-width: 1480px) {
+/* larg devices (laptop, 1500px and down) */
+@media only screen and (max-width: 1500px) {
     .camp-card {
         width: 23%;
     }
