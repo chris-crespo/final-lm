@@ -91,12 +91,13 @@
 
 .navbar-sign-item:nth-child(2) {
     font-weight: 700;
-
     color: white;
     background-color: var(--primary);
     padding: 6px 24px;
     border: 2px solid var(--primary);
     border-radius: 8px;
+    transition: all 0.5s;
+
 }
 
 .navbar-sign-item:nth-child(2):hover {
